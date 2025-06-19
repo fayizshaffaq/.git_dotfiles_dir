@@ -4,7 +4,7 @@
  * A robust, highly-customizable, and 100% GTK-compliant theme for a VERTICAL Waybar.
  *
  * Author: Gemini
- * Version: 3.2
+ * Version: 3.5 (Corrected)
  *
  * This stylesheet is guaranteed to be free of syntactical errors like
  * ':root' which are not supported by Waybar's GTK CSS parser.
@@ -25,12 +25,13 @@
 
 * {
     /* VARIABLE 1: Font Size. Affects the natural width of text content. */
-    font-size: 10px; 
+    font-size: 10px;
 }
 
 #workspaces button,
 #workspaces, #clock, #battery, #pulseaudio, #network, #cpu, #memory,
-#backlight, #tray, #custom-notification, #custom-power {
+#backlight, #tray, #custom-notification, #custom-power,
+#custom-network-unit, #custom-network-upload, #custom-network-download {
     /* VARIABLE 2: Module Horizontal Padding. This is the primary control for the bar's width. */
     padding-left: 0px;
     padding-right: 0px;
@@ -56,6 +57,10 @@
 @define-color color_info #81A1C1;         /* Blue - Info, Paused */
 @define-color color_purple #B48EAD;       /* Purple - Memory module */
 
+/* --- Customizable Network Colors --- */
+@define-color network_kb_color @color_good;    /* Muted Green for KB/s */
+@define-color network_mb_color @color_critical;  /* Muted Red for MB/s */
+
 
 /*
  * ===================================================================
@@ -78,8 +83,8 @@
 window#waybar {
     background: @bar_bg;
     color: @text_primary;
-    margin: 5px;
-    border-radius: 8px;
+    margin: 1px;
+    border-radius: 4px;
     padding: 5px 0; /* Vertical padding for the top/bottom of the bar */
 }
 
@@ -117,14 +122,29 @@ tooltip label {
 #backlight,
 #tray,
 #custom-notification,
-#custom-power {
+#custom-power,
+#custom-network-unit,
+#custom-network-upload,
+#custom-network-download {
     /* Horizontal padding is now controlled in the SIZING CONFIGURATION section */
-    margin: 4px 3px; /* 4px vertical, 3px horizontal margin between modules */
+    margin: 6px 3px; /* 6px vertical, 3px horizontal margin between modules (THIS IS FOR SPACING BETWEEN MODULES, CUSTOMIZE THIS IF YOU WANT CRAMMEDIN OR SPREAD APART MODUELS) */
     padding-top: 0;
     padding-bottom: 0;
     border-radius: 6px;
     background-color: transparent;
 }
+
+/* --- Custom Override for Network Module Spacing (CORRECTED) --- */
+/* This rule specifically targets the three network modules to apply a custom vertical margin,
+   overriding the 6px default defined above.
+   EDIT THE PIXEL VALUES BELOW to adjust spacing. A smaller value brings them closer. */
+#custom-network-unit,
+#custom-network-upload,
+#custom-network-download {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 
 /* --- Default Module Hover Style --- */
 #clock:hover,
@@ -135,7 +155,10 @@ tooltip label {
 #memory:hover,
 #backlight:hover,
 #custom-notification:hover,
-#custom-power:hover {
+#custom-power:hover,
+#custom-network-unit:hover,
+#custom-network-upload:hover,
+#custom-network-download:hover {
     background-color: @bg_hover;
 }
 
@@ -209,7 +232,6 @@ tooltip label {
 
 /* --- System Tray --- */
 #tray {
-    background-color: @bg_module;
 }
 
 /* --- Custom Modules --- */
@@ -224,6 +246,25 @@ tooltip label {
     color: @color_info;
     animation: blink-info 1s steps(1, end) infinite;
 }
+
+/* --- Custom Network Speed Indicator --- */
+/* Default color: muted green for KB/s */
+#custom-network-unit,
+#custom-network-upload,
+#custom-network-download,
+#custom-network-unit.network-kb,
+#custom-network-upload.network-kb,
+#custom-network-download.network-kb {
+    color: @network_kb_color;
+}
+
+/* Override color: muted red for MB/s */
+#custom-network-unit.network-mb,
+#custom-network-upload.network-mb,
+#custom-network-download.network-mb {
+    color: @network_mb_color;
+}
+
 
 /*
  * ===================================================================

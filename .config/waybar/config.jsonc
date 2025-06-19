@@ -19,7 +19,6 @@
         "backlight",
         "cpu",
         "memory"
-
     ],
 
     // Modules that will appear in the center of the vertical bar
@@ -27,12 +26,12 @@
         "hyprland/workspaces"
     ],
 
-    // Modules that will appear at the bottom of the vertical bar
+    // Modules that will appear at thebottom of the vertical bar
     "modules-right": [
         "tray",
         "custom/network-unit",
-				"custom/network-upload",
-				"custom/network-download",
+		"custom/network-upload",
+		"custom/network-download",
         "clock",
         "custom/notification",
         "custom/power"
@@ -78,12 +77,12 @@
         "format": "\n{usage}%",
         "tooltip": true,
         "tooltip-format": "CPU: {usage}%\nAvg Freq: {avg_frequency}GHz",
-        "interval": 5
+        "interval": 2
     },
 
     "memory": {
         "format": "\n{percentage}%",
-        "interval": 10,
+        "interval": 2,
         "states": {
             "critical": 80
 		},
@@ -102,53 +101,53 @@
         "spacing": 3, 
         "rotate": 90
     },
+
     "custom/network-unit": {
-    "format": "{}",
-    "interval": 2,
-    "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline r1 < rx; getline t1 < tx; close(rx); close(tx); system(\"sleep 1\"); getline r2 < rx; getline t2 < tx; close(rx); close(tx); bps = (r2-r1) + (t2-t1); mbs = bps/1024/1024; if (mbs >= 1) { print \"MB\" } else { print \"KB\" } }'"
-},
-"custom/network-upload": {
-    "format": "{}",
-    "interval": 2,
-    "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline t1 < tx; close(tx); system(\"sleep 1\"); getline t2 < tx; close(tx); bps = t2-t1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 10) { printf \"%.0f\", mbs } else if (mbs >= 1) { printf \"%.1f\", mbs } else { printf \"%.0f\", kbs } }'"
-},
-"custom/network-download": {
-    "format": "{}",
-    "interval": 2,
-    "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; getline r1 < rx; close(rx); system(\"sleep 1\"); getline r2 < rx; close(rx); bps = r2-r1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 10) { printf \"%.0f\", mbs } else if (mbs >= 1) { printf \"%.1f\", mbs } else { printf \"%.0f\", kbs } }'"
-  },
+        "return-type": "json",
+        "interval": 1,
+        "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline r1 < rx; getline t1 < tx; close(rx); close(tx); system(\"sleep 1\"); getline r2 < rx; getline t2 < tx; close(rx); close(tx); bps = (r2-r1) + (t2-t1); mbs = bps/1024/1024; if (mbs >= 1) { text = \"MB\"; class = \"network-mb\"; } else { text = \"KB\"; class = \"network-kb\"; } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
+    },
+
+    "custom/network-upload": {
+        "return-type": "json",
+        "interval": 1,
+        "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline t1 < tx; close(tx); system(\"sleep 1\"); getline t2 < tx; close(tx); bps = t2-t1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 1) { class = \"network-mb\"; if (mbs >= 10) { text = sprintf(\"%.0f\", mbs); } else { text = sprintf(\"%.1f\", mbs); } } else { class = \"network-kb\"; text = sprintf(\"%.0f\", kbs); } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
+    },
+
+    "custom/network-download": {
+        "return-type": "json",
+        "interval": 1,
+        "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; getline r1 < rx; close(rx); system(\"sleep 1\"); getline r2 < rx; close(rx); bps = r2-r1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 1) { class = \"network-mb\"; if (mbs >= 10) { text = sprintf(\"%.0f\", mbs); } else { text = sprintf(\"%.1f\", mbs); } } else { class = \"network-kb\"; text = sprintf(\"%.0f\", kbs); } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
+    },
+
     "clock": {
         "format": "{:%I\n%M}",
         "tooltip-format": "<big>{:%A, %d %B}</big>\n<tt><small>{calendar}</small></tt>",
         "timezone": "Asia/Kolkata",
         "interval": 60
 	},
-  "custom/notification": {
-    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
-    "format": "{icon}",
-    "format-icons": {
-      "notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
-      "dnd-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "",
-      "inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
-  
 
+    "custom/notification": {
+        "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+            "none": "",
+            "dnd-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+  
     "custom/power": {
         "format": "",
         "tooltip": true,

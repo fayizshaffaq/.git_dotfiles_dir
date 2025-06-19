@@ -1,0 +1,13 @@
+first isntall these two fonts from AUR becuase the config file refrenrsenses them. 
+
+paru -S otf-atkinson-hyperlegible-next otf-atkinson-hyperlegible-next-mono
+
+
+save the config file in this path. 
+/etc/fonts/local.conf
+
+
+
+
+run to refresh the font cache
+sudo fc-cache -fv

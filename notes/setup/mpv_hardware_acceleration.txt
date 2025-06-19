@@ -1,0 +1,19 @@
+already installed on your pc but just in case
+sudo pacman -S --needed mpv intel-media-driver libva-utils
+
+
+	add this the text to this file 
+
+nvim ~/.config/mpv/mpv.conf
+
+# ~/.config/mpv/mpv.conf
+
+# Specify the hardware decoding API. 'vaapi' is the native Linux API.
+hwdec=vaapi
+
+# Set the video output driver. 'gpu' is modern and required for hwdec.
+vo=gpu
+
+# CRITICAL: Specify the GPU context for Wayland.
+# This ensures seamless integration with Hyprland and is the most likely fix.
+gpu-context=wayland

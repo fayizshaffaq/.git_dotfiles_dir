@@ -1,0 +1,157 @@
+/* ~/.config/waybar/style.css */
+
+/* === GLOBAL SETTINGS - Edit these values to easily adjust properties === */
+@define-color bg-color rgba(25, 22, 20, .8);       /* Transparent dark background */
+@define-color active-bg rgba(45, 40, 35, 0.85);     /* Pill background */
+@define-color text #e2d8cf;                         /* Light warm text */
+@define-color text-inactive #9b8e83;                /* Muted text */
+@define-color accent1 #e2a478;                      /* Warm orange */
+@define-color accent2 #d78c54;                      /* Darker orange */
+@define-color accent3 #bd6f3e;                      /* Deep orange */
+@define-color warning #e27878;                      /* Warning/urgent */
+@define-color success #a8c27d;                      /* Success states */
+
+/* General styling */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Noto Sans", "Font Awesome 6 Free", monospace;
+    font-size: 10px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main bar container - ADJUST WIDTH HERE (28px) */
+window#waybar {
+    background-color: @bg-color;
+    color: @text;
+    min-width: 28px; /* CHANGE THIS ONE VALUE TO ADJUST WIDTH */
+    transition: background-color 0.3s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+/* Common module styling - creates pill shapes */
+/* ADJUST PILL RADIUS HERE (12px) */
+#workspaces,
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#bluetooth,
+#cpu,
+#memory,
+#network,
+#custom-power,
+#tray {
+    background-color: @active-bg;
+    border-radius:9px;  /* CHANGE THIS ONE VALUE TO ADJUST ROUNDNESS */
+    padding: 0px 0;
+    margin: 5px 2px;
+    min-width: 24px;  /* bar-width (28px) minus margins (4px) */
+}
+
+/* Workspaces module */
+#workspaces button {
+    color: @text-inactive;
+    background: transparent;
+    border-radius: 12px;  /* Same as module border-radius */
+    min-width: 20px;  /* bar-width (28px) minus padding (8px) */
+    padding: 2px 0;
+    margin: 2px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: rgba(226, 164, 120, 0.2);
+    color: @text;
+}
+
+#workspaces button.active {
+    background-color: @accent1;
+    color: #1a1714;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: @warning;
+    color: #1a1714;
+}
+
+/* Individual modules styling */
+#clock {
+    color: @accent1;
+    font-weight: bold;
+}
+
+
+#custom-notification {
+	background-color: @active-bg;
+	border-radius:9px;  /* CHANGE THIS ONE VALUE TO ADJUST ROUNDNESS */
+	padding: 0px 0;
+	margin: 5px 2px;
+	color: @accent1;
+	font-weight: bold;  
+}
+
+#battery {
+    color: @success;
+}
+
+#battery.charging, #battery.plugged {
+    color: @success;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @warning;
+    color: #1a1714;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @active-bg;
+        color: @warning;
+    }
+}
+
+#pulseaudio {
+    color: @accent2;
+}
+
+#pulseaudio.muted {
+    color: @text-inactive;
+}
+
+#backlight {
+    color: @accent3;
+}
+
+#tray {
+    background-color: @active-bg;
+    padding: 3px 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @warning;
+}
+
+/* Tooltip styling */
+tooltip {
+    background-color: #252220;
+    border: 1px solid @accent3;
+    border-radius: 6px;  /* Half of module border-radius */
+    padding: 8px;
+}
+
+tooltip label {
+    color: @text;
+}

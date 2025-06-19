@@ -1,0 +1,18 @@
+sudo systemctl disable sddm.service
+
+sudo nvim /etc/systemd/system/getty.target.wants/getty@tty1.service
+
+and comment out or delete the two lines with 
+
+
+and 
+
+Type=simple
+
+
+auto login to hyprland uwsm
+add to zshrc
+
+if uwsm check may-start; then
+    exec uwsm start hyprland.desktop
+fi

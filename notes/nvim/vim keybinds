@@ -1,0 +1,150 @@
+=INSERT
+i append text at the curser. 
+a append text to after the curser.
+A append text at the end of line. 
+
+enter or K - to open links or enter a hyper link
+: to type commands
+hjkl navigation. 
+
+
+motions for d: = operator (d) + motion(w,e,$)
+w until the start of the next word, EXCLUDING its first character.
+e to the end of the current word, INCLUDING the last characterl
+b the last word if the cursor is on the first charactor, or the current word if the current word from the point of where the cursor is if it at any place other than the first word. 
+$ to the end of the line, INCLUDING the last character.
+0 to the start of the line
+shift 0 beggining of the next line. (right after period)
+
+number + motion will allow you to navigate and jump to words at once eg
+2w move two words foraward to the first charctor of teh second word
+2e move two words forared to the last charactor of teh 2nd word
+2b move back 2 words 
+0 move to the start of the line
+
+
+
+:q exit
+:q! exit without saving
+:w to write the file aka save. 
+:wq write and exit aka save and exit. 
+
+
+VISUAL MODE - v
+v allow you to select a text with and moving aorund with motions
+V selects the entire current line
+
+COPY
+y operator (yank) y + (optional) num + motion eg y2w to yank two words.
+
+PASTE
+everything deleted is temperaroly saved to the nvim registory.
+p to put previously deleted/yanked/changed text after the cursor.
+P put the text before the cursor (captial P)
+
+DELETE
+d is the operator
+dd to delete the entire current line
+num plus operator will delete that many things eg:
+2dd will delete 2 lines
+x delete charactor
+
+UNDO/REDO
+u to undo 
+U to undo the whole line and bring it back to original state
+Crtl r to redo. 
+
+
+
+CHANGE OPERATOR 
+this can be used to cut and paste as well. everything deleted is saved in teh nvim registary
+operator + (optional) numbers + motions
+c + motion  Deletes words onwards the cursor, for you to type something else in place of or leave blank.eg:-
+c2w deletes two words from where the cursor is or c2e
+c2j deletes two lines below from where the cursor is
+c2k deletes two lines above from where the cursor is.
+C deletes until the end of line from onwards the placemnt of the cursor. 
+
+
+HIGHLIGHTING TEXT AND SAVING JUST THE HIGLIGHTED TEXT TO A FILE
+v to toggle highlight and then move around with motion keys then type in just ':' and ":'<','>'" will appear automatically at the bottom. and then you can type w <filename> to save just the highlighted to a file that doesn't exist yet.
+:!ls to see the newly created file. 
+
+REPLAACE:
+r replaces just one character with what ever follows, if you conitnnue typing, it'll append instead of replace.
+R replaces more than one charactor goes on until you esc
+
+
+CURSOR LOCAITON AND FILE STATUS
+crtl g tells you how far deep you're in the document in percentage and also tells you total lines in the document. and also the path to the file open
+
+MOVING QUICKLY
+G moves you to the bottom of the file
+gg moves you to the start of the file
+[number]+ G to go to the line number. 
+
+
+FIND
+/(search word) looks for the searched word in the forwared direction. 
+?(search word) looks for the searched word in teh reverse direction. 
+after pressing enter to look serch for the word:-
+n to move to the next word, will move forward if searched with / and backword if searched with ?
+N to move to the PREVIOUS word, will move backword if searched with / and forward if searched with ?
+\c to ignore the case for just the current search command. /<searchterm>\c
+
+REMOVE HIGHLIGHTS OF MATCHED TEXTS
+:nohlsearch
+
+
+
+IGNORE CASE
+:set to set options for the options below
+:set ic to ignore case
+:set noic to not ignore case
+
+:set is 'incsearch'    show partial matches for a search phrase
+:set hls 'hlsearch'    highlight all matching phrases
+
+COMMAND LINE COMPLETINON
+tab to auto complete or show the commands to complete after you type the first word of a command eg :e <TAB> 
+crtl d to also show all the diffrent possible commands but this is formated diffrently and is BETTER imo
+
+
+INVERT THE VALUE OF A SETTING
+ivn
+:set invic to invert the value of ignore case; achieves teh same result as :set noic ie to not ignore case
+
+
+
+jumping back and forth 
+crtl o to go back to where you came from for when you use somethign like [num] G 
+crtl i to go forware to where you got back from eg, you you were on line 3 and then went on line 4, then line 5 then went back to line 4, then crtl i to go back to line 5
+
+% to jump to the pair bracket or parantihisis or curly bracket.
+
+
+
+SUBSTITUTE MULTIPLE INSTANCES OF THE SAME word eg teh to the
+:s the substitute command
+/g to make the channge in all instances of the word "teh" in the line/s. (by defualt all the below operators only substitue the first word in each line with /g added. eveyrthing instance is substituted)
+/c to ask for conformation each time add /c
+
+:s/teh/the/g substitute in just the line where the cursor is and all instances of them in each line.
+:#,#s/teh/the/g substitute in just the mentioned lines and all instances of them in each line
+:%s/teh/the/gc subsittue in the WHOLE file, and all instances of them if there are multiple in each line
+
+EXICUTE EXTERNAL COMMANDS FROM WITHIN NVIM
+:! followed by an external command like ls eg :!ls
+:!rm <currently saved file from the disk> this is an example of all you can do with this. you can remove the saved file youre' currenlty working on and then perhaps save it to a diffrent place. when you delete it, the file is still in ram temperaroly unless you quit without writing it to disk somewhere.
+
+
+
+THE OPEN COMMAND
+o creates a new line BELOW the cursor and places you in insert mode. 
+O creates a new line ABOVE the cursor and places you in insert mode.  
+
+
+RETRIEVING AND MERGING FILES
+:r /path/to/file
+this will paste the contents of the file to where the cursor is. 
+

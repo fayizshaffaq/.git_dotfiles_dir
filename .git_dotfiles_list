@@ -12,6 +12,7 @@
 .config/Thunar/
 .config/uwsm/
 .config/waybar/
+.config/wlogout/
 .config/xfce4/
 .config/xsettingsd/
 .config/yazi/

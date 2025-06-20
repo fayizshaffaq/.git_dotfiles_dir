@@ -42,4 +42,16 @@ systemd-analyze critical-chain
 	to see a beautiful visual representation in a browser using the svg file
 systemd-analyze plot > boot_analysis.svg
 
+-----------------
+  SYSTEMCTL VS LOGINCTL FOR SUTTING DOWN AND LOGGING OUT AND OTHERS. 
+------------------
+
+  for hyprland initiated by uwsm, DON'T EVER USE window manager/desktop manager's native commands because the session is managed by uwsm. only use loginctl , and only when necessory use systemctl but never session's native mecanism to wind down the active session.
+  only use these user level commands,the last flag is for logging out gracefuly.
+  loginctl followed by any of these flags. 
+  poweroff, reboot, suspend,loginctl terminate-session $XDG_SESSION_ID,
+
+  if you're in a tty and haven't yet initialized a wm/dm use systemctl.
+    systemctl followed by :-
+    poweroff, reboot, suspend, soft-reboot, hybrid-sleep
 

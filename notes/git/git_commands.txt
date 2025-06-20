@@ -16,31 +16,88 @@ git merge new-feature
 
 
 git init		Consecrates the current directory as a Git repository by creating the .git sanctum.
+
 git clone <url>		Creates a local mirror of a remote repository, including its full history and configuration.
+
 git status		Provides a detailed report on the state of the three trees: Working Directory, Staging Area, and HEAD.
+
 git add <path>		Promotes changes from the working directory to the staging area (index), creating blob objects.
+
 git add -p		Interactively stage discrete portions ("hunks") of changes within files.
+
 git commit -m "msg"		Permanently records the staged snapshot into the repository's history by creating tree and commit objects.
+
 git commit --amend		Replaces the most recent commit with a new one incorporating any staged changes. Rewrites history.
+
 git log		Displays the chronological chain of commits, revealing the project's historical narrative.
+
 git branch <name>		Creates a new, lightweight pointer (a branch) to the current commit.
+
 git switch <branch>		Repositions the HEAD pointer to the specified branch, updating the working directory.
+
 git merge <branch>		Integrates another branch's history via a fast-forward or a new two-parent merge commit.
+
 git rebase <base>		Re-applies a branch's commits on top of another, creating a linear history. Rewrites history.
+
 git remote add <n> <url>		Registers a remote repository's URL under a convenient shorthand name.
+
 git push -u <r> <b>		Uploads local commits to a remote branch and establishes a tracking relationship.
+
 git fetch <remote>		Downloads all new data from a remote without integrating it into local branches.
+
 git pull <remote>		A compound command that performs a fetch followed immediately by a merge.
-git diff		Displays the differences between various states (e.g., working directory vs. staging area).
+
+  Displays the differences between various states (e.g., working directory vs. staging area).
+  Comparing the Working Directory to the Last Commit
+  To discern the delta between your current, uncommitted modifications (the working directory) and the most recent commit (HEAD), the authoritative command is:
+  This command proffers a unified diff encompassing all modifications, both staged and unstaged, relative to the last finalized commit.
+
+git diff HEAD
+
+
 git reset --soft <c>		Moves the current branch pointer to <c>, leaving the staging area and working directory as is.
+
 git reset --mixed <c>		Moves the branch pointer and resets the staging area to match <c>.
+
 git reset --hard <c>		Moves the branch pointer and resets both the staging area and working directory to match <c>. Destructive.
-git revert <c>		Creates a new commit that is the logical inverse of commit <c>, safely undoing it.
+
+
 git stash		Temporarily shelves uncommitted changes, cleaning the working directory.
 
+  GIT REVERT!
+  The Non-Destructive Undo
+  Creates a new commit that is the logical inverse of commit <c>, safely undoing it.
+  This is the canonical method for undoing a commit in a manner that preserves the integrity of the project's history. It operates not by deleting the antecedent commit, but by creating a new commit that applies the inverse of the changes introduced by the specified commit.
+  First, identify the SHA-1 hash of the commit you wish to nullify
+
+git log --oneline
+
+  Execute the revert operation using the identified hash:  This will initiate a new commit. You will be prompted to enter a commit message for this new, reverting commit.
+
+git revert <commit-hash>
+
+  GIT RESET!
+  git reset: The History-Altering Recourse
+  This command is substantially more potent and irrevocably alters the commit history by repositioning the HEAD of the current branch to a specified earlier commit. Its use on publicly shared history is a cardinal sin and must be assiduously avoided.
+  --hard: This is the most draconian option. It resets the HEAD to <commit-hash>, and crucially, discards all subsequent commits and all changes in both the staging area and the working directory. Any uncommitted work will be annihilated.
+
+git reset --hard <commit-hash>
+
+  eg: to quickly revert the the most recent commit.
+
+git reset --hard HEAD
+
+  --soft: This modality resets the HEAD to <commit-hash> but preserves the changes from all the commits that were undone. These changes are aggregated and left in the staging area (index), poised for a new commit.
+
+git reset --soft <commit-hash>
+
+  --mixed: As the default mode, this resets the HEAD and the index to <commit-hash>, but the changes from the undone commits are kept in the working directory. You must then stage and commit these changes anew.
+
+git reset --mixed <commit-hash>
 
 
-	GIT BARE REPO FOR BACKING UP DOTFILES.
+----------------------------------------
+  GIT BARE REPO FOR BACKING UP DOTFILES.
 
 PREREQUSITES (ADDING USERNAME AND EMAIL)
 

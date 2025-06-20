@@ -24,6 +24,7 @@ number + motion will allow you to navigate and jump to words at once eg
 
 
 
+
 :q exit
 :q! exit without saving
 :w to write the file aka save. 
@@ -132,6 +133,31 @@ SUBSTITUTE MULTIPLE INSTANCES OF THE SAME word eg teh to the
 :s/teh/the/g substitute in just the line where the cursor is and all instances of them in each line.
 :#,#s/teh/the/g substitute in just the mentioned lines and all instances of them in each line
 :%s/teh/the/gc subsittue in the WHOLE file, and all instances of them if there are multiple in each line
+
+
+  TO AUTOMATICALLY PLACE A BLANK LINE AFTER EACH EXISTING LINE 
+:%s/$/\r/g
+:: This prefix signals entry into Neovim's command-line mode, preparatory to executing an ex command.
+%: This range specifier designates that the subsequent command is to be applied universally across all lines within the current buffer, from the inaugural line to the ultimate line.
+s: This denotes the substitute command, an immensely versatile and frequently utilized function for pattern-based text replacement.
+/$: This component defines the search pattern. The dollar sign ($) is a regular expression metacharacter that anchors the match to the very end of each line. Effectively, it signifies "find the position immediately before the newline character that terminates a line."
+/\r: This constitutes the replacement string. The \r (carriage return) is a special character in Neovim's regular expression syntax that, when used in the replacement part of a substitute command, inserts a literal newline character.
+/g: This is a flag, signifying "global." In the context of the substitute command, it ensures that if the pattern were to occur multiple times on a single line (which is not the case with $), all occurrences would be replaced. For the specific pattern $, it is largely redundant but is standard practice.
+
+  TO AUTOMATICALLY PLACE A BLANK LINE AFTER EACH EXISTING LINE
+:%s/^/\r/g 
+:: Initiates Neovim's command-line mode.
+%: Specifies that the operation is to encompass all lines in the buffer.
+s: Invokes the substitute command.
+/^: This is the search pattern. The caret (^) specifically matches the beginning of a line.
+/\r: This is the replacement string, inserting a newline character.
+/g: The global flag, ensuring consistent application, though it is functionally superfluous when matching the singular beginning of a line.
+
+  to do it for a certian number of lines specified.   you can also select the lines with the visual mode and then just git color and follow with the s/^/\r/ 
+
+:#,#s/$/\r/g
+
+
 
 EXICUTE EXTERNAL COMMANDS FROM WITHIN NVIM
 :! followed by an external command like ls eg :!ls

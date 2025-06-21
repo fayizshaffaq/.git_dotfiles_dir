@@ -21,3 +21,4 @@ user_scripts/
 notes/
 .zshrc
 .git_dotfiles_list
+.config/starship.toml

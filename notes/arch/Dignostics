@@ -410,7 +410,7 @@ sudo systemctl enable --now nvidia-powerd.service #Enable and start the nvidia-p
 Deep, Persistent Kernel Control
 #This is where you control the fundamental, persistent behavior of the driver. These settings are applied when the kernel module is first loaded at boot. You configure this by creating a .conf file in /etc/modprobe.d/
 
-sudo nano /etc/modprobe.d/nvidia-power.conf #Create a configuration file. The name doesn't matter, but it must end in .conf
+sudo nvim /etc/modprobe.d/nvidia-power.conf #Create a configuration file. The name doesn't matter, but it must end in .conf
 Add <options> lines to this file.
 Rebuild your initial ramdisk (initramfs) for the changes to be included at early boot.
 Reboot.
@@ -516,7 +516,7 @@ sudo btop #collects information from various system files and kernel interfaces 
 ----------------------
 THIS IS A VERY IMPORTANT PART OF POWERMANAGEMETN FOR THE NVIDIA GPU
 
-sudo nano /proc/driver/nvidia/gpus/0000:01:00.0/power
+sudo nvim /proc/driver/nvidia/gpus/0000:01:00.0/power
 
 #/proc/driver/nvidia/gpus/0000:01:00.0/power: This is the full path to a special file that acts as a direct interface to your NVIDIA driver's power management features.
 
@@ -531,7 +531,7 @@ Understanding Power States: Reading the file provides detailed information about
 
 When you cat (read) the /proc/driver/nvidia/gpus/0000:01:00.0/power file, the NVIDIA kernel driver intercepts this request. It doesn't fetch data from a disk. Instead, it queries the GPU's firmware and its own internal state to gather real-time power management information and then formats it as text for you to see.
 
-When you use echo or a text editor like nano to write a value to this file, the kernel driver again intercepts it. It parses the string you sent (e.g., "power_limit=100") and translates it into a command that is sent directly to the GPU's power management controller. This changes the hardware's behavior in real-time.
+When you use echo or a text editor like nvim to write a value to this file, the kernel driver again intercepts it. It parses the string you sent (e.g., "power_limit=100") and translates it into a command that is sent directly to the GPU's power management controller. This changes the hardware's behavior in real-time.
 
 Is it Safe to Modify Values? Caution is Advised.
 
@@ -571,7 +571,7 @@ Yes. Can set persistent configurations.
 The car's official diagnostic and tuning computer.
 Use this for all your GPU management tasks.
 
-sudo nano /proc/.../power
+sudo nvim /proc/.../power
 Low-level kernel interface
 Debugging, deep system inspection, specific low-level tweaks.
 Use with caution. Changes are temporary. Mistakes can cause instability until reboot.

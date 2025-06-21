@@ -8,7 +8,7 @@
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,131,123,92,629,50,50,690,50,50,78,50,147"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,131,123,92,629,50,50,204,50,50,78,50,147"/>
   <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_DELETED"/>
   <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
   <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>

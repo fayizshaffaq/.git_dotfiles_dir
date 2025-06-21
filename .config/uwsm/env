@@ -61,6 +61,8 @@ export GDK_BACKEND="wayland,x11"
 # Setting it here can sometimes be overridden or lead to inconsistencies.
 # export GTK_THEME=Adwaita-dark
 
+export QT_QUICK_CONTROLS_STYLE=Fusion
+
 #--------------------------------------------------------------------------------
 # 3. Cursor and Default Applications
 #--------------------------------------------------------------------------------

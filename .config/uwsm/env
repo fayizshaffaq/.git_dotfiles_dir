@@ -118,7 +118,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Specifies the driver for VA-API hardware video acceleration (decoding/encoding).
 # For your 12th Gen Intel CPU, `iHD` is the correct modern driver.
 # Using the iGPU for video decoding is typically more power-efficient.
-#export LIBVA_DRIVER_NAME=iHD
+export LIBVA_DRIVER_NAME=iHD
 
 # The following line is for using the nvidia-vaapi-driver. It directly CONFLICTS
 # with the Intel driver above. Do not uncomment both. Only use this if you

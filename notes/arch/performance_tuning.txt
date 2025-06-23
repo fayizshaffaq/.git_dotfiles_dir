@@ -50,6 +50,11 @@ systemd-analyze critical-chain
 	to see a beautiful visual representation in a browser using the svg file
 systemd-analyze plot > boot_analysis.svg
 
+  services that are set to autostart 
+systemctl list-unit-files --state=enabled
+
+  service that are set to autostart (userspace)
+systemctl --user list-unit-files --state=enabled
 ---------------
 	BENCHMARKING
 -----------------	 

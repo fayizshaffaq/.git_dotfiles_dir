@@ -29,18 +29,6 @@ fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"
 	to open a file in nvim and if you exit without anything selected it'l open a blank nvim file
 nvim $(fzf --preview="bat --color=always {}")
 
-----------------
-	DIOGNOSTIC
-----------------
-	SYSTEMD BLAME
-	to show what's causing boot delays
-systemd-analyze blame
-
-	to list services that caused the most delays in a tree format.
-systemd-analyze critical-chain
-
-	to see a beautiful visual representation in a browser using the svg file
-systemd-analyze plot > boot_analysis.svg
 
 -----------------
   SYSTEMCTL VS LOGINCTL FOR SUTTING DOWN AND LOGGING OUT AND OTHERS. 

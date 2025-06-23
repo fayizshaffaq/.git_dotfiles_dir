@@ -12,13 +12,13 @@
 }
 {
     "label" : "shutdown",
-    "action" : "loginctl poweroff",
+    "action" : "systemctl poweroff",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "suspend",
-    "action" : "loginctl suspend",
+    "action" : "systemctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
@@ -30,7 +30,7 @@
 }
 {
     "label" : "reboot",
-    "action" : "loginctl reboot",
+    "action" : "systemctl reboot",
     "text" : "Reboot",
     "keybind" : "r"
 }

@@ -427,15 +427,16 @@ pacman -S grub efibootmgr grub-btrfs
 
 pacman -S os-prober 
 
-26.	ADD ACTIVE STATE POWER MANAGEMENT, and Change the loglevel=7 while also removing the quiet Configure GRUB Defaults (/etc/default/grub):
+26.	ADD ACTIVE STATE POWER MANAGEMENT,USBCORE.AUTOSUSPEND=-1, and Change the loglevel=7 while also removing the quiet Configure GRUB Defaults (/etc/default/grub):
 
 nvim /etc/default/grub
 
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 pcie_aspm=force"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 pcie_aspm=force usbcore.autosuspend=-1"
 
 
 	NOTE:pcie_aspm=force enables ASPM, even on devices that do not support ASPM 
 	If you forcibly enable ASPM by using pcie_aspm=force on hardware that does not support ASPM, the system might become unresponsive. Before setting pcie_aspm=force, ensure that all PCIe hardware on the system supports ASPM. 
+  adding usbcore.autosuspend=-1 help with mitigating so many boot errors bluetooth, nvidia and others, aspm is overzealous with powersavings. 
 
 27.	os prober config ONLY if os-prober is instlaled.
 

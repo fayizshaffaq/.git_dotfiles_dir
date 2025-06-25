@@ -1,50 +1,30 @@
 * {
+	all: unset;
 	background-image: none;
-	box-shadow: none;
+	transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
 }
 
 window {
-	background-color: rgba(12, 12, 12, 0.9);
+	/* Add the background image here */
+	background-image: url('noise.png');
+	background-repeat: repeat;
+    /* Optional: a dark fallback color in case the image doesn't load */
+    background-color: #1a1a1a;
 }
 
 button {
-    border-radius: 0;
-    border-color: black;
-	text-decoration-color: #FFFFFF;
-    color: #FFFFFF;
-	background-color: #1E1E1E;
-	border-style: solid;
-	border-width: 1px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
+	font-family: 'Material Symbols Outlined';
+	font-size: 28pt;
+	background-color: rgba(11, 11, 11, 0.4);
+	color: #FFFFFF;
+	margin: 8pt;
+	border-radius: 8pt;
+	padding: 12pt;
 }
 
-button:focus, button:active, button:hover {
-	background-color: #3700B3;
-	outline-style: none;
-}
-
-#lock {
-    background-image: image(url("icons/lock.png"), url("icons/backup_icons/lock.png"));
-}
-
-#logout {
-    background-image: image(url("icons/logout.png"), url("icons/backup_icons/logout.png"));
-}
-
-#suspend {
-    background-image: image(url("icons/suspend.png"), url("icons/backup_icons/suspend.png"));
-}
-
-#soft_reboot {
-    background-image: image(url("icons/soft_reboot.png"), url("icons/backup_icons/soft_reboot.png"));
-}
-
-#shutdown {
-    background-image: image(url("icons/shutdown.png"), url("icons/backup_icons/shutdown.png"));
-}
-
-#reboot {
-    background-image: image(url("icons/reboot.png"), url("icons/backup_icons/reboot.png"));
+button:focus,
+button:active,
+button:hover {
+	background-color: rgba(51, 51, 51, 0.5);
+	border-radius: 12pt;
 }

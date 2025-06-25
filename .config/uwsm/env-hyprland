@@ -70,3 +70,8 @@ export HYPRCURSOR_SIZE=24
 export AQ_DRM_DEVICES=/dev/dri/card1
 #export AQ_MGPU_NO_EXPLICIT=1 	#Disables explicit syncing on mgpu buffers
 #export AQ_NO_MODIFIERS=1 	#Disables modifiers for DRM buffers
+
+
+#---------------------------------------------------------
+# path for exicutables in the user/local dir.
+export PATH="$HOME/.local/bin:$PATH"

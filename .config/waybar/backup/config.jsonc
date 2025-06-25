@@ -14,7 +14,6 @@
 
     // Modules that will appear at the top of the vertical bar
     "modules-left": [
-        "custom/ollama",
         "battery",
         "pulseaudio",
         "backlight",
@@ -30,12 +29,12 @@
     // Modules that will appear at thebottom of the vertical bar
     "modules-right": [
         "tray",
+        "custom/ollama",
         "custom/network-unit",
-		      "custom/network-upload",
-		      "custom/network-download",
+		"custom/network-upload",
+		"custom/network-download",
         "clock",
         "custom/notification",
-        "custom/inhibit-suspend",
         "custom/power"
     ],
 
@@ -159,16 +158,7 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-
-"custom/inhibit-suspend": {
-    "format": "{}",
-    "exec": "if pgrep -x 'hypridle' > /dev/null; then echo '{\"text\": \"󰤄\", \"tooltip\": \"Suspend is enabled. Click to disable.\", \"class\": \"enabled\"}'; else echo '{\"text\": \"\", \"tooltip\": \"Suspend is disabled. Click to enable.\", \"class\": \"disabled\"}'; fi",
-    "interval": 5,
-    "return-type": "json",
-    "on-click": "~/user_scripts/waybar/toggle_hypridle.sh",
-    "escape": true
-}, 
-
+  
     "custom/power": {
         "format": "",
         "tooltip": true,

@@ -25,7 +25,7 @@
 {
     "label" : "soft_reboot",
     "action" : "systemctl soft-reboot",
-    "text" : "soft_reboot",
+    "text" : "Soft Reboot",
     "keybind" : "q"
 }
 {

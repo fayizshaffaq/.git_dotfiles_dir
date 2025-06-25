@@ -1,249 +1,265 @@
-/*
-#  ____        __ _  
-# |  _ \ ___  / _(_) 
-# | |_) / _ \| |_| | 
-# |  _ < (_) |  _| | 
-# |_| \_\___/|_| |_| 
-#                    
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
-*/
-
-/* ---- Configuration ---- */
-configuration {
-    modi:                       "drun,filebrowser,window,run";
-    font:                       "Fira Sans 11";
-    show-icons:                 true;
-    icon-theme:                 "kora";
-    display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         "  ";
-    display-window:              "  ";
-	drun-display-format:        "{name}";
-    hover-select:               false;
-    scroll-method:              1;
-    me-select-entry:            "";
-    me-accept-entry:            "MousePrimary";
-    window-format:              "{w} · {c} · {t}";
-    
-}
-
-/* ---- Load font ---- */
-@import "~/.config/ml4w/settings/rofi-font.rasi"
-
-/* ---- Load colors ---- */
-@theme "~/.config/rofi/colors.rasi"
-
-/* ---- Load wallpaper ---- */
-@import "~/.cache/ml4w/hyprland-dotfiles/current_wallpaper.rasi"
-
-/* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
-
-/* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
-
-/* ---- Map colors ---- */
 * {
-    color11: @primary;
-    color5: @on-primary-fixed;
-    foreground: @on-surface;
+    active-background: #5A595A;
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: #30575F;
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: #30575F;
+    selected-active-foreground: @foreground;
+    selected-normal-background: #5A595A;
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: #A56039;
+    selected-urgent-foreground: @foreground;
+
+    background-color: @background;
+    background: #0b0e1b;
+    foreground: #c2c2c6;
+    border-color: @background;
+    spacing: 2;
 }
 
-// Main //
+#window {
+    background-color: @background;
+    border: 0;
+    padding: 2.5ch;
+}
+
+#mainbox {
+    border: 0;
+    padding: 0;
+}
+
+#message {
+    border: 2px 0px 0px;
+    border-color: @border-color;
+    padding: 1px;
+}
+
+#textbox {
+    text-color: @foreground;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    margin: 0px 0.3em 0em 0em;
+    text-color: @normal-foreground;
+}
+
+#listview {
+    fixed-height: 0;
+    border: 2px 0px 0px;
+    border-color: @border-color;
+    spacing: 2px;
+    scrollbar: true;
+    padding: 2px 0px 0px;
+}
+
+#element {
+    border: 0;
+    padding: 1px;
+}
+
+#element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color: @normal-foreground;
+}
+
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color: @active-background;
+    text-color: @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color: @selected-urgent-foreground;
+}
+
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color: @selected-active-foreground;
+}
+
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color: @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color: @alternate-active-foreground;
+}
+
+#scrollbar {
+    width: 4px;
+    border: 0;
+    handle-width: 8px;
+    padding: 0;
+}
+
+#sidebar {
+    border: 2px 0px 0px;
+    border-color: @border-color;
+}
+
+#button {
+    text-color: @normal-foreground;
+}
+
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}
+
+#inputbar {
+    spacing: 0;
+    text-color: @normal-foreground;
+    padding: 1px;
+}
+
+#case-indicator {
+    spacing: 0;
+    text-color: @normal-foreground;
+}
+
+#entry {
+    spacing: 0;
+    text-color: @normal-foreground;
+}
+
+#prompt {
+    spacing: 0;
+    text-color: @normal-foreground;
+}
+/*
+ * FINAL, CORRECTED TEMPLATE.
+ * The 'modi' line has been fixed to correctly define the clipboard script.
+ */
+
+configuration {
+    /* MODI: This is the corrected line. It links the name 'clipboard' to the script file. */
+    modi:               "drun,run,clipboard:~/user_scripts/rofi/rofi_cliphist.sh";
+
+    show-icons:         true;
+    icon-theme:         "Papirus-Dark";
+    
+    display-drun:       "  Apps";
+    display-run:        "  Run";
+    display-clipboard:  "  Clipboard";
+
+    kb-cancel:          "Escape";
+    font:               "JetBrainsMono Nerd Font 11";
+}
+
+/* 
+ * The colors-rofi-dark.rasi file from pywal will be inserted *above* this line.
+ */
+
 window {
-    height:                      35em;
-    width:                       56em;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border:                      @border-width;
-    border-color:                @color11;
-    border-radius:               @border-radius;
-    background-color:            @background;
+    background-color:   @background;
+    padding:            20px;
+    location:           center;
+    anchor:             center;
+    width:              40%;
 }
 
 mainbox {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" ];
-    background-color:            transparent;
-    background-image:            @current-image;
+    children:           [ inputbar, listview ];
+    border:             6px;
+    border-radius:      12px;
+    border-color:       @color4;
+    spacing:            15px;
 }
 
-
-// Inputs //
 inputbar {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     5em;
-    children:                    [ "textbox-prompt-colon", "entry" ];
-    background-color:            transparent;
-    background-image:            url("~/.cache/ml4w/hyprland-dotfiles/current_wallpaper", width);
+    children:           [ prompt, entry ];
+    spacing:            10px;
+    padding:            12px;
+    border-radius:      8px;
+    background-color:   @alternate-normal-background;
+    text-color:         @foreground;
 }
 
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "  ";
-    padding:                     1em 0.2em 0em 0em;
-    text-color:                  @foreground;
-    border-radius:               2em 0em 0em 2em;
-    background-color:            @color5;
-    background-image:            url("~/.cache/ml4w/hyprland-dotfiles/current_wallpaper", width);
+prompt {
+    enabled:            true;
+    background-color:   inherit;
+    text-color:         @foreground;
 }
 
 entry {
-    enabled:                     true;
-    border-radius:               0em 2em 2em 0em;
-    spacing:                     1em;
-    padding:                     1em;
-    background-color:            @color5;
-    text-color:                  @foreground;
-    cursor:                      text;
-    placeholder:                 "Search";
-    placeholder-color:           inherit;
-}
-
-// Lists //
-listbox {
-    padding:                     0em;
-    spacing:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "listview" , "mode-switcher" ];
-    background-color:            @background;
+    placeholder:        "Search...";
+    background-color:   inherit;
+    text-color:         inherit;
 }
 
 listview {
-    padding:                     1.5em;
-    spacing:                     0.5em;
-    enabled:                     true;
-    columns:                     2;
-    lines:                       3;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    cursor:                      "default";
-    background-color:            transparent;
-    text-color:                  @foreground;
+    columns:            1;
+    lines:              8;
+    cycle:              true;
+    scrollbar:          false;
+    spacing:            10px;
 }
 
-
-// Modes //
-mode-switcher {
-    orientation:                 vertical;
-    width:                       6.6em;
-    enabled:                     true;
-    padding:                     1.5em;
-    spacing:                     1.5em;
-    background-color:            transparent;
-}
-
-button {
-    cursor:                      pointer;
-    border-radius:               2em;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
-button selected {
-    background-color:            @color5;
-    text-color:                  @foreground;
-}
-
-
-// Elements //
 element {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     0.5em;
-    cursor:                      pointer;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-
-element selected.normal {
-    background-color:            @color5;
-    text-color:                  @foreground;
-    border-radius:               1.5em;
-}
-
-element normal.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element normal.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element normal.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element selected.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element selected.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.normal {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.urgent {
-    background-color:            inherit;
-    text-color:                  @foreground;
-}
-
-element alternate.active {
-    background-color:            inherit;
-    text-color:                  @foreground;
+    padding:            10px 12px;
+    border-radius:      8px;
+    cursor:             pointer;
 }
 
 element-icon {
-    size:                        3em;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
-    border-radius:               0em;
+    size:               1.5em;
+    vertical-align:     0.5;
+    margin:             0 15px 0 0;
 }
 
 element-text {
-    vertical-align:              0.5;
-    horizontal-align:            0.1;
-    cursor:                      inherit;
-    background-color:            transparent;
-    text-color:                  inherit;
+    vertical-align:     0.5;
 }
 
-// Error message //
-error-message {
-    text-color:                  @foreground;
-    background-color:            @background;
-    text-transform:              capitalize;
-    children:                    [ "textbox" ];
+element.normal.normal {
+    background-color:   @normal-background;
+    text-color:         @normal-foreground;
 }
 
-textbox {
-    text-color:                  inherit;
-    background-color:            inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
+element.selected.normal {
+    background-color:   @selected-normal-background;
+    text-color:         @selected-normal-foreground;
+}
+
+element.alternate.normal {
+    background-color:   @alternate-normal-background;
+    text-color:         @normal-foreground;
 }

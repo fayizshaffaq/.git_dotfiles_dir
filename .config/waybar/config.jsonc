@@ -108,7 +108,7 @@
     },
      
     "custom/ollama": {
-		    "format": "",
+		    "format": "󱋊",
 		    "tooltip": true,
 		    "tooltip-format": "Chat with Ollama",
 		    "on-click": "$HOME/user_scripts/waybar/waybar_ollama.sh"

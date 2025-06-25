@@ -9,10 +9,10 @@
 .config/qt5ct/
 .config/qt6ct/
 .config/swaync/
-.config/Thunar/
 .config/uwsm/
 .config/waybar/
 .config/wlogout/
+.config/rofi/
 .config/xfce4/
 .config/xsettingsd/
 .config/yazi/

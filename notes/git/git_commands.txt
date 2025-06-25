@@ -280,3 +280,25 @@ git_dotfiles checkout -f
 
 26.	now repeat the steps from above to configure it on the new system. 
 
+
+
+
+
+
+
+
+
+  REMOVING A FILE/DIRECTORY FROM VERSION CONTROL. (for bare repo)
+  if you've been tracking a file and want to no longer track it, first remove it from the list of files/directories that are specifically tracking each file/direcotry. 
+    then to remving it from your repo in teh next commit, you need to use the folowing command for file and directory
+
+    FOR REMOVING A FILE. 
+
+git_dotfiles rm --cached path/to/file
+
+    FOR REMOVING A DIRECTORY 
+
+git_dotfiles rm -r --cashed path/to/directory/
+    eg: git_dotfiles rm -r --cached .config/Thunar/
+
+

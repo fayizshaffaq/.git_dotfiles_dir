@@ -262,7 +262,7 @@ git_dotfiles push
 
 23.	Deployment on a New System On the new machine, clone your remote repository as a bare repository into the same location, ~/.git_dotfiles_dir
 
-git clone --bare git@github.com:your-username/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
+git clone --bare https://github.com/fayizshaffaq/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
 
 24.	Set up the Alias: Just as before, add the alias to your ~/.zshrc
 

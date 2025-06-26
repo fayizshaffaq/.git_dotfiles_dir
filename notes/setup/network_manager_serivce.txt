@@ -1,0 +1,2 @@
+  causes uncecessory boot time delay and is not required. so disable. 
+systemctl disable NetworkManager-wait-online.service

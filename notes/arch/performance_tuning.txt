@@ -12,7 +12,11 @@ zen-kernal
 
 free -h
 
-	to benchmark a disk's read speed. with the t flag (-t) dont use other flags unles you know what youre doing, they ar dangerious. (no write cycles incurred!!,great)
+  inxi  (for memory viewing)
+  sorts apps by memory usage , change 10 to how many apps/programs you want listed. 
+sudo inxi -t m10
+
+to benchmark a disk's read speed. with the t flag (-t) dont use other flags unles you know what youre doing, they ar dangerious. (no write cycles incurred!!,great)
 
 hdparm -t /dev/sdX
 	

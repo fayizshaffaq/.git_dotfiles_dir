@@ -1,2 +1,0 @@
-need to run the following command for this to work. 
-./wallpaper_update.sh.bak /path/to/wallpaper.png

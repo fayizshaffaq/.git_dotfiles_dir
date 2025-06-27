@@ -25,6 +25,8 @@ CUSTOM_COMMANDS=(
 #firefox
 "pywalfox update"
 
+#kitty
+"kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
 )
 # ----------------------------------------------------
 

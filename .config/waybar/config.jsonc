@@ -19,7 +19,8 @@
         "pulseaudio",
         "backlight",
         "memory",
-        "cpu"
+        "cpu",
+        "temperature"
     ],
 
     // Modules that will appear in the center of the vertical bar
@@ -30,9 +31,9 @@
     // Modules that will appear at thebottom of the vertical bar
     "modules-right": [
         "tray",
+        "custom/network-upload",
         "custom/network-unit",
-		      "custom/network-upload",
-		      "custom/network-download",
+		    "custom/network-download",
         "clock",
         "custom/notification",
         "custom/inhibit-suspend",
@@ -41,10 +42,22 @@
 
     // Module specific configurations
 
+
+    "temperature": {
+        "thermal-zone":"/sys/class/thermal/thermal_zone6/type:x86_pkg_temp",
+        "hwmon-path-abs": null,
+        "critical-threshold": 65,
+        "format-critical": "🔥\n{temperatureC}",
+        "format": "°\n{temperatureC}",
+        "interval":2,
+        "tooltip-format": "Package: {temperatureC}"
+},
+
+
 "battery": {
-    "format": " {capacity}\n{power:.1f}",       // This is the default, used for "discharging"
-    "format-charging": "{capacity}\n{power:.1f}", // Explicitly show power when charging
-    "format-plugged": "{capacity}\n--",          // When plugged in and full, show a hyphen
+    "format": "\n{capacity}\n{power:.1f}",       // This is the default, used for "discharging"
+    "format-charging": "\n{capacity}\n{power:.0f}", // Explicitly show power when charging
+    "format-plugged": "\n{capacity}",          // When plugged in and full, show a hyphen
     "interval": 5,
     "states": {
         "warning": 30,
@@ -81,6 +94,7 @@
     "cpu": {
         "format": "\n{usage}",
         "tooltip": true,
+        "on-click": "sh -c 'kitty btop'",
         "tooltip-format": "CPU: {usage}%\nAvg Freq: {avg_frequency}GHz",
         "interval": 2
     },
@@ -116,18 +130,24 @@
 
     "custom/network-unit": {
         "return-type": "json",
+		    "tooltip": true,
+		    "tooltip-format": "Network Traffic",
         "interval": 1,
         "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline r1 < rx; getline t1 < tx; close(rx); close(tx); system(\"sleep 1\"); getline r2 < rx; getline t2 < tx; close(rx); close(tx); bps = (r2-r1) + (t2-t1); mbs = bps/1024/1024; if (mbs >= 1) { text = \"MB\"; class = \"network-mb\"; } else { text = \"KB\"; class = \"network-kb\"; } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
     },
 
     "custom/network-upload": {
         "return-type": "json",
+		    "tooltip": true,
+		    "tooltip-format": "Upload Speed",
         "interval": 1,
         "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); tx = \"/sys/class/net/\" iface \"/statistics/tx_bytes\"; getline t1 < tx; close(tx); system(\"sleep 1\"); getline t2 < tx; close(tx); bps = t2-t1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 1) { class = \"network-mb\"; if (mbs >= 10) { text = sprintf(\"%.0f\", mbs); } else { text = sprintf(\"%.1f\", mbs); } } else { class = \"network-kb\"; text = sprintf(\"%.0f\", kbs); } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
     },
 
     "custom/network-download": {
         "return-type": "json",
+		    "tooltip": true,
+		    "tooltip-format": "Download Speed",
         "interval": 1,
         "exec": "awk 'BEGIN { \"ip route get 1.1.1.1\" | getline; for(i=1;i<=NF;i++) if($i==\"dev\") iface=$(i+1); close(\"ip route get 1.1.1.1\"); rx = \"/sys/class/net/\" iface \"/statistics/rx_bytes\"; getline r1 < rx; close(rx); system(\"sleep 1\"); getline r2 < rx; close(rx); bps = r2-r1; mbs = bps/1024/1024; kbs = bps/1024; if (mbs >= 1) { class = \"network-mb\"; if (mbs >= 10) { text = sprintf(\"%.0f\", mbs); } else { text = sprintf(\"%.1f\", mbs); } } else { class = \"network-kb\"; text = sprintf(\"%.0f\", kbs); } printf \"{\\\"text\\\": \\\"%s\\\", \\\"class\\\": \\\"%s\\\"}\\n\", text, class; }'"
     },

@@ -1,7 +1,8 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # BEGIN_KITTY_THEME
-include ~/.cache/wal/colors-kitty.conf
+# Dawnfox
+include current-theme.conf
 # END_KITTY_THEME
 
 #: Fonts {{{

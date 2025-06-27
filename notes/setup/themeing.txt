@@ -1,0 +1,6 @@
+  for kitty's config, change the following to 
+  from
+include current-theme.conf
+  to 
+include ~/.cache/wal/colors-kitty.conf
+

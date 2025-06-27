@@ -343,7 +343,7 @@ pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie qpwgraph tl
 
 	8
 
-pacman -S ncdu eza tealdeer wikiman iotop iftop ethtool tmux  httrack filezilla s-tui meld handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize logrotate lshw speedtest-cli arp-scan ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship poppler fd rq zoxide imagemagick ttf-jetbrains-mono-nerd bat lazygit socat swww inotify-tools sassc file
+pacman -S ncdu eza tealdeer wikiman iotop iftop ethtool tmux  httrack filezilla s-tui meld handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize logrotate lshw speedtest-cli arp-scan ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship poppler fd rq zoxide imagemagick ttf-jetbrains-mono-nerd bat lazygit socat swww inotify-tools sassc file obsidian krita
 
 	9
 

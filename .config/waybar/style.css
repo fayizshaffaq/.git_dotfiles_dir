@@ -203,13 +203,15 @@ tooltip label {
 #clock {
     font-weight: bold;
     color: @text_secondary;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /* --- Ollama --- */
 #custom-ollama {
     color: @color_purple;
-    margin-top: 5px;
-
+    margin-top: 3px;
+    margin-bottom: 0;
 }
 
 /* --- Battery --- */
@@ -270,6 +272,7 @@ tooltip label {
 #custom-notification.notification {
     color: @color_info;
     animation: blink-info 1s steps(1, end) infinite;
+    margin-top: 2px;
     margin-bottom: 0px;
 
 

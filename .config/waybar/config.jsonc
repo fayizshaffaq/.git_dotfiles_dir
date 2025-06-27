@@ -30,13 +30,13 @@
 
     // Modules that will appear at thebottom of the vertical bar
     "modules-right": [
-        "tray",
+       // "tray", //uncomment this to enable tray
         "custom/network-upload",
         "custom/network-unit",
 		    "custom/network-download",
-        "clock",
-        "custom/notification",
         "custom/inhibit-suspend",
+        "custom/notification",
+        "clock",
         "custom/power"
     ],
 

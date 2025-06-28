@@ -319,39 +319,38 @@ pacman -S intel-media-driver mesa vulkan-intel mesa-utils intel-gpu-tools libva 
 
 	2
 	
-pacman -S hyprland xorg-xwayland uwsm smartmontools qt5-wayland qt6-wayland xdg-desktop-portal-gtk gtk3 gtk4 nwg-look qt5ct qt6ct kvantum papirus-icon-theme hyprpolkitagent
+pacman -S hyprland xorg-xwayland uwsm qt5-wayland qt6-wayland xdg-desktop-portal-gtk gtk3 gtk4 nwg-look qt5ct qt6ct kvantum hyprpolkitagent
 
 	3
 	
-pacman -S crda xorg-xhost polkit xdg-desktop-portal-hyprland xdg-utils ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-font-awesome ttf-nerd-fonts-symbols
-
+pacman -S xorg-xhost polkit xdg-desktop-portal-hyprland xdg-utils ttf-font-awesome ttf-jetbrains-mono-nerd
 	4
 
-pacman -S waybar libdbusmenu-qt5 libdbusmenu-glib wev fastfetch hyprlock hypridle hyprpaper hyprsunset swappy jq bc  wlr-randr python-pip python3
+pacman -S waybar libdbusmenu-qt5 socat swww inotify-tools sassc file libdbusmenu-glib fastfetch hyprlock hypridle hyprsunset swappy jq bc 
 
 	5
 
-pacman -S wofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager nm-connection-editor compsize ncdu kitty pavucontrol
+pacman -S rofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager nm-connection-editor compsize ncdu kitty pavucontrol unzip swayimg zathura zathura-pdf-mupdf
 
 	6
 
-pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa easyeffects sof-firmware gst-plugin-pipewire bluez bluez-utils blueman dosfstools 
+pacman -S pipewire wireplumber pipewire-pulse bluez bluez-utils blueman dosfstools 
 
 	7
 
-pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie qpwgraph tlp tlp-rdw thermald powertop lm_sensors 7zip usbutils usbmuxd gparted ntfs-3g acpid pacman-contrib turbostat nvtop btop inxi
+pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie tlp tlp-rdw thermald powertop  7zip usbutils usbmuxd gparted ntfs-3g acpid pacman-contrib nvtop btop inxi
 
 	8
 
-pacman -S ncdu eza tealdeer wikiman iotop iftop ethtool tmux  httrack filezilla s-tui meld handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize logrotate lshw speedtest-cli arp-scan ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship poppler fd rq zoxide imagemagick ttf-jetbrains-mono-nerd bat lazygit socat swww inotify-tools sassc file obsidian krita unzip
+pacman -S tealdeer iotop iftop ethtool httrack filezilla handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize  
 
 	9
 
-pacman -S tesseract #and then choose tesseract-data-eng.(30th usually)
+pacman -S tesseract #and then choose tesseract-data-eng.(30th usually) 
 
+  10
 
-gnome-disk-utility dysk docker-buildx uv docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm
-
+pacman -S logrotate lshw ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship rq imagemagick bat krita uv 
 
 22.	NVIDIA DRIVERS
 	downlaod them if you if you have nvidia
@@ -364,8 +363,10 @@ theming: everforest, gruvbox-dark-gtk everforest-gtk-theme-git nordic-darker-the
 
 	OTHER Stuff
 power-profiles-daemon is a replacement for tlp but it's not as customizable.
-sysstat dunst (alternative for mako) alternative for hyprpaper tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate iwd doublecmd-qt5  obs-studio audacity krita
--------------------
+sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate iwd doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python3 pipewire-alsa easyeffects sof-firmware gst-plugin-pipewire lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
+
+
+ -------------------
 
 23.	INITRAMFS EDIT THE MKINITCPIO FILE
 	
@@ -585,7 +586,7 @@ makepkg -si
 
 paru -S wlogout  acpi_call tlpui qtodotxt2-git pscircle adwaita-qt6 adwaita-qt5 nordic-theme pacseek jdownloader2 otf-atkinson-hyperlegible-next waypaper
 
-paru -S wdpass resvg cloudflare-warp-nox-bin lazydocker asusctl miniconda3 envycontrol (out of date) 
+paru -S wdpass resvg cloudflare-warp-nox-bin dislocker lazydocker asusctl miniconda3 envycontrol (out of date) 
 
 40.	enable services.
 sudo systemctl enable --now fwupd.service warp-svc.service asusd.service 

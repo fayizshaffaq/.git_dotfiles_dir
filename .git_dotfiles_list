@@ -12,12 +12,16 @@
 .config/uwsm/
 .config/waybar/
 .config/wlogout/
+.config/waypaper/
+.config/wal/
 .config/rofi/
 .config/xsettingsd/
 .config/yazi/
 .config/zellij/
+.config/zathura/
 user_scripts/
 notes/
 .zshrc
 .git_dotfiles_list
 .config/starship.toml
+.config/mimeapps.list

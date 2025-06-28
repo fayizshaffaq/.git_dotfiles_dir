@@ -2,16 +2,17 @@
   This will allow gnome-keyring to automatically unlock your login keyring when you log in, and to update the keyring password if you change your user password.
 
 
+  make sure these two packages are installed (seahorse is optional and not necessory )
+sudo pacman -S gnome-keyring libsecret seahorse
+
+
 sudo nvim /etc/pam.d/login
 
 auth       optional     pam_gnome_keyring.so
 session    optional     pam_gnome_keyring.so auto_start
-
-
-sudo nano /etc/pam.d/passwd
-
 password   optional     pam_gnome_keyring.so
 
 
-  this step has alreday been added to the hyprland.conf file. 
+
+  this step is unnecessory when the above entries are in place.  
 exec-once = /usr/bin/gnome-keyring-daemon --start --components=secrets

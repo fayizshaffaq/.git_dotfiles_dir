@@ -20,13 +20,17 @@ CUSTOM_COMMANDS=(
   # THE COMMANDS OR SCRIPS ALL NEED TO BE IN QUOTATIONS!!!!!!!!, the script needs to be stopped and rerun if there are any changes,or just restart your pc and it'll auto run becuasue it's in hyprland.conf set to auto exec
 
 #rofi
-"cat ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/template/rofi_template.rasi > ~/.config/rofi/config.rasi"
+"cat ~/.cache/wal/colors-rofi-dark.rasi ~/.config/wal/templates/rofi_template.rasi > ~/.config/rofi/config.rasi"
 
 #firefox
 "pywalfox update"
 
 #kitty
 "kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
+
+#swaync
+"pkill swaync && sleep 0.2 && swaync &"
+
 )
 # ----------------------------------------------------
 

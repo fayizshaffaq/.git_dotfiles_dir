@@ -34,12 +34,13 @@ export OMP_NUM_THREADS=20
 
 # --- Pyenv (Python Version Management) ---
 # Initializes pyenv to manage multiple Python versions.
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
+
+##	export PYENV_ROOT="$HOME/.pyenv"
+##	export PATH="$PYENV_ROOT/bin:$PATH"
+##	if command -v pyenv 1>/dev/null 2>&1; then
+##	  eval "$(pyenv init --path)"
+##	  eval "$(pyenv init -)"
+##	fi
 
 # Configure the path where Zsh looks for commands.
 # Uncomment and modify if you have local binaries (e.g., in ~/.local/bin).
@@ -131,14 +132,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Example of a system-specific alias for Arch Linux
-alias pacman='sudo pacman --color auto'
-alias update='sudo pacman -Syu'
-
-# fzf + nvim + bat
-# opens selected FILES (multiple) in nvim after previewing them with bat.
-alias nv_fzf_bat='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
-
 # alias for git dotfiles bear repo
 alias git_dotfiles='/usr/bin/git --git-dir=$HOME/.git_dotfiles_dir/ --work-tree=$HOME'
 
@@ -165,15 +158,14 @@ mkcd() {
 }
 
 # Find the 20 largest files/directories in the current directory.
-lslarge() {
+sort_size() {
   du -h -x -s -- * | sort -r -h | head -20
 }
 
 # List installed Arch packages, sorted by installation date.
-pac-by-date() {
+list_installed() {
   awk 'NR==FNR { if (/\[ALPM\] installed/) { ts = $1; gsub(/^\[|\]$/, "", ts); pkg = $4; if (!(pkg in fit)) fit[pkg] = ts; } next; } { if ($0 in fit) print fit[$0], $0; }' /var/log/pacman.log <(pacman -Qq) | sort -k1,1 | awk '{print $2}'
 }
-
 
 # -----------------------------------------------------------------------------
 # [6] PLUGINS & PROMPT INITIALIZATION
@@ -185,15 +177,11 @@ pac-by-date() {
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# --- Starship Prompt ---
+# Hand off prompt rendering to Starship for a powerful, customizable prompt.
+# `eval` executes the output of `starship init zsh`.
+eval "$(starship init zsh)"
 
-# --- Zsh Autosuggestions ---
-# This plugin suggests commands as you type based on your history.
-# The path is typical for Arch Linux installations.
-if [[ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
-  source "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-  # Set the color of the suggestion. `fg=8` is a dim gray.
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-fi
 
 # --- Zsh Syntax Highlighting ---
 # This plugin provides real-time syntax highlighting for the command line.
@@ -202,27 +190,17 @@ if [[ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
   source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
-
-# --- Starship Prompt ---
-# Hand off prompt rendering to Starship for a powerful, customizable prompt.
-# `eval` executes the output of `starship init zsh`.
-eval "$(starship init zsh)"
-
 # -----------------------------------------------------------------------------
 # [7] Auto login INTO UWSM HYPRLAND WITH TTY1
 # -----------------------------------------------------------------------------
 
-# to auto login with uwsm hyprland 
-if uwsm check may-start; then
+# Check if we are on tty1 and no display server is running
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  if uwsm check may-start; then
     exec uwsm start hyprland.desktop
+  fi
 fi
 
 # =============================================================================
 # End of ~/.zshrc
 # =============================================================================
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GEMINI_API_KEY=""
-

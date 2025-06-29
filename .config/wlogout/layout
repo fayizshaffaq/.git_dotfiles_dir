@@ -1,16 +1,4 @@
 {
-    "label" : "lock",
-    "action" : "hyprlock -q",
-    "text" : "Lock",
-    "keybind" : "l"
-}
-{
-    "label" : "logout",
-    "action" : "loginctl terminate-session $XDG_SESSION_ID",
-    "text" : "Logout",
-    "keybind" : "e"
-}
-{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "Shutdown",
@@ -23,14 +11,26 @@
     "keybind" : "u"
 }
 {
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
     "label" : "soft_reboot",
     "action" : "systemctl soft-reboot",
     "text" : "Soft Reboot",
     "keybind" : "q"
 }
 {
-    "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
+    "label" : "logout",
+    "action" : "loginctl terminate-session $XDG_SESSION_ID",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "lock",
+    "action" : "hyprlock -q",
+    "text" : "Lock",
+    "keybind" : "l"
 }

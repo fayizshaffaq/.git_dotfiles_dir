@@ -6,7 +6,7 @@
 
 window {
 	/* Add the background image here */
-	background-image: url('noise.png');
+	background-image: url('wallpaper.jpg');
 	background-repeat: repeat;
     /* Optional: a dark fallback color in case the image doesn't load */
     background-color: #1a1a1a;

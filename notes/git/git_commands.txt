@@ -292,13 +292,13 @@ git_dotfiles checkout -f
   if you've been tracking a file and want to no longer track it, first remove it from the list of files/directories that are specifically tracking each file/direcotry. 
     then to remving it from your repo in teh next commit, you need to use the folowing command for file and directory
 
-    FOR REMOVING A FILE. 
+    FOR REMOVING A FILE. (add -f if needed)
 
 git_dotfiles rm --cached path/to/file
 
-    FOR REMOVING A DIRECTORY 
+    FOR REMOVING A DIRECTORY (add -f if needed)
 
-git_dotfiles rm -r --cashed path/to/directory/
+git_dotfiles rm -r --cached path/to/directory/
     eg: git_dotfiles rm -r --cached .config/Thunar/
 
 

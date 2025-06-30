@@ -253,13 +253,13 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 echo "your-hostname" > /etc/hostname
 
-17.	Configure Hosts file (if this text doesn't already exist, you made a mistake with step 15)
+17.	(optional) Configure Hosts file (if this text doesn't already exist, you made a mistake with step 15)
 
-nvim /etc/hosts
+nvim /etc/hosts 
 
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   your-hostname.localdomain <your-hostname> (your set hostname)
+127.0.1.1   your-hostname.localdomain <your-hostname> (your set hostname) (this line needs to be researched,it's possibly incorrect)
 
 18.	SETTING USERS
 	set Root Password
@@ -326,15 +326,14 @@ pacman -S hyprland xorg-xwayland uwsm qt5-wayland qt6-wayland xdg-desktop-portal
 pacman -S xorg-xhost polkit xdg-desktop-portal-hyprland xdg-utils ttf-font-awesome ttf-jetbrains-mono-nerd
 	4
 
-pacman -S waybar libdbusmenu-qt5 socat swww inotify-tools sassc file libdbusmenu-glib fastfetch hyprlock hypridle hyprsunset swappy jq bc 
+pacman -S waybar libdbusmenu-qt5 socat swww inotify-tools sassc file libdbusmenu-glib fastfetch hyprlock hypridle hyprsunset swappy 
 
 	5
 
-pacman -S rofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager nm-connection-editor compsize ncdu kitty pavucontrol unzip swayimg zathura zathura-pdf-mupdf
-
+pacman -S rofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager iwd nm-connection-editor compsize ncdu kitty pavucontrol unzip swayimg 
 	6
 
-pacman -S pipewire wireplumber pipewire-pulse bluez bluez-utils blueman dosfstools 
+pacman -S pipewire wireplumber pipewire-pulse bluez bluez-utils blueman dosfstools sof-firmware gst-plugin-pipewire
 
 	7
 
@@ -350,7 +349,8 @@ pacman -S tesseract #and then choose tesseract-data-eng.(30th usually)
 
   10
 
-pacman -S logrotate lshw ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship rq imagemagick bat krita uv mako
+pacman -S logrotate lshw ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship imagemagick bat krita uv mako rq jq bc zathura zathura-pdf-mupdf
+
 
 22.	NVIDIA DRIVERS
 	downlaod them if you if you have nvidia
@@ -363,7 +363,7 @@ theming: everforest, gruvbox-dark-gtk everforest-gtk-theme-git nordic-darker-the
 
 	OTHER Stuff
 power-profiles-daemon is a replacement for tlp but it's not as customizable.
-sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate iwd doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python3 pipewire-alsa easyeffects sof-firmware gst-plugin-pipewire lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
+sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python3 pipewire-alsa easyeffects lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
 
 
  -------------------
@@ -417,7 +417,9 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 mkinitcpio -P
 
-	this method creates it for kernals individiually specified, the diffrenct in flags is the captilaiztion of the letter -p -P
+  OR
+
+  this method creates it for kernals individiually specified, the diffrenct in flags is the captilaiztion of the letter -p -P
 
 mkinitcpio -p linux
 
@@ -504,7 +506,7 @@ WantedBy=multi-user.target
 
 
 
-32.	SETTING ZRAM
+32.	SETTING ZRAM (swap in ram)
 
 	Create the configuration file:
 

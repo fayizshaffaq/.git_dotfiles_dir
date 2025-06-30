@@ -2,7 +2,7 @@
 echo $SHELL
 
 swtich to zsh
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 
 
 sudo pacman -S zsh-syntax-highlighting zsh-autosuggestions fzf starship

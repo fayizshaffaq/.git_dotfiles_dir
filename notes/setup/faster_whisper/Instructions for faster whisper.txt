@@ -2,18 +2,19 @@ Python 3.9 or greater
 if there is ever a python verstion constraint use pyenv to use a supported python version for the environment
 
 	CREATE A PYTHON ENVIRONMENT FIRST TO ISOLATE IT
-mkdir fasterwhisper
-cd fasterwhisper
-python -m venv fasterwhisper_venv
-source fasterwhisper_venv/bin/activate
+uv venv fasterwhisper_cpu 
+source fasterwhisper_cpu/bin/activate
 
+
+  go into the directory
+cd fasterwhisper_cpu
 
 	install faster-whisper
-pip install faster-whisper
+uv pip install faster-whisper
 
-	after the installation is done use teh exisiting config.py to run the script to download a model you can change the model if you so want by specifying it, rn the default is small.en ,(the script is configured to look for an audio file in the RAM disk mic directory)
+	after the installation is done use teh exisiting config.py to run the script to download a model you can change the model if you so want by specifying it, rn the default is small.en ,(the script is configured to look for an audio file in the RAM disk mic directory) make sure there's an audio wav file that already exists in /mnt/ramdisk/mic/1_mic.wav
 
-python config.py
+python /path/to/the/config.py
 -----------------------X--------------------
 
 	FROM OUTSIDE THE PYTHON ENVIRONMENT (AUTOMATED)

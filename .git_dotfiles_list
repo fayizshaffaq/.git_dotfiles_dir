@@ -1,12 +1,7 @@
-.config/gtk-3.0/settings.ini
-.config/gtk-4.0/
 .config/hypr/
 .config/kitty/
 .config/mpv/
-.config/nwg-look/
 .config/pacseek/
-.config/qt5ct/
-.config/qt6ct/
 .config/swaync/
 .config/uwsm/
 .config/waybar/

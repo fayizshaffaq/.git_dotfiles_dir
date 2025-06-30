@@ -23,3 +23,8 @@ open-webui serve
 
 http://localhost:8080
 
+  crate this password and email so you remember it. 
+
+email: testing@gmail.com
+username : testing
+password: testing

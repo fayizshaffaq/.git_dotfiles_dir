@@ -17,3 +17,24 @@ vo=gpu
 # CRITICAL: Specify the GPU context for Wayland.
 # This ensures seamless integration with Hyprland and is the most likely fix.
 gpu-context=wayland
+
+
+
+
+------------------------
+  PAUSE PLAY WITH SHORTCUTS KEYBINDS
+--------------------------
+  first install this package mpv-mpris
+
+sudo pacman -S mpv-mpris (already listed in arch install pacakes)
+
+  then run mpv once and close it. 
+  then create a scripts directory in the mpv directory
+
+mkdir -p ~/.config/mpv/scripts
+
+  then run this to create a symbolic link
+
+ln -s /usr/lib/mpv/scripts/mpris.so ~/.config/mpv/scripts/
+
+  test it out with playerctl play /playerctl pause or just with your existing keybind for mpris (playerctl contorl)

@@ -150,7 +150,6 @@ function y() {
 }
 
 
-
 # --- Functions ---
 # Creates a directory and changes into it.
 mkcd() {
@@ -160,6 +159,11 @@ mkcd() {
 # Find the 20 largest files/directories in the current directory.
 sort_size() {
   du -h -x -s -- * | sort -r -h | head -20
+}
+
+# for unlocking drive with the scripts with just drive <name of the drive> eg drive fast or drive media or drive browser
+drive() {
+    ~/user_scripts/unlock_drive/unlock_$1.sh
 }
 
 # List installed Arch packages, sorted by installation date.

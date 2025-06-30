@@ -349,7 +349,7 @@ pacman -S tesseract #and then choose tesseract-data-eng.(30th usually)
 
   10
 
-pacman -S logrotate lshw ffmpeg mpv firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship imagemagick bat krita uv mako rq jq bc zathura zathura-pdf-mupdf
+pacman -S logrotate lshw ffmpeg mpv mpv-mpris firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship imagemagick bat krita uv mako rq jq bc zathura zathura-pdf-mupdf
 
 
 22.	NVIDIA DRIVERS

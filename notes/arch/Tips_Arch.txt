@@ -43,3 +43,15 @@ nvim $(fzf --preview="bat --color=always {}")
     systemctl followed by :-
     poweroff, reboot, suspend, soft-reboot, hybrid-sleep
 
+
+----------------------------------------------
+  AUTO MOUNTING OF DRIVIES WHEN UNLOCKING FROM COMMANDLINE
+--------------------------------------------
+
+  this command to unlock a drive when it's encrypted. Note that it doesn't initiate the unlocked drive, you have to click it whitin thunar to initiate it. but you can also mount it with a simple command. make sure to specifiy your drive by finding it's name from lsblk.
+
+udisksctl unlock --block-device /dev/nvme1n1p1
+
+  mount it with a command, (since the entry for it already exists withing fstab you don't have to list the entrie mount command, just enter this instead) eg for the media partition. 
+
+sudo mount /mnt/media

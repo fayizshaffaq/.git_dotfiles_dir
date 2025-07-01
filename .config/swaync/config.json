@@ -15,12 +15,12 @@
   "notification-icon-size": 32,
   "notification-body-image-height": 100,
   "notification-body-image-width": 100,
-  "notification-window-width": 300,
+  "notification-window-width": 250,
   "timeout": 6,
   "timeout-low": 3,
   "timeout-critical": 0,
   "fit-to-screen": true,
-  "control-center-width": 360,
+  "control-center-width": 280,
   "keyboard-shortcuts": true,
   "image-visibility": "always",
   "transition-time": 250,
@@ -49,8 +49,8 @@
       "text": "Notification"
     },
     "mpris": {
-      "image-size": 80,
-      "image-radius": 14
+      "image-size": 60,
+      "image-radius": 12
     },
     "volume": {
       "label": "󰕾"

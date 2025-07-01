@@ -36,7 +36,7 @@
     background-image: none;         /* Force GTK to render the background color */
     border: 1px solid @theme_accent;
     color: @theme_text;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .control-center-list {
@@ -47,27 +47,27 @@
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
     background: @theme_bg_alt;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 .notification-row {
     outline: none;
-    margin: 0px;
+    margin: 0px 4px;
 }
 
 /* --- Floating Notifications --- */
 .notification {
-    border-radius: 10px;
+    border-radius: 12px;
     background: transparent;
+    margin: 5px;
 }
 
 .notification-content {
     background-color: @cc_bg; /* Floating notifications should match the CC background */
     background-image: none;
-    padding: 3px 10px 3px 6px;
-    border-radius: 10px;
+    padding: 6px 10px;
+    border-radius: 12px;
     border: 1px solid @theme_accent;
-    margin: 0px;
 }
 
 .close-button {
@@ -96,8 +96,8 @@
 .widget-mpris {
     background-color: @theme_bg; /* Use the solid theme background */
     color: @theme_text;
-    padding: 5px;
-    margin: 5px;
+    padding: 6px;
+    margin: 6px;
     border-radius: 10px;
 }
 
@@ -140,7 +140,7 @@
 
 /* --- General Text and Elements --- */
 .summary, .time, .body {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly smaller font for narrower space */
     font-weight: bold;
     background: transparent;
     color: @theme_text;
@@ -148,7 +148,7 @@
 }
 
 .time {
-    margin-right: 18px;
+    margin-right: 10px; /* Reduced margin to save space */
 }
 
 /* Fallback/other elements */

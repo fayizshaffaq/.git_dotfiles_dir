@@ -330,7 +330,7 @@ pacman -S waybar libdbusmenu-qt5 socat swww inotify-tools sassc file libdbusmenu
 
 	5
 
-pacman -S rofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager iwd nm-connection-editor compsize ncdu kitty pavucontrol unzip swayimg 
+pacman -S rofi playerctl brightnessctl vsftpd fwupd featherpad networkmanager iwd nm-connection-editor compsize ncdu kitty pavucontrol unzip swayimg python-pipx
 	6
 
 pacman -S pipewire wireplumber pipewire-pulse bluez bluez-utils blueman dosfstools sof-firmware gst-plugin-pipewire
@@ -341,7 +341,7 @@ pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie tlp tlp-rdw
 
 	8
 
-pacman -S tealdeer iotop iftop ethtool httrack filezilla handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize  
+pacman -S tealdeer iotop iftop ethtool httrack filezilla handbrake cliphist grim slurp wl-clipboard tree fzf thunar swaync compsize clang
 
 	9
 
@@ -363,7 +363,7 @@ theming: everforest, gruvbox-dark-gtk everforest-gtk-theme-git nordic-darker-the
 
 	OTHER Stuff
 power-profiles-daemon is a replacement for tlp but it's not as customizable.
-sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python-pipx python3 pipewire-alsa easyeffects lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
+sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python3 pipewire-alsa easyeffects lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
 
 
  -------------------

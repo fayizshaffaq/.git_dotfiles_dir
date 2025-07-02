@@ -199,6 +199,7 @@ fi
 # -----------------------------------------------------------------------------
 
 # Check if we are on tty1 and no display server is running
+
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
   if uwsm check may-start; then
     exec uwsm start hyprland.desktop

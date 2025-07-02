@@ -319,7 +319,7 @@ pacman -S intel-media-driver mesa vulkan-intel mesa-utils intel-gpu-tools libva 
 
 	2
 	
-pacman -S hyprland xorg-xwayland uwsm qt5-wayland qt6-wayland xdg-desktop-portal-gtk gtk3 gtk4 nwg-look qt5ct qt6ct kvantum hyprpolkitagent
+pacman -S hyprland xorg-xwayland uwsm qt5-wayland qt6-wayland xdg-desktop-portal-gtk gtk3 gtk4 nwg-look qt5ct qt6ct qt6-svg qt6-multimedia-ffmpeg kvantum hyprpolkitagent
 
 	3
 	
@@ -363,7 +363,7 @@ theming: everforest, gruvbox-dark-gtk everforest-gtk-theme-git nordic-darker-the
 
 	OTHER Stuff
 power-profiles-daemon is a replacement for tlp but it's not as customizable.
-sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python3 pipewire-alsa easyeffects lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
+sysstat dunst (alternative for mako) tldr (ALTERNTIVE FOR tealdeer) libinput-gestures supergfxctl asusctltray grimblast tumbler kate doublecmd-qt5  obs-studio audacity eza wikiman s-tui meld arp-scan zoxide lazygit obsidian smartmontools crda python-pip python-pipx python3 pipewire-alsa easyeffects lm_sensors turbostat speedtest-cli zsh-autosuggestions fd papirus-icon-theme qpwgraph ttf-dejavu ttf-firacode-nerd noto-fonts noto-fonts-emoji ttf-nerd-fonts-symbols wev docker docker-compose mission-center baobab stress-ng yt-dlp man-db man-pages openssh sddm wlr-randr gnome-disk-utility dysk docker-buildx
 
 
  -------------------
@@ -533,7 +533,7 @@ sudo systemctl status systemd-zram-setup@zram0.service
 
 	systemctl enable for all of these
 
-systemctl enable tlp.service udisks2.service thermald.service bluetooth.service smartd.service firewalld.service systemd-timesyncd.service acpid.service fstrim.timer vsftpd.service NetworkManager.service 
+systemctl enable tlp.service udisks2.service thermald.service bluetooth.service firewalld.service fstrim.timer systemd-timesyncd.service acpid.service vsftpd.service NetworkManager.service 
 
 systemctl enable bat.service
 
@@ -548,7 +548,7 @@ systemctl enable --now --user libinput-gestures.service
 
 	likly not installed but if instlald, enable them aswell
 plexmediaserver.service tumbler.service reflector.service reflector.timer geoclue.service iwd.service man-db.timer sddm.service usbmuxd.service sshd.service 
-avahi-daemon.service 
+avahi-daemon.service smartd.service
 
 34.	for reflector 
 To Enable Periodic Updates: sudo systemctl  (You'll need to configure /etc/xdg/reflector/reflector.conf first)

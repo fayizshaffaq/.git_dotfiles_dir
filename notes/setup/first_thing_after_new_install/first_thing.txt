@@ -3,3 +3,6 @@ After new installation of Arch Linux, first thing that is required is for you to
 coorection it needs to be installed with pipx install pywall16
 
 also clear out total threads in zshrc and environmnt variable. 
+
+thunar terminal. 
+

@@ -4,33 +4,15 @@
 # and run a predefined list of custom scripts OR commands whenever the swww wallpaper changes.
 
 # --- 💡 CONFIGURATION: ADD YOUR SCRIPTS OR COMMANDS HERE 💡 ---
-# Add any script path or raw command string you want to run after a theme change.
-# Each item MUST be enclosed in double quotes.
-#
-# If you don't have any, leave the list empty: CUSTOM_COMMANDS=()
-
 CUSTOM_COMMANDS=(
-  # Example 1: A raw command to reload Waybar
-  #"pkill -SIGUSR2 Waybar"
-  # Example 2: A path to another script you made
-  # "$HOME/my-scripts/reload-cava.sh"
-  # Example 3: Another raw command
-  # "pywalfox update"
-  
-  # THE COMMANDS OR SCRIPS ALL NEED TO BE IN QUOTATIONS!!!!!!!!, the script needs to be stopped and rerun if there are any changes,or just restart your pc and it'll auto run becuasue it's in hyprland.conf set to auto exec
-
-#rofi
-"cat ~/.cache/wal/colors-rofi-dark.rasi ~/.config/wal/templates/rofi_template.rasi > ~/.config/rofi/config.rasi"
-
-#firefox
-"pywalfox update"
-
-#kitty
-"kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
-
-#swaync
-"pkill swaync && sleep 0.2 && swaync &"
-
+  # rofi
+  "cat ~/.cache/wal/colors-rofi-dark.rasi ~/.config/wal/templates/rofi_template.rasi > ~/.config/rofi/config.rasi"
+  # firefox
+  "pywalfox update"
+  # kitty
+  "kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
+  # swaync
+  "pkill swaync && sleep 0.2 && swaync &"
 )
 # ----------------------------------------------------
 
@@ -44,36 +26,49 @@ SWWW_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/swww"
 
 # Wait for the directory to exist before starting to watch.
 while [ ! -d "$SWWW_CACHE_DIR" ]; do
-  sleep 1
+  echo "Waiting for swww cache directory to be created at $SWWW_CACHE_DIR..."
+  sleep 5
 done
 
 echo "Theme Updater is running, watching for wallpaper changes..."
 
 # Main loop using inotifywait
 inotifywait -m -e create,modify --format '%w%f' "$SWWW_CACHE_DIR" | while read -r event; do
+    # --- DEBOUNCE LOGIC ---
+    # When a wallpaper change occurs, swww may trigger multiple events in quick
+    # succession. We only want to run our script once per change.
+    # The 'read -t 0.5' command waits for half a second to see if any more
+    # events are fired. This effectively groups all events from a single
+    # wallpaper change into one, preventing the script from looping rapidly.
+    read -t 0.5 -r
+
     echo "Detected wallpaper change. Updating theme..."
 
+    # It's slightly more reliable to get the wallpaper from the 'event' variable itself
+    # in case 'swww query' is slow, but querying is also fine.
     CURRENT_WALLPAPER=$(swww query | awk -F 'image: ' '{print $2}')
 
-    if [ -n "$CURRENT_WALLPAPER" ]; then
+    if [ -n "$CURRENT_WALLPAPER" ] && [ -f "$CURRENT_WALLPAPER" ]; then
         # --- CORE ACTIONS ---
-        wal -i "$CURRENT_WALLPAPER"
-        #hyprctl reload
-        
+        # The '-n' flag skips setting the wallpaper, which swww already did.
+        # The '-q' flag makes it quiet.
+        wal -i "$CURRENT_WALLPAPER" -n -q
+
         # --- CUSTOM COMMAND EXECUTION ---
         if [ ${#CUSTOM_COMMANDS[@]} -gt 0 ]; then
             echo "Executing custom commands from the list..."
             for command_string in "${CUSTOM_COMMANDS[@]}"; do
                 echo "-> Executing: $command_string"
                 # Use 'eval' to execute the string as a command.
-                # This is safe because you are the one defining the commands.
                 # The '&' at the end runs it in the background to prevent blocking.
                 eval "$command_string" &
             done
         else
             echo "-> Custom command list is empty."
         fi
-        
+
         echo "Theme update complete."
+    else
+        echo "Could not get current wallpaper or file does not exist. Skipping."
     fi
 done

@@ -4,5 +4,14 @@ coorection it needs to be installed with pipx install pywall16
 
 also clear out total threads in zshrc and environmnt variable. 
 
+
 thunar terminal. 
 
+remove swaping of mouse keys in hyprconfig. 
+
+remove hyprland's display asus and uncomment auto. 
+
+remove alt 6 and alt 7 
+
+remove nvidia specific env. from uwsm env
+remove aq_driver from hyprlnd env as well. 

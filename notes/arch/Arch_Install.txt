@@ -20,7 +20,10 @@ passwd
 
 	clint side
 ssh root@192.168.29.xxx
-  
+ 
+  if you're having trouble connecting, forget the connection and then reconnect,: this is to forget the exisiting ip eg:
+ssh-keygen -R 192.168.xx.xx
+
 1.	BATTERY
 	Battery limit 60
 
@@ -240,7 +243,9 @@ hwclock --systohc
 
 nvim /etc/locale.gen
 
-	Generates the uncommented locales and sets the default system language.
+en_US.UTF-8 UTF-8
+
+  Generates the uncommented locales and sets the default system language.
 
 locale-gen
 
@@ -436,13 +441,17 @@ pacman -S grub efibootmgr grub-btrfs
 
 pacman -S os-prober 
 
-26.	ADD ACTIVE STATE POWER MANAGEMENT,USBCORE.AUTOSUSPEND=-1, and Change the loglevel=7 while also removing the quiet Configure GRUB Defaults (/etc/default/grub):
+26.	ADD ACTIVE STATE POWER MANAGEMENT,USBCORE.AUTOSUSPEND=-1, and Change the loglevel=7 while also removing the quiet Configure and also disable zswap which is turned on by default and conflicts with zram.  GRUB Defaults (/etc/default/grub): 
 
 nvim /etc/default/grub
 
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 pcie_aspm=force usbcore.autosuspend=-1"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 zswap.enabled=0"
 
-  optional, also add mitigations=off to check perfomrmance with it and without it. 
+optional parameters: 
+
+  pcie_aspm=force usbcore.autosuspend=-1
+
+  optional, also add mitigations=off to check perfomrmance with it and without it on old laptops. 
 
 	NOTE:pcie_aspm=force enables ASPM, even on devices that do not support ASPM 
 	If you forcibly enable ASPM by using pcie_aspm=force on hardware that does not support ASPM, the system might become unresponsive. Before setting pcie_aspm=force, ensure that all PCIe hardware on the system supports ASPM. 

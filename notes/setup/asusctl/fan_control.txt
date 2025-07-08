@@ -7,9 +7,11 @@ sudo asusctl fan-curve -E true -m performance -f gpu -D 30c:20%,55c:40%,59c:45%,
 sudo asusctl fan-curve -E true -m performance -f cpu -D 30c:20%,55c:40%,59c:45%,62c:50%,65c:57%,67c:60%,70c:70%,72c:85% 
 
 
-	MAXXING OUT
+	MAXXING OUT gpu
 sudo asusctl fan-curve -E true -m performance -f gpu -D 30c:100%,55c:100%,59c:100%,62c:100%,65c:100%,67c:100%,70c:100%,72c:100% 
 
+	MAXXING OUT cpu
+sudo asusctl fan-curve -E true -m performance -f cpu -D 30c:100%,55c:100%,59c:100%,62c:100%,65c:100%,67c:100%,70c:100%,72c:100% 
 
 	active profile list
 sudo asusctl profile -p   

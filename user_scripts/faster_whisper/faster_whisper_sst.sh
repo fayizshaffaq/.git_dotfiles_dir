@@ -19,7 +19,7 @@ set -euo pipefail
 # --- User-configurable Constants ---
 readonly VENV_PATH="/home/fayiz/contained_apps/uv/fasterwhisper_cpu/"
 readonly PYTHON_SCRIPT="/home/fayiz/user_scripts/faster_whisper/config.py"
-readonly AUDIO_DIR="/mnt/ramdisk/mic"
+readonly AUDIO_DIR="/mnt/zram1/mic"
 
 # --- Logging and Runtime Configuration ---
 readonly LOG_FILE="/tmp/transcribe_voice.log"

@@ -49,7 +49,7 @@ def main():
     """
     # --- 1. Dynamic Audio File Selection ---
     # This logic is restored as per your request.
-    audio_dir = "/mnt/ramdisk/mic/"
+    audio_dir = "/mnt/zram1/mic/"
     audio_file_path = find_latest_audio_file(audio_dir)
 
     if not audio_file_path:

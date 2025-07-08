@@ -15,7 +15,7 @@ ACTIVE_MODEL_DIR="${HOME}/piper/models/active_model"
 PIPER_EXECUTABLE="${HOME}/piper/piper/piper"
 
 # Directory where the audio output will be saved.
-OUTPUT_DIR="/mnt/ramdisk/PiperTTS_Audio"
+OUTPUT_DIR="/mnt/zram1/PiperTTS_Audio"
 
 # Audio player command.
 AUDIO_PLAYER="mpv"

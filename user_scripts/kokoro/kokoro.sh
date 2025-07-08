@@ -30,8 +30,8 @@ VOICE_MODEL="af_sarah.4+af_nicole.6"
 # 2. Output Directory
 #    The path where the generated .wav files will be stored.
 #    IMPORTANT: This script will create the directory if it doesn’t exist.
-#    Using a ramdisk is recommended for performance and automatic cleanup on reboot.
-OUTPUT_DIR="/mnt/ramdisk/kokoros"
+#    Using a zram1 is recommended for performance and automatic cleanup on reboot.
+OUTPUT_DIR="/mnt/zram1/kokoros"
 
 # 3. MPV Playback Speed
 #    Set the audio playback speed for MPV. 1.0 is normal speed.

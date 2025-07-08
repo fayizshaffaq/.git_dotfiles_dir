@@ -39,7 +39,21 @@ Fine-tune your Hyprland compositor and shell environment. These steps are often 
     - [ ] Clear the `TOTAL_THREADS` variable from `.zshrc` file. 
     - [ ] Clear the `TOTAL_THREADS` variable from the uwsm environment variable file.
 	
-- [ ] **asus misconfiguration for asusd D-bus:** :- follow the note for it if you have an asus laptop. 
+- [ ] **Asus misconfiguration for asusd D-bus:** :- follow the note for it if you have an asus laptop. 
+- [ ] **Asus service for keybaord auto theme color pywal16:** :- 
+```bash
+sudo systemctl enable --now asusd
+```
+
+- [ ] **Comment out Asus service for keybaord auto theme color pywal16 in :** :- 
+```bash
+nvim ~/user_scripts/waypaper/wallpaper_update.sh
+```
+
+>[!note]+ Comment out this part
+>asus keyboard
+>"~/user_scripts/asus/asus_keyboard_color.sh"
+
 ---
 
 ### 3. Package Management & Software Installation

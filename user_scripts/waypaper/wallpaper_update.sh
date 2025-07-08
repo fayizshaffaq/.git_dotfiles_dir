@@ -13,6 +13,8 @@ CUSTOM_COMMANDS=(
   "kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
   # swaync
   "pkill swaync && sleep 0.2 && swaync &"
+  #asus keyboard
+  "~/user_scripts/asus/asus_keyboard_color.sh"
 )
 # ----------------------------------------------------
 

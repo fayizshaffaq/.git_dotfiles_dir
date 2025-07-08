@@ -32,7 +32,7 @@ The process involves four main phases:
 [[Fetching the Official Configuration from Hugging Face]]
 
 > [!todo] Step 3
-[[Extracting and Preparing the "Perfect" Modelfile]]
+[[Extracting and Preparing the Perfect Modelfile]]
 
 > [!todo] Step 3
 [[Final Import and Cleanup]]

@@ -14,7 +14,7 @@ CUSTOM_COMMANDS=(
   # swaync
   "pkill swaync && sleep 0.2 && swaync &"
   #asus keyboard
-  "~/user_scripts/asus/asus_keyboard_color.sh"
+  "~/user_scripts/asus/asus_keyboard_color_pywal16.sh"
 )
 # ----------------------------------------------------
 

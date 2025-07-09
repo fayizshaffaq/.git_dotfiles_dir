@@ -1,3 +1,4 @@
+```ini
 # Static information about the filesystems.
 # See fstab(5) for details.
 
@@ -11,21 +12,23 @@ UUID=6012dbc7-c25e-49d2-830e-fdefaa265d80	/home     	btrfs     	rw,noatime,compr
 # /dev/nvme0n1p6
 UUID=08C7-4D25      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
-# ramdisk
-tmpfs /mnt/ramdisk tmpfs rw,noatime,exec,size=60G,uid=1000,gid=1000,mode=0755,comment=x-gvfs-show 0 0
+#ramdisk
+#tmpfs /mnt/ramdisk tmpfs rw,noatime,exec,size=2G,uid=1000,gid=1000,mode=0755,comment=x-gvfs-show 0 0
 
 
-# wd hdd btrfs
+#wd hdd btrfs
 UUID=bb5a5a44-4b30-4db2-822f-ceab3171ee51	/mnt/fast	btrfs		defaults,discard=async,comment=x-gvfs-show,compress=zstd:3,noatime,space_cache=v2,nofail,noauto,autodefrag,subvol=/	0 0
 
-# wd hdd ntfs
+#wd hdd ntfs
 UUID=319E44F71F4E3E14	/mnt/slow	ntfs3	defaults,noatime,nofail,noauto,comment=x-gvfs-show,uid=1000,gid=1000,umask=002,windows_names   0 0
 
-# browser ssd btrfs with copy on write disabled and that also disables compression nodatacow
+#browser ssd btrfs with copy on write disabled and that also disables compression nodatacow
 UUID=8a3946c8-cc46-4d58-8a85-6ed6a3befcf1	/mnt/browser	btrfs		defaults,nodatacow,ssd,discard=async,comment=x-gvfs-show,noatime,space_cache=v2,nofail,noauto,subvol=/	0 0
 
-# Media ssd Ntfs
+#Media ssd Ntfs
 UUID=9C38076638073F30	/mnt/media	ntfs3	defaults,noatime,uid=1000,gid=1000,umask=002,windows_names,noauto,nofail,comment=x-gvfs-show 0 0
 
-# swap
+#disk swap
 UUID=b334f79d-92bb-4d84-b17b-9e3cdcb0f194	none	swap	defaults 0 0
+```
+

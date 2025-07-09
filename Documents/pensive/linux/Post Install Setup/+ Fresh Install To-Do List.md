@@ -28,11 +28,6 @@ Fine-tune your Hyprland compositor and shell environment. These steps are often 
 > [!CAUTION]
 > The following steps involve hardware-specific settings. Adjust them carefully based on whether you are on a desktop or a laptop, and what GPU you are using.
 
-- [ ] **Configure Monitor Output:** In `hyprland.conf`, remove machine-specific display names (e.g., for an ASUS monitor) and uncomment the `auto` setting for portability.
-- [ ] **Adjust `hyprland.conf` Settings:**
-    - [ ] Disable the swapping of left/right mouse click buttons.
-    - [ ] Remove the custom keybinds for changing refresh rate that are specific to asus laptops with 144 hz `Alt+6` and `Alt+7`.
-	
 - [ ] **Clean Environment Variables:**
     - [ ] **(If not on NVIDIA)** Remove NVIDIA-specific `env` variables.
     - [ ] **(If not on NVIDIA)** Remove the `aq_driver` variable.
@@ -44,15 +39,42 @@ Fine-tune your Hyprland compositor and shell environment. These steps are often 
 ```bash
 sudo systemctl enable --now asusd
 ```
-
+- [ ] **Copy the asusd directory for asusrelated configuration to /etc:** :- 
+```bash
+sudo cp ~/notes/setup/etc/asusd /etc/
+```
 - [ ] **Comment out Asus service for keybaord auto theme color pywal16 in :** :- 
 ```bash
 nvim ~/user_scripts/waypaper/wallpaper_update.sh
 ```
-
 >[!note]+ Comment out this part
 >asus keyboard
->"~/user_scripts/asus/asus_keyboard_color.sh"
+>"~/user_scripts/asus/asus_keyboard_color_pywal16.sh"
+
+- [ ] **Comment out anything beyond  the end line of zshrc to speed it up your terminal:** :- 
+```bash
+nvim ~/user_scripts/waypaper/wallpaper_update.sh
+```
+
+>[!note]+ Comment out beyond this part
+> ===========================
+> End of ~/.zshrc
+> ============================
+
+
+- [ ] **Comment out the asusd scritpt for non asus laptops in hyprland config :**:- 
+```bash
+nvim ~/.config/hypr/hyprland.conf
+```
+>[!note]+ Comment out this part
+>Asus specific hardware script for keyboard light and fan control. 
+>bindl = , XF86Launch3, exec, kitty -e sudo ~/user_scripts/asus/asus-control.sh
+
+- [ ] **Configure Monitor Output:** In `hyprland.conf`, remove machine-specific display names (e.g., for an ASUS monitor) and uncomment the `auto` setting for portability.
+
+- [ ] **Adjust `hyprland.conf` Settings:**
+    - [ ] Disable the swapping of left/right mouse click buttons.
+    - [ ] Remove the custom keybinds for changing refresh rate that are specific to asus laptops with 144 hz `Alt+6` and `Alt+7`.
 
 ---
 
@@ -66,6 +88,11 @@ Install your AUR helper and the core software packages your workflow depends on.
     - [ ] Install `ollama`.
     - [ ] Install `faster-whisper`.
 - [ ] **Waydroid:**- android container. lightweight. 
+- [ ] fix logratate by uncommenting size and compress in 
+```bash
+sudo nvim /etc/logrotate.conf
+```
+
 ---
 
 ### 4. Theming & Desktop Customization
@@ -107,6 +134,7 @@ Enable essential background services and disable ones you don't need.
 Finalize the setup for individual applications.
 
 - [ ] **`mpv`:** Set up your `mpv.conf` for video playback.
-- [ ] **`firefox`:** Apply your custom `userChrome.css` for the side-panel modifications.
+- [ ] **`firefox`:** Apply your custom `userChrome.css` for the side-panel modifications., hardware acceleration and smoothscrooling and other stuff refer to [[Firefox]]
+- [ ] fix being locked out if you enter incorrect password [[Incorrect Password Attempt Timeout]]
+- [ ] **`spotify`:** without adds script
 - [ ] **`yazi`:** Deploy your configuration files for the `yazi` terminal file manager.
-

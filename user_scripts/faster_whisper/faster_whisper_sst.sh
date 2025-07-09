@@ -174,8 +174,5 @@ fi
 
 log_message "--- Script finished successfully ---"
 
-if [[ -n "$DISPLAY" ]] || [[ -n "$WAYLAND_DISPLAY" ]]; then
-    kill -TERM $PPID 2>/dev/null || true
-fi
 
 exit 0

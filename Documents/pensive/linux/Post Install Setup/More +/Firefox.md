@@ -77,3 +77,58 @@ This command links the `.mozilla` folder from an external drive mounted at `/run
 sudo ln -s /run/media/fayiz/firefox/.mozilla /home/fayiz/.mozilla
 ```
 
+---
+
+# Firefox: Enabling Hardware Acceleration and Enhanced Scrolling
+
+This guide details the necessary `about:config` tweaks and standard settings adjustments to enable hardware-accelerated video decoding and improve the scrolling experience in Firefox. These changes can lead to significantly lower CPU usage during video playback and a smoother, more pleasant browsing experience.
+
+---
+
+## 1. Hardware Video Acceleration (VA-API)
+
+Enabling hardware acceleration offloads video decoding from the CPU to the GPU, which is crucial for smooth playback of high-resolution content and improved battery life on laptops. This is achieved by enabling Firefox's support for the Video Acceleration API (VA-API), the same technology used by native video players like [[MPV]].
+
+### Accessing `about:config`
+
+1.  Type `about:config` into the Firefox address bar and press Enter.
+2.  A warning page may appear. Click "Accept the Risk and Continue" to proceed.
+
+### Configuration Settings
+
+Use the search bar at the top of the `about:config` page to find and modify the following preferences. You can double-click a preference to toggle its value between `true` and `false`.
+
+| Preference Name | Recommended Value | Description |
+| :--- | :--- | :--- |
+| `media.ffmpeg.vaapi.enabled` | `true` | **(Primary Setting)** This is the key that enables VA-API support within Firefox's media framework. This allows Firefox to use the same system-level hardware decoding drivers as other applications. |
+| `gfx.webrender.all` | `true` | Enables the high-performance WebRender rendering engine for all system configurations, which is beneficial for overall browser performance and works well with hardware acceleration. |
+| `media.hardware-video-decoding.force-enabled` | `true` | **(Last Resort)** Forces hardware decoding to be active even if Firefox's internal checks fail. Use this only if the other settings don't work. |
+
+> [!TIP] System-Level Dependencies
+> For `media.ffmpeg.vaapi.enabled` to work, you must have the correct VA-API drivers installed for your GPU. For more information on installing these drivers, refer to the guides on [[MPV]] and [[CPU]] management.
+
+> [!WARNING] Forcing Can Cause Instability
+> The `media.hardware-video-decoding.force-enabled` option overrides Firefox's compatibility checks. While it can solve issues on some systems, it may lead to graphical glitches, crashes, or black video screens on others. Enable it only as a final troubleshooting step.
+
+---
+
+## 2. Enhanced Scrolling Experience
+
+These settings, available in the standard Firefox options menu, can make navigating web pages feel much more fluid and intuitive.
+
+### How to Enable Scrolling Features
+
+1.  Navigate to Firefox **Settings**.
+2.  Select the **General** tab on the left.
+3.  Scroll down to the **Browsing** section.
+
+### Recommended Settings
+
+Ensure the following options are checked:
+
+-   `[x]` **Use autoscrolling**
+    -   **Functionality**: Allows you to scroll through a page by clicking the middle mouse button (scroll wheel) and moving the mouse up or down. This enables rapid, continuous scrolling without repeatedly using the scroll wheel.
+
+-   `[x]` **Use smooth scrolling**
+    -   **Functionality**: Instead of jumping line-by-line, this setting animates the scroll motion, making page navigation feel smoother and less jarring.
+

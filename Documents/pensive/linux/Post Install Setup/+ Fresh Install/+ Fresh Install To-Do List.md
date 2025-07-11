@@ -212,3 +212,6 @@ Finalize the setup for individual applications.
 - [ ] **`spotify`:** without adds script [[Spotify]]
 
 - [ ] **`yazi`:** Deploy your configuration files for the `yazi` terminal file manager.
+
+### 7. Re-Link exisiting github repo to continue backing up to it. 
+- [ ] Follow these steps to the T [[Relink to my existing github repo for backup after Fresh Install]]

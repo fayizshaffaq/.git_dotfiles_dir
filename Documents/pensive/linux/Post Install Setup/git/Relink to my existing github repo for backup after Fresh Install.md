@@ -75,7 +75,7 @@ To securely communicate with GitHub without passwords, you must set up SSH keys.
 
 ### 7. 🤝 Link Local and Remote Repositories
 
-Ensure your local repository is correctly pointing to the remote one on GitHub. (the first command might fail but that's okay the add origin one. )
+Ensure your local repository is correctly pointing to the remote one on GitHub. (the first command might will say error: remote origin already exists., that's okay, continue on with the rest. )
 *   [[Link Local and Remote Repositories]]
 
 ### 8. 🚀 Commit and Push

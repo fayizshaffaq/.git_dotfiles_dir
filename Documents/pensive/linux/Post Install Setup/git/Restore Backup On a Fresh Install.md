@@ -12,15 +12,9 @@ Follow these steps to deploy your dotfiles onto a new machine.
 
 3.  **Check Out Your Configuration.** This command will populate your `$HOME` directory with the files from the repository.
     ```bash
-    git_dotfiles checkout
+    git_dotfiles checkout -f
     ```
     > [!WARNING] Potential for Overwriting Files
-    > The `checkout` command will fail if it finds existing files that would be overwritten (e.g., a default `.zshrc`). This is a safety feature.
-    >
-    > **To force the checkout and overwrite any conflicting files, use the `-f` flag:**
-    > ```bash
-    > git_dotfiles checkout -f
-    > ```
     > Use this with caution. It is often what you want on a fresh system, but consider backing up the default files first.
 
 4.  **Finalize Setup.** Repeat the prerequisite steps from Part 1 to configure your Git user name and email on the new machine. Your system is now synced.

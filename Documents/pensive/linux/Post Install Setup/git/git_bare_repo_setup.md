@@ -61,7 +61,7 @@ This manual is structured to serve as both an initial installation guide and a l
 
 1.  **[[Restore Backup On a Fresh Install]]**
     *   Clone your remote dotfiles repository onto a new machine and use a single command to check out the files, instantly populating your new `$HOME` directory.
-
+2.  [[Relink to my existing github repo for backup after Fresh Install]]
 ---
 
 ## Part 4: Maintenance & Housekeeping

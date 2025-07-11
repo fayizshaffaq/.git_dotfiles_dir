@@ -77,7 +77,7 @@ nvim ~/.zshrc
 	```
 
 - [ ] **Update Drive Unlock Script:** Change the UUID in your LUKS/drive unlocking script.
-- [ ] **Configure Auto-Login:** Set up automatic login on TTY1. [[+MOC Auto Login]]
+- [ ] **Configure Auto-Login:** Set up automatic login on TTY1. [[+ MOC Auto Login]]
 
 - [ ] **Configure Power Key:** Define the system's behavior when the power key is pressed. [[Power Key Behaviour]]
 
@@ -148,7 +148,7 @@ nvim ~/.config/hypr/hyprland.conf
 ### 3. (Optional) Package Management & Software Installation
 
 - [ ] **Install AI Tools:**
-    - [ ] Install `ollama`. [[+MOC Ollama]]
+    - [ ] Install `ollama`. [[+ MOC Ollama]]
     - [ ] Install `faster-whisper`. [[Faster Whisper]]
 	- [ ] Install `kokoro` [[Kokoro Rust]]
 
@@ -174,7 +174,7 @@ This section covers the visual setup of your desktop, from dynamic colors to fon
 
 - [ ] **Decay-Green theme** [[General Theming]] 
 
-- [ ] **Install & Configure Fonts:** Install your preferred system and terminal fonts. [[+MOC Fonts]]
+- [ ] **Install & Configure Fonts:** Install your preferred system and terminal fonts. [[+ MOC Fonts]]
 
 - [ ] **Configure Thunar:** Set up the right-click "Open Terminal Here" custom action.
 
@@ -214,4 +214,7 @@ Finalize the setup for individual applications.
 - [ ] **`yazi`:** Deploy your configuration files for the `yazi` terminal file manager.
 
 ### 7. Re-Link exisiting github repo to continue backing up to it. 
-- [ ] Follow these steps to the T [[Relink to my existing github repo for backup after Fresh Install]]
+- [ ] Follow these steps after you've already checked out and restored all the files from the github repo using git_dotfiles checkout -f  [[Relink to my existing github repo for backup after Fresh Install]]
+
+or
+- [ ] create  a new github repo to start backing up. [[git_bare_repo_setup]]

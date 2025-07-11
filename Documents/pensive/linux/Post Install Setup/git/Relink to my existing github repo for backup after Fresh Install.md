@@ -58,11 +58,6 @@ git_dotfiles status
 git_dotfiles_add_list
 ```
 
-If you've made any changes since checkout -f those will be staged to be commited. 
-```bash
-git_dotfiles status
-```
-
 Make your first commit but **DONT** push yet. 
 ```bash
 git_dotfiles commit -m "fresh install first commit to the same old git repo"

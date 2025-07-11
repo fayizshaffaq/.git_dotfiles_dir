@@ -6,7 +6,7 @@ This is a critical step where you install the core software for your system, inc
 > [!NOTE] Phased Installation Strategy
 > Running these `pacman` commands separately is intentional. It allows `pacman` to resolve dependencies and download packages in manageable chunks. If one command fails, it's easier to identify the problematic package without halting the entire installation process.
 
-### 1.  Graphics Drivers & Core System Utilities 
+### 1. Graphics Drivers & Core System Utilities 
 This command installs essential drivers for Intel GPUs, Mesa for 3D graphics, Vulkan support, and key system tools for Btrfs and ZRAM.
 - [ ] Status
 ```bash

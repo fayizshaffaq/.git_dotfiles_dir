@@ -109,5 +109,5 @@ While `venv` is the built-in standard, modern tools offer significant advantages
 
 *   [[Managing a Virtual Environment|venv]]: The reliable, built-in Python standard. Good for simple, lightweight environments.
 *   **Conda**: A powerful tool for complex data science and scientific computing projects. It can manage non-Python dependencies (like C++ libraries) and is language-agnostic.
-*   [[+MOC UV|uv]]: An extremely fast, modern tool written in Rust. It's designed as a drop-in replacement for `pip` and `venv`, offering massive performance gains, especially for large projects. Highly recommended for Arch Linux users.
+*   [[+ MOC UV|uv]]: An extremely fast, modern tool written in Rust. It's designed as a drop-in replacement for `pip` and `venv`, offering massive performance gains, especially for large projects. Highly recommended for Arch Linux users.
 *   **pipx**: The specialized tool for one job: installing and running Python CLI applications in isolated environments. It is the unequivocally superior solution for this specific task.

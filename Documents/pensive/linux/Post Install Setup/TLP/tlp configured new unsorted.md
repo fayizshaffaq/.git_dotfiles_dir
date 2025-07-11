@@ -168,7 +168,7 @@ PLATFORM_PROFILE_ON_BAT=quiet
 #my hw supports s2idle deep, the one currently active will be in []
 
 MEM_SLEEP_ON_AC=s2idle
-MEM_SLEEP_ON_BAT=deep
+MEM_SLEEP_ON_BAT=s2idle
 
 # Define disk devices on which the following DISK/AHCI_RUNTIME parameters act.
 # Separate multiple devices with spaces.

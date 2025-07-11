@@ -8,7 +8,7 @@
 # --- User-configurable variables ---
 # The UUID of the encrypted partition to unlock.
 # Find this by running `lsblk -f` or `sudo blkid` in your terminal.
-DEVICE_UUID="df07cba3-22cb-42e3-a752-616550825187"
+DEVICE_UUID="9150739f-d057-4958-85ea-ffdb81dfe29f"
 
 # The mount point (e.g., a path defined in /etc/fstab)
 MOUNT_POINT="/mnt/browser"

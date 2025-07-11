@@ -7,7 +7,7 @@ python 3.12
 (OPTIONAL BUT NOT RECOMMANDED)
 paru -S miniconda3
 source /opt/miniconda3/etc/profile.d/conda.sh
-sudo chown -R fayiz:fayiz /opt/miniconda3
+sudo chown -R dusk:dusk /opt/miniconda3
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 && conda --version
 conda update -n base -c defaults conda
 nvim ~/.condarc
@@ -31,8 +31,8 @@ cd kokoro-tts
 uv sync --active
 wget https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/voices-v1.0.bin
 wget https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/kokoro-v1.0.onnx
-mkdir /mnt/ramdisk/kokoro/
-./kokoro-tts ~/Documents/text.txt /mnt/ramdisk/kokoro/audio.wav --voice af_heart && mpv /mnt/ramdisk/kokoro/audio.wav
+mkdir /mnt/zram/kokoro/
+./kokoro-tts ~/Documents/text.txt /mnt/zram1/kokoro/audio.wav --voice af_heart && mpv /mnt/zram1/kokoro/audio.wav
 
 
 good voices 

@@ -16,10 +16,16 @@ Before you can use `NetworkManager`, you must enable its systemd service to star
     sudo systemctl start NetworkManager.service
     ```
 
+
 > [!TIP] Enable and Start in One Go
 > You can combine both steps into a single command using the `--now` flag:
 > ```bash
 > sudo systemctl enable --now NetworkManager.service
+> ```
+
+> [!note] Disable this service, it's uncecessory 
+> ```
+> sudo systemctl disable NetworkManager-wait-online.service
 > ```
 
 ## Connecting to a Wi-Fi Network

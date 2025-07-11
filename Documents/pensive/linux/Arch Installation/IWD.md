@@ -18,7 +18,7 @@ You will now be inside the `[iwd]#` prompt for the following steps.
 List all available network devices to find the name of your wireless adapter (e.g., `wlan0`).
 
 ```bash
-[iwd]# device list
+device list
 ```
 
 > [!TIP]
@@ -29,12 +29,12 @@ List all available network devices to find the name of your wireless adapter (e.
 Use your device name to scan for nearby wireless networks.
 
 ```bash
-[iwd]# station <device_name> scan
+station <device_name> scan
 ```
 
 **Example:**
 ```bash
-[iwd]# station wlan0 scan
+station wlan0 scan
 ```
 
 ### Step 4: List Available Networks
@@ -42,12 +42,12 @@ Use your device name to scan for nearby wireless networks.
 After the scan completes, display the list of detected networks to find your SSID.
 
 ```bash
-[iwd]# station <device_name> get-networks
+station <device_name> get-networks
 ```
 
 **Example:**
 ```bash
-[iwd]# station wlan0 get-networks
+station wlan0 get-networks
 ```
 
 ### Step 5: Connect to a Network
@@ -55,7 +55,7 @@ After the scan completes, display the list of detected networks to find your SSI
 Connect to your chosen network using its SSID (network name).
 
 ```bash
-[iwd]# station <device_name> connect "<Your_SSID>"
+station <device_name> connect "<Your_SSID>"
 ```
 
 > [!NOTE]
@@ -65,7 +65,7 @@ Connect to your chosen network using its SSID (network name).
 
 **Example:**
 ```bash
-[iwd]# station wlan0 connect "MyWiFiNetwork"
+station wlan0 connect "MyWiFiNetwork"
 ```
 
 ### Step 6: Exit `iwd`

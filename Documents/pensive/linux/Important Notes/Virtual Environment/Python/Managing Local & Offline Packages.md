@@ -6,7 +6,7 @@ The `pip download` command fetches packages and their dependencies from a reposi
 
 ```bash
 # Example: Download PyTorch and its dependencies to a local directory
-pip download torch torchvision torchaudio --dest /mnt/ramdisk/local_whl_dir/
+pip download torch torchvision torchaudio --dest /mnt/zram1/local_whl_dir/
 ```
 
 You can also specify versions:
@@ -23,7 +23,7 @@ pip download "numpy>=1.24,<1.26" --dest /path/to/dir
 Once you have a directory of wheel files, you can instruct `pip` to install from it.
 
 ```bash
-pip install torch --find-links=/mnt/ramdisk/python_whl_local/
+pip install torch --find-links=/mnt/zram1/python_whl_local/
 ```
 
 > [!WARNING] `--no-index` vs. `--find-links`

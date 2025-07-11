@@ -1,4 +1,11 @@
-40.	enable services.
-sudo systemctl enable --now fwupd.service warp-svc.service asusd.service 
+Enable following systemd services:
 
-systemctl --user enable --now hyprpolkitagent.service
+```bash
+sudo systemctl enable --now 
+```
+
+Enable following systemd **usersession** services:
+
+```bash
+systemctl --user enable --now 
+```

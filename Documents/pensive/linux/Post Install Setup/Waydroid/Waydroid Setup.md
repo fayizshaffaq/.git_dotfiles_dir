@@ -12,7 +12,7 @@ This guide provides a comprehensive walkthrough for installing and configuring W
 
 Before you begin, it's crucial to verify that your Linux kernel has the necessary modules enabled for Waydroid to function.
 
-1.  **Check for `binder` and `ashmem`:**
+1.  **Check for `binder` and `ashmem`:** (works without this as well)
     Open a terminal and run the following command:
     ```bash
     grep -E "binder|ashmem" /proc/filesystems
@@ -25,7 +25,7 @@ Before you begin, it's crucial to verify that your Linux kernel has the necessar
     nodev	ashmem
     ```
 
-> [!WARNING] Missing Kernel Modules
+> [!note] (Optional, NOT NEEDED)
 > If the command returns no output or is missing one of the modules, Waydroid will not work. On Arch Linux, the `linux-zen` kernel includes these modules by default. You may need to install it and reboot your system.
 > ```bash
 > sudo pacman -S linux-zen

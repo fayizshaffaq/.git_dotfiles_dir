@@ -32,11 +32,11 @@ source /opt/miniconda3/etc/profile.d/conda.sh
 By default, the Miniconda directory is owned by `root`. To allow your user to create environments, install packages, and update Conda without using `sudo`, you must take ownership of the installation directory.
 
 ```bash
-sudo chown -R fayiz:fayiz /opt/miniconda3
+sudo chown -R dusk:dusk /opt/miniconda3
 ```
 
 > [!IMPORTANT] Update Username
-> In the command above, you **must** replace `fayiz:fayiz` with your own `username:group`. You can find your username by running the `whoami` command.
+> In the command above, you **must** replace `dusk:dusk` with your own `username:group`. You can find your username by running the `whoami` command.
 
 ---
 

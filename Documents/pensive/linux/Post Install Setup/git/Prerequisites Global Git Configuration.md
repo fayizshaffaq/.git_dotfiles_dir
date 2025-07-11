@@ -7,7 +7,7 @@ Before you begin, ensure your Git identity is configured. This information is em
 
 1.  **Set Your User Name:**
     ```bash
-    git config --global user.name "fayiz"
+    git config --global user.name "dusk"
     ```
 
 2.  **Set Your Email Address:**

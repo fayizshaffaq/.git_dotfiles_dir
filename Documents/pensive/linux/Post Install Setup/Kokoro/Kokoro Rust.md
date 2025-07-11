@@ -181,13 +181,13 @@ Usage: kokoros [OPTIONS] <COMMAND>
 First, create a directory for the output files.
 
 ```bash
-mkdir -p /mnt/ramdisk/kokoros
+mkdir -p /mnt/zram1/kokoros
 ```
 
 Generate audio from a predefined stream and save it to a file.
 
 ```bash
-kokoros -s af_heart stream > /mnt/ramdisk/kokoros/1.wav
+kokoros -s af_heart stream > /mnt/zram1/kokoros/1.wav
 ```
 
 **Example 2: Synthesizing Text from a String**
@@ -195,5 +195,5 @@ kokoros -s af_heart stream > /mnt/ramdisk/kokoros/1.wav
 Generate audio from a text string and save it to a specified output file using the `-o` flag.
 
 ```bash
-kokoros text "There was once a time in New York when things were not as good as they are right now." -o /mnt/ramdisk/kokoros/2.wav
+kokoros text "There was once a time in New York when things were not as good as they are right now." -o /mnt/zram1/kokoros/2.wav
 ```

@@ -17,7 +17,7 @@ These services are enabled system-wide and will start automatically at boot.
 Run the following command from your `chroot` environment to enable the core system services:
 
 ```bash
-systemctl enable NetworkManager.service tlp.service udisks2.service thermald.service bluetooth.service firewalld.service fstrim.timer systemd-timesyncd.service acpid.service vsftpd.service bat.service
+systemctl enable NetworkManager.service tlp.service udisks2.service thermald.service bluetooth.service firewalld.service fstrim.timer systemd-timesyncd.service acpid.service vsftpd.service
 ```
 
 ### Core System Services Overview

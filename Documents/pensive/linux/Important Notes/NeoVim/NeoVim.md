@@ -175,7 +175,7 @@ These are set using the `:set` command.
 | `:set ic` | **I**gnore **C**ase for searches. |
 | `:set noic` | Turn off ignore case. |
 | `:set hls` | **H**igh**l**ight **S**earch results. |
-| `:set nohls` | Turn off highlight search. |
+| `:set nohlsearch` | Turn off highlight search. |
 | `:set incsearch` | Show search matches **inc**rementally as you type. |
 
 ### ➤ The Substitute Command

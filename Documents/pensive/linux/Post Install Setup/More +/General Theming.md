@@ -79,6 +79,10 @@ This method is for themes you download directly from the web.
 > cp -r /path/to/downloaded/decay-green ~/.local/share/themes/
 > ```
 
+```bash
+cp -r /mnt/media/Documents/do_not_delete_linux/themes/Decay-Green ~/.local/share/themes/
+```
+
 ### Applying GTK Themes
 
 Once a theme is installed, you need a tool to set it as the active theme. `nwg-look` is an excellent graphical tool for this.

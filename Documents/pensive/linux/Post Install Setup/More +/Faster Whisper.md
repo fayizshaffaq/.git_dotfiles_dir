@@ -40,12 +40,12 @@ source fasterwhisper_cpu/bin/activate
 > [!TIP] Check Your Prompt
 > After activation, your shell prompt should change to indicate that you are now inside the `(fasterwhisper_cpu)` environment.
 
-> [!important] Go into the newly created virtual envionment directory.
->```bash
+### Step 4: Go into the newly created virtual envionment directory.
+```bash
 cd fasterwhisper_cpu
+```
 
-
-### Step 4: Install Faster Whisper
+### Step 5: Install Faster Whisper
 
 With the environment active, you can now install the `faster-whisper` package using `uv pip`.
 
@@ -67,7 +67,7 @@ This method involves directly running a Python configuration script.
 > Before running, you must edit your Python script (`config.py`).
 > 1.  **Set User Variables**: Update the absolute paths for your virtual environment and the Python script itself.
 > 2.  **Model Selection**: The script defaults to the `small.en` model. You can change this to another model if desired.
-> 3.  **Audio Input**: The script is configured to look for an audio file at `/mnt/ramdisk/mic/1_mic.wav`. Ensure this file exists before running.
+> 3.  **Audio Input**: The script is configured to look for an audio file at `/mnt/zram1/mic/1_mic.wav`. Ensure this file exists before running.
 
 Execute the script with the following command:
 
@@ -88,6 +88,8 @@ Run the script from your terminal:
 ./faster_whisper_sst.sh
 ```
 
+> [!important] Running the script for the first time will take time cuz it needs to download the models. 
+
 ---
 
 ## Appendix: Reference Commands
@@ -97,6 +99,6 @@ The following commands are not required for the setup above but are useful for a
 | Description | Command |
 | :--- | :--- |
 | **Find Audio Input Sources** | `pactl list short sources` |
-| **Record Audio with FFmpeg** | `ffmpeg -f pulse -i 'alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi_Mic1_source' /mnt/ramdisk/mic/1_mic.wav` |
-| **Transcribe with whisper.cpp** | `./whisper.cpp/build/bin/whisper-cli -m /home/fayiz/whisper.cpp/ggml_model/ggml-base.en.bin -f /mnt/ramdisk/mic/1_mic.wav` |
+| **Record Audio with FFmpeg** | `ffmpeg -f pulse -i 'alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi_Mic1_source' /mnt/zram1/mic/1_mic.wav` |
+| **Transcribe with whisper.cpp** | `./whisper.cpp/build/bin/whisper-cli -m /home/dusk/whisper.cpp/ggml_model/ggml-base.en.bin -f /mnt/zram/mic/1_mic.wav` |
 

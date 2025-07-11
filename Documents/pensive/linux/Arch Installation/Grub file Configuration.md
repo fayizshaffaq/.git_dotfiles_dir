@@ -17,7 +17,7 @@ Locate the `GRUB_CMDLINE_LINUX_DEFAULT` line. This line sets the kernel paramete
 A well-configured line might look like this:
 
 ```ini
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 zswap.enabled=0 usbcore.autosuspend=-1"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 zswap.enabled=0"
 ```
 
 Here is a breakdown of common and useful parameters:

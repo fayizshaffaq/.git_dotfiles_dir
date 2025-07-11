@@ -23,10 +23,4 @@ Follow these steps to deploy your dotfiles onto a new machine.
     > ```
     > Use this with caution. It is often what you want on a fresh system, but consider backing up the default files first.
 
-    > [!TIP] Backing Up Default Files
-    > Before forcing a checkout, you can save the default configuration files from the new system with a command like this:
-    > ```bash
-    > mkdir -p $HOME/dotfiles_backup && mv $HOME/.zshrc $HOME/dotfiles_backup/
-    > ```
-
 4.  **Finalize Setup.** Repeat the prerequisite steps from Part 1 to configure your Git user name and email on the new machine. Your system is now synced.

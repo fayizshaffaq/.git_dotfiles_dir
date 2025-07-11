@@ -5,7 +5,7 @@ This crucial step uses the `pacstrap` script to install the base system, a Linux
 Run the following command to install the core components. We are including `nvim` (Neovim) as a text editor, but you can substitute it with `vim`, `nano`, or omit it.
 
 ```bash
-pacstrap /mnt base base-devel linux linux-headers linux-firmware nvim
+pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nvim
 ```
 
 > [!NOTE] Package Breakdown
@@ -27,13 +27,12 @@ pacstrap /mnt base base-devel linux linux-headers linux-firmware nvim
 You can install other kernels alongside or instead of the default one. This is useful for specific use cases like performance tuning or long-term stability.
 
 > [!WARNING]
-> If you choose an alternative kernel *instead of* the default, remember to replace `linux` and `linux-headers` in the main command with your chosen kernel and its corresponding headers (e.g., `linux-zen` and `linux-zen-headers`).
+> If you choose an alternative kernel *instead of* the default, remember to replace `linux-zen` and `linux-zen-headers` in the main command with your chosen kernel and its corresponding headers (e.g., `linux` and `linux-headers`).
 
-#### Zen Kernel
-Optimized for desktop, multimedia, and gaming performance with a focus on responsiveness.
+#### Official Kernel
 
 ```bash
-pacstrap /mnt linux-zen linux-zen-headers
+pacstrap /mnt linux linux-headers
 ```
 
 #### Long-Term Support (LTS) Kernel

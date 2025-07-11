@@ -8,9 +8,11 @@ First, you must format the designated partition (e.g., `/dev/sdXN`) as a swap ar
 
 > [!WARNING] Data Loss
 > This command will permanently erase all data on the specified partition. Double-check that you have selected the correct device.
-
 ```bash
-mkswap /dev/sdXN
+lsblk
+```
+```bash
+sudo mkswap /dev/sdXN
 ```
 *Replace `/dev/sdXN` with your actual swap partition, for example, `/dev/sda3`.*
 

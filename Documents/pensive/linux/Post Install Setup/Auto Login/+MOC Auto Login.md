@@ -8,7 +8,7 @@
 
 The setup involves three main stages that must be completed chronologically. Each step is detailed in its own note.
 
-1.  **[[Disable SDDM]]**
+1.  **[[Disable SDDM]]** (if installed)
     First, you must disable any existing display manager (like SDDM or GDM) to prevent it from conflicting with the new TTY auto-login method.
 
 2.  **[[Configure TTY1 for Automatic Login]]**

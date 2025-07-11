@@ -2,7 +2,7 @@
 `Reflector` is a script that automates the process of selecting the fastest and most up-to-date Arch Linux package mirrors. A well-configured mirrorlist is crucial for fast and reliable package management with `pacman`.
 
 > [!NOTE] Execution Environment
-> These commands should be executed from within the `chroot` environment, as indicated by step #21 in your [[+MOC Arch Linux Installation]].
+> These commands should be executed from within the `chroot` environment, as indicated by step #21 in your [[+ MOC Arch Linux Installation]].
 
 ---
 

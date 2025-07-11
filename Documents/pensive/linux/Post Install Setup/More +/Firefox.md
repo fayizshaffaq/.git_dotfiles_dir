@@ -71,10 +71,10 @@ sudo ln -s /path/to/your/external/drive/.mozilla ~/.mozilla
 ```
 
 **Example from your notes:**
-This command links the `.mozilla` folder from an external drive mounted at `/run/media/fayiz/firefox/` to the location where Firefox expects to find it in the user's home directory.
+This command links the `.mozilla` folder from an external drive mounted at `/mnt/browser/.mozilla` to the location where Firefox expects to find it in the user's home directory.
 
 ```bash
-sudo ln -s /run/media/fayiz/firefox/.mozilla /home/fayiz/.mozilla
+sudo ln -s /mnt/browser/.mozilla ~/.mozilla
 ```
 
 ---
@@ -100,12 +100,8 @@ Use the search bar at the top of the `about:config` page to find and modify the 
 
 | Preference Name | Recommended Value | Description |
 | :--- | :--- | :--- |
-| `media.ffmpeg.vaapi.enabled` | `true` | **(Primary Setting)** This is the key that enables VA-API support within Firefox's media framework. This allows Firefox to use the same system-level hardware decoding drivers as other applications. |
 | `gfx.webrender.all` | `true` | Enables the high-performance WebRender rendering engine for all system configurations, which is beneficial for overall browser performance and works well with hardware acceleration. |
 | `media.hardware-video-decoding.force-enabled` | `true` | **(Last Resort)** Forces hardware decoding to be active even if Firefox's internal checks fail. Use this only if the other settings don't work. |
-
-> [!TIP] System-Level Dependencies
-> For `media.ffmpeg.vaapi.enabled` to work, you must have the correct VA-API drivers installed for your GPU. For more information on installing these drivers, refer to the guides on [[MPV]] and [[CPU]] management.
 
 > [!WARNING] Forcing Can Cause Instability
 > The `media.hardware-video-decoding.force-enabled` option overrides Firefox's compatibility checks. While it can solve issues on some systems, it may lead to graphical glitches, crashes, or black video screens on others. Enable it only as a final troubleshooting step.
@@ -132,3 +128,16 @@ Ensure the following options are checked:
 -   `[x]` **Use smooth scrolling**
     -   **Functionality**: Instead of jumping line-by-line, this setting animates the scroll motion, making page navigation feel smoother and less jarring.
 
+
+hiding sidebar: about:config
+enable 
+toolkit.legacyUserProfileCustomizations.stylesheets
+
+about:profiles and open root directory path. and paste the premade chrome directory in which the userChrome.css file was previously created.
+
+here is the userChrome.css files's contents if you've lost it. 
+```css
+#sidebar-main {
+  display: none !important;
+}
+```

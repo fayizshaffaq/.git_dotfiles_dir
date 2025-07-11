@@ -45,8 +45,7 @@ Use these commands to see which services are set to start automatically.
 Once you identify a service you don't need, you can disable it.
 
 ```bash
-# Example: Disable the Bluetooth service if you don't use it
-sudo systemctl disable bluetooth.service
+sudo systemctl disable NetworkManager-wait-online.service
 ```
 
 > [!WARNING] Be Cautious When Disabling Services

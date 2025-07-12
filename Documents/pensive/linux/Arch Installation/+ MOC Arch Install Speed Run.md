@@ -85,7 +85,7 @@ timedatectl set-ntp true
 ```bash
 lsblk
 ```
-*Formatting Target Drive*
+*Partitioning Target Drive*
 ```bash
 cfdisk /dev/sdX
 ```
@@ -98,12 +98,12 @@ cfdisk /dev/sdX
 lsblk /dev/sdX
 ```
 
-*BOOT/ESP Partition*
+*Formatting BOOT/ESP Partition*
 ```bash
 mkfs.fat -F32 /dev/esp_partition
 ```
 
-*ROOT Partition*
+*Formatting ROOT Partition*
 ```bash
 mkfs.btrfs -f /dev/root_partition
 ```
@@ -111,7 +111,7 @@ mkfs.btrfs -f /dev/root_partition
 
 ---
 
-*Mounting the Root Partition*
+*Mounting Root Partition*
 ```bash
 mount /dev/root_partition /mnt
 ```
@@ -129,6 +129,7 @@ btrfs subvolume create /mnt/@home
 ```bash
 ls /mnt
 ```
+*Un-Mounting Root Partition and it's newly created Sub-volumes*
 ```bash
 umount -R /mnt
 ```
@@ -144,7 +145,7 @@ mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@ /d
 
 ---
 
-*Creating Directories to mount home sub-vol & boot partition*
+*Creating Directories to mount Home Sub-Vol & Boot/ESP Partition*
 ```bash
 mkdir /mnt/home
 ```
@@ -174,6 +175,7 @@ mount /dev/esp_partition /mnt/boot
 
 ---
 
+*Syncing Mirrors for faster Download Speeds*
 ```bash
 reflector --country India --age 24 --sort rate --save /etc/pacman.d/mirrorlist
 ```
@@ -344,7 +346,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ---
 
-*Zram as both Block device and as Swap device*
+*Zram as Block device and Swap device (ZSTD compression)*
 ```bash
 mkdir /mnt/zram1
 ```
@@ -369,7 +371,7 @@ options = rw,nosuid,nodev,discard,X-mount.mode=1777
 
 ---
 
-*Optimizing System Swap Values for Zram*
+*Optimizing System Swap Values for Zram SWAP*
 ```bash
 sudo nvim /etc/sysctl.d/99-vm-zram-parameters.conf
 ```

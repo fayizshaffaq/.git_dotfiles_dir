@@ -5,6 +5,7 @@ iwctl
 ```bash
 device list
 ```
+*Replace wlo1 with your device name from above eg: wlan1*
 ```bash
 station wlo1 scan
 ```

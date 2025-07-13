@@ -8,14 +8,9 @@ This guide provides essential commands and procedures for managing your Firefox 
 
 Your Firefox profile contains all your personal data, including saved logins, bookmarks, history, extensions, and settings. Backing up this profile is crucial for migrating to a new system or recovering your setup.
 
-### Locating Your Profile Directory
+### [[Firefox Profile Directory]]
 
-The entire configuration is stored within a single hidden folder in your home directory: `~/.mozilla`.
-
-1.  Open Firefox and type `about:profiles` into the address bar.
-2.  Under the default profile in use, find the **Root Directory** line and click the **Open Directory** button.
-3.  Your file manager will open inside a specific profile folder (e.g., `xxxxxxxx.default-release`).
-4.  Navigate **up two levels** in your file manager. You will land in your home directory and see the `.mozilla` folder.
+1.  Navigate **up two levels** in your file manager. You will land in your home directory and see the `.mozilla` folder.
 
 > [!NOTE] The Golden Folder
 > The `~/.mozilla` directory is all you need. To back it up, simply copy this entire folder to a safe location (like an external drive or cloud storage). To restore, close Firefox, delete the existing `~/.mozilla` folder on the new system, and replace it with your backup.
@@ -140,4 +135,12 @@ here is the userChrome.css files's contents if you've lost it.
 #sidebar-main {
   display: none !important;
 }
+#sidebar-panel-header {
+  display: none !important;
+}
 ```
+
+
+# HIDING ANY ELEMENT WITHIN FIREFOX
+
+> [!SUCESS] [[Firefox Custom Element Hide]]

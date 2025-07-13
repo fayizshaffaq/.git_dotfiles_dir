@@ -207,7 +207,7 @@ Finalize the setup for individual applications.
 
 - [ ] **`mpv`:** Set up your `mpv.conf` for video playback. [[MPV]]
 
-- [ ] **`firefox`:** Apply your custom `userChrome.css` for the side-panel modifications., hardware acceleration and smoothscrooling and other stuff refer to [[Firefox]]
+- [ ] **`firefox`:** Apply your custom `userChrome.css` for the side-panel modifications., hardware acceleration and smoothscrooling and other stuff refer to [[+ MOC Firefox]]
 
 - [ ] **`spotify`:** without adds script [[Spotify]]
 

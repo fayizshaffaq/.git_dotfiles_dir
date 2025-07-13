@@ -57,7 +57,7 @@ pacman -S pipewire wireplumber pipewire-pulse bluez bluez-utils blueman dosfstoo
 Install tools for version control, file transfers, firewall, power management, and system monitoring.
 - [ ] Status
 ```bash
-pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie tlp tlp-rdw thermald powertop 7zip usbutils usbmuxd gparted ntfs-3g acpid pacman-contrib nvtop btop inxi
+pacman -S git wget curl xdg-user-dirs gvfs firewalld udisks2 udiskie tlp tlp-rdw thermald powertop 7zip usbutils usbmuxd gparted ntfs-3g acpid pacman-contrib nvtop btop inxi less
 ```
 
 ### 8. File Management & Productivity Tools

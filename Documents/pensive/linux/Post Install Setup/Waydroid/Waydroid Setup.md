@@ -62,6 +62,11 @@ Waydroid requires two image files: `system.img` and `vendor.img`. You will downl
     *   Go into the `system` directory, select your preferred type (`gapps` or `vanilla`), and download the latest `system.img`.
     *   Go into the `vendor` directory and download the latest `vendor.img`.
 
+> [!tip] Decompress the files with unzip
+> ``` 
+> unzip lineageos.....
+> ```
+	
 > [!TIP] Which Image Should You Choose?
 > For the most "phone-like" experience and access to the Google Play Store, the **GApps** image is recommended. If you prefer a de-Googled, open-source environment, choose **Vanilla**.
 
@@ -83,12 +88,12 @@ sudo mkdir -p /etc/waydroid-extra/images
 Move the `system.img` and `vendor.img` files you downloaded into the directory you just created.
 
 ```bash
-sudo mv ~/Downloads/system.img /etc/waydroid-extra/images/
-sudo mv ~/Downloads/vendor.img /etc/waydroid-extra/images/
+sudo mv /mnt/zram1/system.img /etc/waydroid-extra/images/
+sudo mv /mnt/zram1/vendor.img /etc/waydroid-extra/images/
 ```
 
 > [!NOTE]
-> This command assumes your downloaded files are in the `~/Downloads` folder. If you saved them elsewhere, adjust the source path accordingly.
+> This command assumes your downloaded files are in the `/mnt/zram1/` folder. If you saved them elsewhere, adjust the source path accordingly.
 
 ---
 
@@ -116,6 +121,9 @@ This method starts the Waydroid container automatically on boot, making it alway
 sudo systemctl enable --now waydroid-container
 ```
 
+> [!tip] Restart your pc once and then open waydroid with rofi. 
+
+```
 #### Method B: Manual Session
 
 This method starts a session that lasts until you stop it or reboot your machine. It's useful for on-demand use.
@@ -134,6 +142,12 @@ Once the session is running, you should see the Waydroid application in your sys
 
 ---
 
+## Fixing Network issues. 
+[[Waydroid Network & Firewall Configuration]]
+
+## Fixing file sharing between host and container permission issues. 
+
+[[File Permission Errors in Shared Folders]]
 ### Next Steps: ARM Compatibility and Rooting
 
 Many Android applications are built for ARM processors. To run them on your x86 PC, you need a translation layer.

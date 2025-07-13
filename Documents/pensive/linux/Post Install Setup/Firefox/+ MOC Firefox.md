@@ -10,10 +10,8 @@ Your Firefox profile contains all your personal data, including saved logins, bo
 
 ### [[Firefox Profile Directory]]
 
-1.  Navigate **up two levels** in your file manager. You will land in your home directory and see the `.mozilla` folder.
-
 > [!NOTE] The Golden Folder
-> The `~/.mozilla` directory is all you need. To back it up, simply copy this entire folder to a safe location (like an external drive or cloud storage). To restore, close Firefox, delete the existing `~/.mozilla` folder on the new system, and replace it with your backup.
+> The `~/.mozilla` directory is all you need. To back it up, simply copy this entire folder to a safe location (like an external drive or cloud storage). To restore, close Firefox, delete the existing `~/.mozilla` folder on the new system, and replace it with your backup. Note that copy pasting the folder logs you out of some accounts, it's a security feature that some websites implement, ie when they notice the data was copied, it logs you out.   
 
 ---
 

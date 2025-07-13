@@ -1,7 +1,3 @@
-Of course. Here is a beautifully formatted, step-by-step guide based on your note, designed for clarity and ease of use in Obsidian.
-
-***
-
 # Hiding Firefox UI Elements with Custom CSS
 
 This guide provides a methodical, step-by-step process for customizing the Firefox browser interface by hiding unwanted elements (like buttons, toolbars, or sidebars) using a custom CSS file.

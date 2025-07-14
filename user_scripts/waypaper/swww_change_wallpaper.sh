@@ -14,7 +14,7 @@ WALLPAPER_DIR="~/Pictures/wallpapers"
 # Configure the swww transition effect.
 # See `man swww` or `swww --help` for all available options.
 # Examples: "simple", "fade", "left", "right", "top", "bottom", "wipe", "wave", "grow", "outer", "random"
-TRANSITION_TYPE="random"
+TRANSITION_TYPE="grow"
 
 # Duration of the transition in seconds.
 TRANSITION_DURATION=2

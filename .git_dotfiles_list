@@ -10,6 +10,7 @@
 .config/waypaper/
 .config/wal/
 .config/rofi/
+.config/systemd/user/swaync.service.d/
 .config/xsettingsd/
 .config/yazi/
 .config/zellij/

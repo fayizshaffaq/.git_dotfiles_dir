@@ -134,6 +134,11 @@ nvim ~/.config/hypr/hyprland.conf
     - [ ] Disable the swapping of left/right mouse click buttons.
     - [ ] Remove the custom keybinds for changing refresh rate that are specific to asus laptops with 144 hz `Alt+6` and `Alt+7`.
 
+- [ ] **Delete the override service file for swaync to force it to use the intel GPU, this is only for laptops with integrated gpu. 
+```bash
+rm -rf ~/.config/systemd/user/swaync.service.d/gpu-fix.conf
+```
+
 ## Only for Asus tuf f15 
 
 - [ ] **Asus misconfiguration for asusd D-bus:** :- follow the note for it if you have an asus laptop. [[Asusd Dbus Misconfiguration]]

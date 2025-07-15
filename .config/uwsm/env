@@ -129,7 +129,7 @@ export LIBVA_DRIVER_NAME=iHD
 # For a hybrid graphics system, you should NOT set this variable globally.
 # Doing so would restrict all Vulkan applications to a single GPU, defeating the
 # purpose of PRIME offloading. Let the Vulkan loader detect both drivers.
-# # export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+# export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
 
 # --- NVIDIA PRIME Render Offload & Driver Settings ---
 # These variables are essential for making the NVIDIA dGPU available on demand.

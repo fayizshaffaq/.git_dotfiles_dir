@@ -3,7 +3,7 @@
 TEMP_FILE="/tmp/hyprsunset.temp"
 DEFAULT_TEMP=4500
 MIN_TEMP=1000
-MAX_TEMP=10000
+MAX_TEMP=5000
 
 # Initialize the temp file if it doesn't exist
 if [ ! -f "$TEMP_FILE" ]; then

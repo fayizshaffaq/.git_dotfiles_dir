@@ -3,6 +3,7 @@
 .config/mpv/
 .config/pacseek/
 .config/swaync/
+.config/swappy/
 .config/uwsm/
 .config/waybar/
 .config/wlogout/

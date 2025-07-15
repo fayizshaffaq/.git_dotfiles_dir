@@ -12,7 +12,7 @@ CUSTOM_COMMANDS=(
   # kitty
   "kitty @ set-colors --all --configured ~/.cache/wal/colors-kitty.conf"
   # swaync
-  "pkill swaync && sleep 0.2 && swaync &"
+#  "pkill swaync && sleep 0.2 && swaync &"
   #asus keyboard
   "~/user_scripts/asus/asus_keyboard_color_pywal16.sh"
 )

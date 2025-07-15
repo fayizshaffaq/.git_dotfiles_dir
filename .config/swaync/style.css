@@ -1,157 +1,250 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/*     Correctly Re-engineered for Pywal Compatibility     */
-
-/* Import the swaync-compatible pywal colors */
+/* Import your pywal colors */
 @import url("../../.cache/wal/colors-swaync.css");
 
-/* --- Define theme variables using Pywal colors --- */
-/* Core Theme Colors */
-@define-color theme_accent @color4;         /* Main accent color (e.g., borders, highlights) */
-@define-color theme_text @foreground;       /* Main text color */
-@define-color theme_bg @background;         /* Main solid background color */
-@define-color theme_bg_alt alpha(@foreground, 0.1); /* An alternative background, slightly transparent */
+/* --- Base --- */
+@define-color text @foreground;
+@define-color background-alt alpha(@color1, .4);
+@define-color selected @color6;
+@define-color hover alpha(@selected, .4);
+@define-color urgent @color2;
 
-/* Notification and Control Center Background */
-/* This is the primary semi-transparent background for the main container */
-@define-color cc_bg alpha(@background, 0.85);
-
-/* Critical/Destructive Action Colors */
-@define-color theme_red @color1;            /* A strong red from your theme */
-@define-color theme_red_hover @color9;      /* The brighter/hover version of the red */
-
-/* --- Base Styles --- */
 * {
-    font-family: "JetBrains Mono Nerd Font";
-    font-weight: bold;
+  color: @text;
+  all: unset;
+  font-family: "JetBrains Mono Nerd Font", "Fira Sans";
+  font-size: 14px;
+  transition: 200ms;
 }
 
-.blank-window {
-    background: alpha(black, 0.2);
+.blank-window {  
+  background: transparent;  
 }
-
-/* --- Main Container --- */
-/* This is the most critical rule. It styles the entire control center panel. */
+  
+/* --- CONTROL CENTER --- */
 .control-center {
-    background-color: @cc_bg;       /* Use the semi-transparent background */
-    background-image: none;         /* Force GTK to render the background color */
-    border: 1px solid @theme_accent;
-    color: @theme_text;
-    border-radius: 12px;
+  background: alpha(@background, .98);
+  border-radius: 24px;
+  border: 1px solid @selected;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+  margin: 18px;
+  padding: 12px;
 }
 
-.control-center-list {
-    background: transparent;
+.control-center .notification-row .notification-background,
+.control-center .notification-row .notification-background .notification.critical {
+  background-color: @background;
+  border-radius: 16px;
+  margin: 4px 0px;
+  padding: 2px;
+  border: 1px solid @selected;
 }
 
-/* --- Notifications (Inside Control Center) --- */
-.control-center .notification-row:focus,
-.control-center .notification-row:hover {
-    background: @theme_bg_alt;
-    border-radius: 12px;
+.control-center .notification-row .notification-background .notification.critical {
+  color: @urgent;
 }
 
+.control-center .notification-row .notification-background .notification .notification-content {
+  margin: 4px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 0.5em;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background: alpha(@selected, .6);
+  color: @text;
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background: @selected;
+}
+
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 6px;
+  color: @text;
+  margin: 0px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: @selected;
+}
+
+progressbar, progress, trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255,255,255,.1);
+}
+
+/* --- FLOATING NOTIFICATIONS --- */
 .notification-row {
-    outline: none;
-    margin: 0px 4px;
+  outline: none;
+  margin: 0;
+  padding: 0px;
 }
 
-/* --- Floating Notifications --- */
-.notification {
-    border-radius: 12px;
-    background: transparent;
-    margin: 5px;
+.floating-notifications.background .notification-row .notification-background {
+  background: alpha(@background, .98);
+  box-shadow: 0 0 8px 0 rgba(0,0,0,.6);
+  border: 1px solid @selected;
+  border-radius: 24px;
+  margin: 8px;
+  padding: 0;
 }
 
-.notification-content {
-    background-color: @cc_bg; /* Floating notifications should match the CC background */
-    background-image: none;
-    padding: 6px 10px;
-    border-radius: 12px;
-    border: 1px solid @theme_accent;
+.floating-notifications.background .notification-row .notification-background .notification {
+  padding: 3px;
+  border-radius: 12px;
 }
 
-.close-button {
-    background: @theme_red;
-    color: @theme_bg;
-    text-shadow: none;
-    padding: 0;
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-    border: none;
+.floating-notifications.background .notification-row .notification-background .notification.critical {
+  border: 2px solid @urgent;
 }
 
-.close-button:hover {
-    box-shadow: none;
-    background: @theme_red_hover;
-    transition: all .15s ease-in-out;
+.floating-notifications.background .notification-row .notification-background .notification .notification-content {
+  margin: 7px;
 }
 
-/* --- Widgets (Inside Control Center) --- */
-/* These widgets sit ON TOP of the semi-transparent .control-center background */
-.widget-title,
-.widget-dnd,
-.widget-volume,
-.widget-backlight,
-.widget-mpris {
-    background-color: @theme_bg; /* Use the solid theme background */
-    color: @theme_text;
-    padding: 6px;
-    margin: 6px;
-    border-radius: 10px;
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 0.5em;
 }
 
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  border-radius: 8px;
+  background-color: @background-alt ;
+  margin: 6px;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background-color: @hover;
+  border: 1px solid @selected;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.8rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button {
+  margin: 6px;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:hover {
+  background-color: @selected;
+}
+
+.notification.critical progress {
+  background-color: @selected;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @selected;
+}
+
+/* --- WIDGETS --- */
 .widget-title {
-    font-size: 1rem;
+  font-size: 1.2em;
+  margin: 6px;
 }
 
-.widget-title>button {
-    font-size: 0.75rem;
-    color: @theme_text;
-    border-radius: 10px;
-    background: transparent;
-    border: 0.5px solid @theme_accent;
+.widget-title button {
+  background: @background-alt;
+  border-radius: 6px;
+  padding: 4px 16px;
 }
 
-.widget-title>button:hover {
-    background: @theme_accent;
-    color: @theme_bg;
+.widget-title button:hover {
+  background-color: @hover;
 }
 
 .widget-dnd {
-    font-size: 1rem;
-    color: @theme_accent;
+  margin: 6px;
+  font-size: 1.2rem;
 }
 
-.widget-dnd>switch {
-    border-radius: 10px;
-    border: 1px solid @theme_accent;
-    background: alpha(@theme_accent, 0.5);
+.widget-dnd > switch {
+  background: @background-alt;
+  font-size: initial;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 2px;
 }
 
-.widget-dnd>switch:checked {
-    background: @theme_accent;
+.widget-dnd > switch:hover {
+  background: @hover;
 }
 
-.widget-dnd>switch slider {
-    background: @theme_bg;
-    border-radius: 10px;
+.widget-dnd > switch:checked {
+  background: @selected;
 }
 
-/* --- General Text and Elements --- */
-.summary, .time, .body {
-    font-size: 0.9rem; /* Slightly smaller font for narrower space */
-    font-weight: bold;
-    background: transparent;
-    color: @theme_text;
-    text-shadow: none;
+.widget-dnd > switch slider {
+  background: @text;
+  border-radius: 6px;
 }
 
-.time {
-    margin-right: 10px; /* Reduced margin to save space */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 6px 2px;
+  margin: 6px;
+  border-radius: 12px;
+  background: @background-alt;
 }
 
-/* Fallback/other elements */
-.floating-notifications {
-    background: transparent;
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 4px 10px;
+  padding: 6px 12px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @hover;
+}
+
+.widget-volume, .widget-backlight {
+    background: @background-alt;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+.widget-volume label, .widget-backlight label {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.widget-volume scale, .widget-backlight scale {
+}
+
+scale trough {
+    min-height: 6px;
+    border-radius: 12px;
+    background-color: alpha(@background, 0.5);
+}
+
+scale trough highlight {
+    border-radius: 12px;
+    background-color: @selected;
 }

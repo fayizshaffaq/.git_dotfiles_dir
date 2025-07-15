@@ -81,7 +81,7 @@ pacman -S tesseract
 Install final applications like a web browser and media player, along with powerful shell tools like Zsh, Starship, and Bat.
 - [ ] Status
 ```bash
-pacman -S logrotate lshw ffmpeg mpv mpv-mpris firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship imagemagick bat krita uv mako rq jq bc zathura zathura-pdf-mupdf
+pacman -S logrotate lshw ffmpeg mpv mpv-mpris firefox gnome-keyring libsecret yad yazi zellij zsh zsh-syntax-highlighting starship imagemagick bat krita uv rq jq bc zathura zathura-pdf-mupdf
 ```
 
 ---

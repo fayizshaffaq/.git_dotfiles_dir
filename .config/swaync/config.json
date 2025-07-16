@@ -62,7 +62,7 @@
                 },
                 {
                     "label": "󰓅",
-                    "command": "notify-send 'Placeholder Button' 'Configure the script path in config.json'"
+                    "command": "kitty -- bash $HOME/user_scripts/performance/services_and_process_terminator.sh"
                 },
                 {
                     "label": "",

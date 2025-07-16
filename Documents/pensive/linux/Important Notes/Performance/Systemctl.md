@@ -16,20 +16,43 @@ This guide is structured to serve as both a learning resource and a quick-refere
 
 These commands provide a real-time view of what is currently running on your system. They are your first step in any diagnostic process.
 
-| Command | Description |
-| :--- | :--- |
-| `systemctl status <unit>` | Shows detailed runtime status of a specific unit, including whether it's active, its PID, memory usage, and the latest log entries. **This is often the most useful command for checking a single service.** |
-| `systemctl list-units` | Lists all currently active and loaded units (services, sockets, targets, etc.). This is your immediate overview of what's running. |
-| `systemctl list-units --type=service` | Filters the `list-units` output to show only active service units. Useful for focusing on running processes. |
-| `systemctl list-units --all` | Shows all units `systemd` knows about, regardless of their state (active, inactive, loaded, failed). Essential for seeing services that have stopped or are defined but not running. |
-| `systemctl list-units --type=service --state=failed` | A critical diagnostic command that specifically lists any services that have failed to start or have crashed. **Start your troubleshooting here.** |
+
+- Shows detailed runtime status of a specific unit, including whether it's active, its PID, memory usage, and the latest log entries. **This is often the most useful command for checking a single service.**
+> ```bash
+> systemctl status <unit>
+> ```
+
+ - Lists all currently active and loaded units (services, sockets, targets, etc.). This is your immediate overview of what's running.
+> ```bash
+> systemctl list-units
+> ```
+
+- Filters the `list-units` output to show only service units that are active and were once active during the current boot. Useful for focusing on services that ran during the current boot.
+> ```bash
+> systemctl list-units --type=service
+> ```
+
+- Filters the `list-units` list by only the services that are currently running.
+> ```bash
+> systemctl list-units --type=service --state=running
+> ``` 
+
+- Shows all units `systemd` knows about, regardless of their state (active, inactive, loaded, failed). Essential for seeing services that have stopped or are defined but not running. 
+> ```bash
+> systemctl list-units --all
+> ```
+
+- A critical diagnostic command that specifically lists any services that have failed to start or have crashed. **Start your troubleshooting here.**
+> ```bash
+> systemctl list-units --type=service --state=failed
+> ```
 
 ### Example: Checking a Service
 
 To get a detailed report on the NetworkManager service:
-```bash
-systemctl status NetworkManager.service
-```
+> ```bash
+> systemctl status NetworkManager.service
+> ```
 
 ---
 
@@ -48,9 +71,11 @@ These commands are used to control services in the current session (start, stop)
 | `sudo systemctl enable --now <unit>` | A convenient combination that both enables a unit for future boots and starts it immediately in the current session. |
 
 > [!TIP] Managing Multiple Services
-> You can manage multiple services in a single command. This is highly efficient for initial system setup. For concrete examples, see [[Enabling System Services]] and [[AUR Package services]].
-> ```bash
+> You can manage multiple services in a single command. This is highly efficient for initial system setup. For concrete examples, see [[Enabling System Services]].
+
+
 # Enable and start multiple services at once
+> ```bash
 > sudo systemctl enable --now NetworkManager.service bluetooth.service firewalld.service
 > ```
 

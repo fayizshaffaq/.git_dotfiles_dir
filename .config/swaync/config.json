@@ -41,7 +41,7 @@
         "buttons-grid": {
             "actions": [
                 {
-                    "label": "",
+                    "label": "󰡬",
                     "command": "bash $HOME/user_scripts/swaync/hyprsunset_slider.sh"
                 },
                 {
@@ -53,7 +53,7 @@
                     "command": "blueman-manager"
                 },
                 {
-                    "label": "",
+                    "label": "",
                     "command": "pavucontrol"
                 },
                 {
@@ -61,15 +61,15 @@
                     "command": "bash $HOME/user_scripts/waypaper/swww_change_wallpaper.sh"
                 },
                 {
-                    "label": "",
+                    "label": "󰓅",
                     "command": "notify-send 'Placeholder Button' 'Configure the script path in config.json'"
                 },
                 {
-                    "label": "",
+                    "label": "",
                     "command": "notify-send 'Placeholder Button' 'Configure the script path in config.json'"
                 },
                 {
-                    "label": "🔼",
+                    "label": "󰌌",
                     "command": "notify-send 'Placeholder Button' 'Configure the script path in config.json'"
                 },
                 {

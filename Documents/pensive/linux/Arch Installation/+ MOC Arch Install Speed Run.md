@@ -1,4 +1,4 @@
-*wifi connection*
+### 1. *WiFi Connection*
 ```bash
 iwctl
 ```
@@ -25,7 +25,7 @@ ping -c 2 x.com
 
 ---
 
-*SSH*
+### 2. *SSH*
 ```bash
 passwd
 ```
@@ -44,7 +44,7 @@ ssh-keygen -R 192.168.xx
 
 ---
 
-*Setting a bigger Font*
+### 3. *Setting a bigger Font*
 ```bash
 setfont latarcyrheb-sun32
 ```
@@ -52,7 +52,7 @@ setfont latarcyrheb-sun32
 
 ---
 
-*Limiting Battery Charge to 60%*
+### 4. *Limiting Battery Charge to 60%*
 ```bash
 echo 60 | sudo tee /sys/class/power_supply/BAT1/charge_control_end_threshold
 ```
@@ -60,7 +60,7 @@ echo 60 | sudo tee /sys/class/power_supply/BAT1/charge_control_end_threshold
 
 ---
 
-*pacman packages corruption detection*
+### 5. *Pacman Packages Corruption Detection*
 ```bash
 pacman-key --init
 ```
@@ -71,7 +71,7 @@ pacman-key --populate archlinux
 
 ---
 
-*System Timezone*
+### 6. *System Timezone*
 ```bash
 timedatectl set-timezone Asia/Kolkata
 ```
@@ -82,7 +82,7 @@ timedatectl set-ntp true
 
 ---
 
-*Identifying Target Drive*
+### 7. *Identifying Target Drive*
 ```bash
 lsblk
 ```
@@ -94,7 +94,7 @@ cfdisk /dev/sdX
 
 ---
 
-*Identifying Target Drive's Partitions*
+### 8. *Identifying Target Drive's Partitions*
 ```bash
 lsblk /dev/sdX
 ```
@@ -112,7 +112,7 @@ mkfs.btrfs -f /dev/root_partition
 
 ---
 
-*Mounting Root Partition*
+### 9. *Mounting Root Partition*
 ```bash
 mount /dev/root_partition /mnt
 ```
@@ -120,7 +120,7 @@ mount /dev/root_partition /mnt
 
 ---
 
-**ROOT Partition** *Sub-Volume Creation*
+### 10. **ROOT Partition** *Sub-Volume Creation*
 ```bash
 btrfs subvolume create /mnt/@
 ```
@@ -138,7 +138,7 @@ umount -R /mnt
 
 ---
 
-*Mounting Root Partition's*  **ROOT Sub-Volume** 
+### 11. *Mounting Root Partition's*  **ROOT Sub-Volume** 
 ```bash
 mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@ /dev/root_partition /mnt
 ```
@@ -146,7 +146,7 @@ mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@ /d
 
 ---
 
-*Creating Directories to mount Home Sub-Vol & Boot/ESP Partition*
+### 12. *Creating Directories to mount Home Sub-Vol & Boot/ESP Partition*
 ```bash
 mkdir /mnt/home
 ```
@@ -160,7 +160,7 @@ ls /mnt
 
 ---
 
-Again mounting the *Root Partition* but this time it's **HOME Sub-Volume** 
+### 13. Again mounting the *Root Partition* but this time it's **HOME Sub-Volume** 
 ```bash
 mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@home /dev/root_partition /mnt/home
 ```
@@ -168,7 +168,7 @@ mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@hom
 
 ---
 
-*Mounting the BOOT/ESP Partition*
+### 14. *Mounting the BOOT/ESP Partition*
 ```bash
 mount /dev/esp_partition /mnt/boot
 ```
@@ -176,7 +176,7 @@ mount /dev/esp_partition /mnt/boot
 
 ---
 
-*Syncing Mirrors for faster Download Speeds*
+### 15. *Syncing Mirrors for faster Download Speeds*
 ```bash
 reflector --country India --age 24 --sort rate --save /etc/pacman.d/mirrorlist
 ```
@@ -187,7 +187,7 @@ vim /etc/pacman.d/mirrorlist
 
 ---
 
-*Installing Linux*
+### 16. *Installing Linux*
 ```bash
 pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nvim
 ```
@@ -195,7 +195,7 @@ pacstrap /mnt base base-devel linux-zen linux-zen-headers linux-firmware nvim
 
 ---
 
-*fstab file generation*
+### 17. *Fstab File Generation*
 ```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -206,7 +206,7 @@ cat /mnt/etc/fstab
 
 ---
 
-*Chrooting*
+### 18. *Chrooting*
 ```bash
 arch-chroot /mnt
 ```
@@ -214,7 +214,7 @@ arch-chroot /mnt
 
 ---
 
-*Setting System Time*
+### 19. *Setting System Time*
 ```bash
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 ```
@@ -225,7 +225,7 @@ hwclock --systohc
 
 ---
 
-*Setting System Language*
+### 20. *Setting System Language*
 ```bash
 nvim /etc/locale.gen
 ```
@@ -235,7 +235,7 @@ nvim /etc/locale.gen
 
 ---
 
-*Part of Setting System Language*
+### 21. *Part of Setting System Language*
 ```bash
 locale-gen
 ```
@@ -246,7 +246,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 ---
 
-*Setting Hostname*
+### 22. *Setting Hostname*
 ```bash
 echo "your-hostname" > /etc/hostname
 ```
@@ -254,7 +254,7 @@ echo "your-hostname" > /etc/hostname
 
 ---
 
-*Setting Root Password*
+### 23. *Setting Root Password*
 ```bash
 passwd
 ```
@@ -262,7 +262,7 @@ passwd
 
 ---
 
-*Creating User Account* (replace with your username)
+### 24. *Creating User Account* (replace with your username)
 ```bash
 useradd -m -G wheel,input,audio,video,storage,optical,network,lp,power,games,rfkill your_username
 ```
@@ -274,7 +274,7 @@ passwd your_username
 
 ---
 
-*Allowing Wheel Group to have root rights.*
+### 25. *Allowing Wheel Group to have root rights.*
 ```bash
 EDITOR=nvim visudo
 ```
@@ -284,13 +284,13 @@ EDITOR=nvim visudo
 
 ---
 
-*Installing Apps*
+### 26. *Installing Apps*
 [[Package Installation]]
 - [ ] Status
 
 ---
 
-*Configuring Initiramfs config*
+### 27. *Configuring Initiramfs config*
 ```bash
 nvim /etc/mkinitcpio.conf
 ```
@@ -301,7 +301,7 @@ nvim /etc/mkinitcpio.conf
 
 ---
 
-*Generating Initramfs*
+### 28. *Generating Initramfs*
 ```bash
 mkinitcpio -P
 ```
@@ -309,7 +309,7 @@ mkinitcpio -P
 
 ---
 
-*Grub Packages*
+### 29. *Grub Packages*
 ```bash
 pacman -S grub efibootmgr grub-btrfs os-prober
 ```
@@ -317,7 +317,7 @@ pacman -S grub efibootmgr grub-btrfs os-prober
 
 ---
 
-*Configuring Grub Config*
+### 30. *Configuring Grub Config*
 ```bash
 nvim /etc/default/grub
 ```
@@ -331,7 +331,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7 zswap.enabled=0 pcie_aspm=force"
 
 ---
 
-*Installing Grub to the BOOT/ESP Partition. *
+### 31. *Installing Grub to the BOOT/ESP Partition. *
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --recheck
 ```
@@ -339,7 +339,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --re
 
 ---
 
-*Generating Grub File for Boot*
+### 32. *Generating Grub File for Boot*
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -347,7 +347,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ---
 
-*Zram as Block device and Swap device (ZSTD compression)*
+### 33. *Zram as Block device and Swap device (ZSTD compression)*
 ```bash
 mkdir /mnt/zram1
 ```
@@ -372,7 +372,7 @@ options = rw,nosuid,nodev,discard,X-mount.mode=1777
 
 ---
 
-*Optimizing System Swap Values for Zram SWAP*
+### 34. *Optimizing System Swap Values for Zram SWAP*
 ```bash
 sudo nvim /etc/sysctl.d/99-vm-zram-parameters.conf
 ```
@@ -387,7 +387,7 @@ vm.page-cluster = 0
 
 ---
 
-*System Services*
+### 35. *System Services*
 ```bash
 systemctl enable NetworkManager.service tlp.service udisks2.service thermald.service bluetooth.service firewalld.service fstrim.timer systemd-timesyncd.service acpid.service vsftpd.service
 ```
@@ -406,7 +406,7 @@ sudo systemctl mask systemd-rfkill.socket
 
 ---
 
-*Concluding*
+### 36. *Concluding*
 ```bash
 exit
 ```

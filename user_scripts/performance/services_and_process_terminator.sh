@@ -24,10 +24,12 @@ DEFAULT_PROCESSES=(
     "firewalld"
     "waybar"
     "wallpaper_updat"
+    "swaync"
 )
 # Optional processes to show in the checklist (but OFF by default).
 OPTIONAL_PROCESSES=(
     "blueman-manager"
+    "hyprsunset"
 )
 
 
@@ -50,7 +52,7 @@ DEFAULT_SYSTEM_SERVICES=(
 # Optional system services.
 OPTIONAL_SYSTEM_SERVICES=(
     "waydroid-container"
-    "Network-Manager"
+    "NetworkManager"
     "warp-svc"
     "wpa_supplicant"
     "bluetooth"
@@ -69,9 +71,7 @@ OPTIONAL_SYSTEM_SERVICES=(
 # --- User Services ---
 # User services to be STOPPED BY DEFAULT.
 DEFAULT_USER_SERVICES=(
-    "hyprsunset"
     "xdg-user-dirs-update"
-    "swaync"
     "gnome-keyring-daemon"
     "hyprpolkitagent"
     "app-blueman@autostart"

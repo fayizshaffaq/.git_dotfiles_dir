@@ -204,7 +204,7 @@ baobab
 
 ### Software RAID
 
-For massive I/O improvements and data redundancy, consider combining multiple disks into a **Software RAID** array. This is an advanced topic that can significantly boost performance. See [[Software RAID]] for a detailed guide.
+For massive I/O improvements and data redundancy, consider combining multiple disks into a **Software RAID** array. This is an advanced topic that can significantly boost performance. 
 
 ---
 

@@ -21,12 +21,15 @@
 # Run with --auto, these are the processes that will be killed.
 DEFAULT_PROCESSES=(
     "swww-daemon"
+    "firewalld"
     "waybar"
+    "wallpaper_updat"
+    "swaync"
 )
 # Optional processes to show in the checklist (but OFF by default).
 OPTIONAL_PROCESSES=(
-    "swaync"
     "blueman-manager"
+    "hyprsunset"
 )
 
 
@@ -35,10 +38,31 @@ OPTIONAL_PROCESSES=(
 # System services to be STOPPED BY DEFAULT.
 DEFAULT_SYSTEM_SERVICES=(
     "vsftpd"
+    "firewalld"
+    "systemd-timesyncd"
+    "systemd-journald"
+    "logrotate.timer"
+    "shadow.timer"
+    "systemd-tmpfiles-clean.timer"
+    "archlinux-keyring-wkd-sync.timer"
+    "systemd-coredump.socket"
+    "systemd-hostnamed.socket"
+    "sshd"
 )
 # Optional system services.
 OPTIONAL_SYSTEM_SERVICES=(
     "waydroid-container"
+    "NetworkManager"
+    "warp-svc"
+    "wpa_supplicant"
+    "bluetooth"
+    "polkit"
+    "upower"
+    "udisks2"
+    "rtkit-daemon"
+    "systemd-udevd"
+    "systemd-importd.socket"
+
 )
 
 
@@ -47,15 +71,24 @@ OPTIONAL_SYSTEM_SERVICES=(
 # --- User Services ---
 # User services to be STOPPED BY DEFAULT.
 DEFAULT_USER_SERVICES=(
-    "pipewire"
+    "xdg-user-dirs-update"
+    "gnome-keyring-daemon"
+    "hyprpolkitagent"
+    "app-blueman@autostart"
+    "at-spi-dbus-bus"
 )
 # Optional user services.
 OPTIONAL_USER_SERVICES=(
-    "hyprsunset"
     "pipewire-pulse.socket"
     "pipewire.socket"
     "pipewire-pulse"
     "pipewire"
+    "wireplumber"
+    "p11-kit-server"
+    "gvfs-daemon.service"
+    "gnome-keyring-daemon"
+    "gnome-keyring-daemon"
+
 )
 
 

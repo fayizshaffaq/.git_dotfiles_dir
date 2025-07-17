@@ -20,6 +20,8 @@
 # Processes to be STOPPED BY DEFAULT. They will be pre-selected in the menu.
 # Run with --auto, these are the processes that will be killed.
 DEFAULT_PROCESSES=(
+    "blueman-manager"
+    "hyprsunset"
     "swww-daemon"
     "firewalld"
     "waybar"
@@ -28,8 +30,6 @@ DEFAULT_PROCESSES=(
 )
 # Optional processes to show in the checklist (but OFF by default).
 OPTIONAL_PROCESSES=(
-    "blueman-manager"
-    "hyprsunset"
 )
 
 
@@ -37,10 +37,10 @@ OPTIONAL_PROCESSES=(
 # --- System Services (requires sudo) ---
 # System services to be STOPPED BY DEFAULT.
 DEFAULT_SYSTEM_SERVICES=(
+    "systemd-udevd"
     "vsftpd"
     "firewalld"
     "systemd-timesyncd"
-    "systemd-journald"
     "logrotate.timer"
     "shadow.timer"
     "systemd-tmpfiles-clean.timer"
@@ -48,9 +48,6 @@ DEFAULT_SYSTEM_SERVICES=(
     "systemd-coredump.socket"
     "systemd-hostnamed.socket"
     "sshd"
-)
-# Optional system services.
-OPTIONAL_SYSTEM_SERVICES=(
     "waydroid-container"
     "NetworkManager"
     "warp-svc"
@@ -60,8 +57,10 @@ OPTIONAL_SYSTEM_SERVICES=(
     "upower"
     "udisks2"
     "rtkit-daemon"
-    "systemd-udevd"
     "systemd-importd.socket"
+)
+# Optional system services.
+OPTIONAL_SYSTEM_SERVICES=(
 
 )
 
@@ -71,14 +70,6 @@ OPTIONAL_SYSTEM_SERVICES=(
 # --- User Services ---
 # User services to be STOPPED BY DEFAULT.
 DEFAULT_USER_SERVICES=(
-    "xdg-user-dirs-update"
-    "gnome-keyring-daemon"
-    "hyprpolkitagent"
-    "app-blueman@autostart"
-    "at-spi-dbus-bus"
-)
-# Optional user services.
-OPTIONAL_USER_SERVICES=(
     "pipewire-pulse.socket"
     "pipewire.socket"
     "pipewire-pulse"
@@ -88,6 +79,14 @@ OPTIONAL_USER_SERVICES=(
     "gvfs-daemon.service"
     "gnome-keyring-daemon"
     "gnome-keyring-daemon"
+    "xdg-user-dirs-update"
+    "gnome-keyring-daemon"
+    "hyprpolkitagent"
+    "app-blueman@autostart"
+    "at-spi-dbus-bus"
+)
+# Optional user services.
+OPTIONAL_USER_SERVICES=(
 
 )
 

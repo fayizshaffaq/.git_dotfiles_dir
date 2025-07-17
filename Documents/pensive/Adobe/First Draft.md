@@ -1,3 +1,4 @@
+[[Title of the Video]]
 1. waydroid as regular apps, native performance. 
 2. doesn't try to be everything all at once, the diffrence is, installtion size of around 4 Gigs. as opposed to windows that takes up 60 Gb on a fresh install. 
 3. zram swap and as block storage. 

@@ -172,7 +172,7 @@ This section covers the visual setup of your desktop, from dynamic colors to fon
 
 - [ ] **Generate Initial Theme:** Run `wal` with your desired wallpaper to create the first color palette. Eg: command
     ```bash
-    wal -i Pictures/wallpapers/nature-3082832_1920.jpg 
+    wal -i Pictures/wallpapers/GR3bOIjWMAAFSCZ.jpg
     ```
 
 - [ ] **Configure Kitty Theme:** Edit `kitty.conf` to source its colors directly from `pywal`'s cache. [[General Theming]]

@@ -226,5 +226,29 @@
       ],
       "key": "Z"
     }
+  ],
+  "obsidian-focus-mode:toggle-focus-mode": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": ","
+    }
+  ],
+  "obsidian-focus-mode:toggle-super-focus-mode": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "."
+    }
+  ],
+  "full-screen-cross-platform:toggle-full-screen": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": "1"
+    }
   ]
 }

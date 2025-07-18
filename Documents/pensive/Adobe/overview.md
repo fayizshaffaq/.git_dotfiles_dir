@@ -1,22 +1,23 @@
 1. waydroid as regular apps, native performance. 
 2. doesn't try to be everything all at once, the diffrence is, installtion size of around 4 Gigs. as opposed to windows that takes up 60 Gb on a fresh install. 
 3. zram swap and as block storage. 
-4. startup times improved. 
-5. power consumtpion lowered. /lower heat longitivity 
-6. no antivirus needed
-7. free alternatives libre office and gimp. 
-8. os is a bootloader for the browser, and the browsing experience is teh same 
-9. windwos passthrough 
-10. no key logging 
-11. no taking a screenshot of your pc with recall every 5 second. increases storage space, disk writtes. power consumption and ram consumtion and it's because of things like this that your ram usage is over 5 gigs on a fresh install without any of your apps added at all. 
-12. Since everything is done on computers these days, people spend a lot of time on their computers. And having an environment that is made by you, for you, is a better overall experience because you're much more connected to everything that's on your computer as opposed to things just being there and never being used and sometimes even being used for malicious purposes.
-13. microsoft doesn't even run windows on there servers they run linux, 
-14. becuase you can have linux running for years without any problem, and you can even update it withotu needing to restart which is  alot more than windows can say for itself. 
-15. apps run so smooth. 
-16. Gaming is improving at expinanctial speed, espeically with proton, thanks to steam. 
-17. While there's a somewhat of an argument for people using Windows to not switch to Linux because they use because they play one of the few games that is currently unavailable on Linux there is absolutely no reason for Mac users to not switch because almost 90% or 95% of the things available on the Mac are available on Linux because at the very core they're both Unix based systems.
-18. Microsoft themselves run linux on there servers 
-19. ublock origin. 
+4. different font hyprlegible. 
+5. startup times improved. 
+6. power consumtpion lowered. /lower heat longitivity 
+7. no antivirus needed
+8. free alternatives libre office and gimp. 
+9. os is a bootloader for the browser, and the browsing experience is teh same 
+10. windwos passthrough 
+11. no key logging 
+12. no taking a screenshot of your pc with recall every 5 second. increases storage space, disk writtes. power consumption and ram consumtion and it's because of things like this that your ram usage is over 5 gigs on a fresh install without any of your apps added at all. 
+13. Since everything is done on computers these days, people spend a lot of time on their computers. And having an environment that is made by you, for you, is a better overall experience because you're much more connected to everything that's on your computer as opposed to things just being there and never being used and sometimes even being used for malicious purposes.
+14. microsoft doesn't even run windows on there servers they run linux, 
+15. becuase you can have linux running for years without any problem, and you can even update it withotu needing to restart which is  alot more than windows can say for itself. 
+16. apps run so smooth. 
+17. Gaming is improving at expinanctial speed, espeically with proton, thanks to steam. 
+18. While there's a somewhat of an argument for people using Windows to not switch to Linux because they use because they play one of the few games that is currently unavailable on Linux there is absolutely no reason for Mac users to not switch because almost 90% or 95% of the things available on the Mac are available on Linux because at the very core they're both Unix based systems.
+19. Microsoft themselves run linux on there servers 
+20. ublock origin. 
 
 
 

@@ -15,7 +15,7 @@ First, we'll install Zsh along with a curated set of tools that dramatically imp
 Install them all with a single `pacman` command:
 
 ```bash
-sudo pacman -S --needed zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship
+sudo pacman -S --needed zsh zsh-syntax-highlighting fzf starship
 ```
 
 ---

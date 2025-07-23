@@ -36,7 +36,7 @@ To securely communicate with GitHub without passwords, you must set up SSH keys.
 Download your dotfiles' version history from GitHub into a hidden "bare" repository in your home directory.
 
 ```bash
-git clone --bare git@github.com:fayizshaffaq/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
+git clone --bare git@github.com:dusklinux/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
 ```
 
 ### 5. ⚙️ Configure Repository Status

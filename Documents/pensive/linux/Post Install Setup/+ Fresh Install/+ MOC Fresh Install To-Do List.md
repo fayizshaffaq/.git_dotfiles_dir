@@ -52,7 +52,7 @@ chsh -s $(which zsh)
 > [!IMPORTANT]-
 > For the change to take full effect, you must **log out and log back in**. Simply opening a new terminal window is not enough.
 
-- [ ] **Reboot** :reboot
+- [ ] **Reboot** :
 
 ```bash
 systemctl reboot

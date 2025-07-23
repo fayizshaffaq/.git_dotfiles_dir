@@ -5,7 +5,10 @@ This guide provides a comprehensive, step-by-step process for installing and con
 
 ---
 
+> [!important]+ FTP server wont announce itself, enter your credentials/ ip manually and it should connect.
+
 ### Setup Process Overview
+
 
 Here is a summary of the setup process. Each step links to a note with detailed instructions.
 

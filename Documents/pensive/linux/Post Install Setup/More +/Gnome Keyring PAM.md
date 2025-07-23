@@ -21,7 +21,7 @@ First, you need to install the core components. `gnome-keyring` is the backgroun
 Execute the following command to install the necessary packages:
 
 ```bash
-sudo pacman -S gnome-keyring libsecret seahorse
+sudo pacman -S --needed gnome-keyring libsecret
 ```
 
 ---
@@ -34,9 +34,10 @@ This is the most critical step. By editing the PAM configuration for `login`, yo
 > Be extremely careful when editing files in `/etc/pam.d/`. An incorrect configuration can lock you out of your system, requiring a live USB to fix. Double-check every character before saving.
 
 1.  Open the PAM login configuration file using a text editor with root privileges:
-    ```bash
-    sudo nvim /etc/pam.d/login
-    ```
+
+```bash
+sudo nvim /etc/pam.d/login
+```
 
 2.  Add the following lines to the file. A good practice is to place them at the end of their respective sections (`auth`, `session`, `password`).
 

@@ -5,15 +5,17 @@ iwctl
 ```bash
 device list
 ```
-*Replace wlo1 with your device name from above eg: wlan1*
+
+- *Replace wlan0 with your device name from above eg: wlan1* or what ever your deivce is called
+
 ```bash
-station wlo1 scan
+station wlan0 scan
 ```
 ```bash
-station wlo1 get-networks
+station wlan0 get-networks
 ```
 ```bash
-station wlo1 connect "Near"
+station wlan0 connect "Near"
 ```
 ```bash
 exit
@@ -52,7 +54,7 @@ setfont latarcyrheb-sun32
 
 ---
 
-### 4. *Limiting Battery Charge to 60%*
+### 4. *Optional* : *Limiting Battery Charge to 60%*
 ```bash
 echo 60 | sudo tee /sys/class/power_supply/BAT1/charge_control_end_threshold
 ```
@@ -122,11 +124,9 @@ mount /dev/root_partition /mnt
 
 ### 10. **ROOT Partition** *Sub-Volume Creation*
 ```bash
-btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/{@,@home}
 ```
-```bash
-btrfs subvolume create /mnt/@home
-```
+
 ```bash
 ls /mnt
 ```
@@ -148,11 +148,9 @@ mount -o rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=@ /d
 
 ### 12. *Creating Directories to mount Home Sub-Vol & Boot/ESP Partition*
 ```bash
-mkdir /mnt/home
+mkdir /mnt/{home,boot}
 ```
-```bash
-mkdir /mnt/boot
-```
+
 ```bash
 ls /mnt
 ```

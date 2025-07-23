@@ -30,7 +30,7 @@ Already done.
 [[Setting system wide fonts]]
 
 
- ## **Copy the Pre Configured Configuration file to the direcotry**
+ ## **Copy the Pre Configured Configuration file to the directory**
     Copy the local.conf file to the fonts directory in etc. 
 
 ```bash

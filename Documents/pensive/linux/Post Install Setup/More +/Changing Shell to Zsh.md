@@ -9,14 +9,13 @@ Zsh (the Z shell) is a powerful and highly customizable alternative to the defau
 First, we'll install Zsh along with a curated set of tools that dramatically improve the command-line experience.
 
 *   **`zsh-syntax-highlighting`**: Provides real-time highlighting for commands you type.
-*   **`zsh-autosuggestions`**: Suggests commands as you type based on your history.
 *   **`fzf`**: A lightning-fast fuzzy finder for files and command history.
 *   **`starship`**: A minimal, fast, and infinitely customizable prompt for any shell.
 
 Install them all with a single `pacman` command:
 
 ```bash
-sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship
+sudo pacman -S --needed zsh zsh-syntax-highlighting zsh-autosuggestions fzf starship
 ```
 
 ---
@@ -55,9 +54,6 @@ Your Zsh configuration lives in the `~/.zshrc` file. Create it if it doesn't exi
 # Note: This path is for the Arch Linux package.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Enable autosuggestions
-# Note: This path is for the Arch Linux package.
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Initialize Starship prompt
 eval "$(starship init zsh)"

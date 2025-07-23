@@ -13,21 +13,24 @@ This guide provides instructions for installing two of the most popular AUR help
 `paru` is a feature-rich AUR helper with a focus on a minimal and interactive user experience.
 
 1.  **Clone the Build Files**
-    Download the source files from the AUR using `git`.
-    ```bash
-    git clone https://aur.archlinux.org/paru.git
-    ```
+- Download the source files from the AUR using `git`.
+
+```bash
+git clone https://aur.archlinux.org/paru.git
+```
 
 2.  **Navigate into the Directory**
-    ```bash
-    cd paru
-    ```
+
+```bash
+cd paru
+```
 
 3.  **Build and Install the Package**
-    This command compiles the source, installs dependencies, and installs the package.
-    ```bash
-    makepkg -si
-    ```
+- This command compiles the source, installs dependencies, and installs the package.
+
+```bash
+makepkg -si
+```
 
 ---
 
@@ -36,21 +39,24 @@ This guide provides instructions for installing two of the most popular AUR help
 `yay` is another popular and robust AUR helper, known for its advanced dependency solving and minimal user input.
 
 1.  **Clone the Build Files**
-    Download the source files from the AUR using `git`.
-    ```bash
-    git clone https://aur.archlinux.org/yay.git
-    ```
+Download the source files from the AUR using `git`.
+
+```bash
+git clone https://aur.archlinux.org/yay.git
+```
 
 2.  **Navigate into the Directory**
-    ```bash
-    cd yay
-    ```
+
+```bash
+cd yay
+```
 
 3.  **Build and Install the Package**
-    This command compiles the source, installs dependencies, and installs the package.
-    ```bash
-    makepkg -si
-    ```
+- This command compiles the source, installs dependencies, and installs the package.
+
+```bash
+makepkg -si
+```
 
 > [!TIP] Understanding `makepkg -si`
 > The flags used with `makepkg` are common and useful to know:

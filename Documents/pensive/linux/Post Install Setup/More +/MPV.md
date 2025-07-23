@@ -32,28 +32,28 @@ sudo pacman -S --needed mpv libva-utils
 Next, create a configuration file to tell MPV to use hardware decoding by default.
 
 1.  Create the directory if it doesn't exist:
-    ```bash
-    mkdir -p ~/.config/mpv/
-    ```
+
+```bash
+mkdir -p ~/.config/mpv/
+```
+
 2.  Open the configuration file in a text editor:
-    ```bash
-    nvim ~/.config/mpv/mpv.conf
-    ```
+
+```bash
+nvim ~/.config/mpv/mpv.conf
+```
+
 3.  Add the following content to the file:
 
-    ```ini
-    # ~/.config/mpv/mpv.conf
-    
-    # Specify the hardware decoding API. 'vaapi' is the native Linux API.
-    hwdec=vaapi
-    
-    # Set the video output driver. 'gpu' is modern and required for hwdec.
-    vo=gpu
-    
-    # CRITICAL: Specify the GPU context for Wayland.
-    # This ensures seamless integration with Hyprland.
-    gpu-context=wayland
-    ```
+```ini
+# enable VA‑API hardware decode for AV1
+hwdec=vaapi
+hwdec-codecs=av1
+
+# video output opts for Wayland; use gpu-context=x11 if on Xorg
+vo=gpu
+gpu-context=wayland
+```
 
 > [!NOTE] Configuration Explained
 > - **`hwdec=vaapi`**: Enables the Video Acceleration API (VA-API), the standard for hardware acceleration on Linux.
@@ -79,13 +79,16 @@ sudo pacman -S --needed mpv-mpris
 MPV automatically loads scripts from the `~/.config/mpv/scripts/` directory. We will create a symbolic link to the installed plugin file in this directory.
 
 1.  Create the `scripts` directory:
-    ```bash
-    mkdir -p ~/.config/mpv/scripts
-    ```
+
+```bash
+mkdir -p ~/.config/mpv/scripts
+```
+
 2.  Create the symbolic link:
-    ```bash
-    ln -s /usr/lib/mpv/scripts/mpris.so ~/.config/mpv/scripts/
-    ```
+
+```bash
+ln -s /usr/lib/mpv/scripts/mpris.so ~/.config/mpv/scripts/
+```
 
 > [!TIP] Why Use a Symbolic Link?
 > By creating a symbolic link (`ln -s`) instead of copying the file, the script will be automatically updated whenever the `mpv-mpris` package is upgraded through `pacman`. This ensures you always have the latest version without manual intervention.

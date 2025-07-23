@@ -22,9 +22,16 @@ rm -rf $HOME/.git_dotfiles_dir
 ### 2. 🆔 Set Global Git Identity
 
 Before doing anything else, configure your Git identity on the new machine. This is a one-time setup.
+
 *   [[Prerequisites Global Git Configuration]]
 
-### 3. 📥 Clone the Bare Repository
+### 3. 🔐 Configure SSH Authentication
+
+To securely communicate with GitHub without passwords, you must set up SSH keys.
+
+*   [[Configure SSH Authentication]]
+
+### 4. 📥 Clone the Bare Repository
 
 Download your dotfiles' version history from GitHub into a hidden "bare" repository in your home directory.
 
@@ -32,14 +39,16 @@ Download your dotfiles' version history from GitHub into a hidden "bare" reposit
 git clone --bare git@github.com:fayizshaffaq/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
 ```
 
-### 4. ⚙️ Configure Repository Status
+### 5. ⚙️ Configure Repository Status
 
 Tweak the local repository to hide untracked files. This keeps your status output clean and focused only on the files you explicitly manage.
 *   [[Configure Repository Status]]
 
-### 5. 📝 Track Files and Verify Status
+### 6. 📝 Track Files and Verify Status
 
 Use your custom alias to add all tracked files from your list and then check the status to ensure everything is correct.
+
+> [!IMPORTANT]+ Very Important to follow these steps sequentially. 
 
 this will show a bunch of deleted files but that's okay. 
 ```bash
@@ -62,11 +71,6 @@ Make your first commit but **DONT** push yet.
 ```bash
 git_dotfiles commit -m "fresh install first commit to the same old git repo"
 ```
-
-### 6. 🔐 Configure SSH Authentication
-
-To securely communicate with GitHub without passwords, you must set up SSH keys.
-*   [[Configure SSH Authentication]]
 
 ### 7. 🤝 Link Local and Remote Repositories
 

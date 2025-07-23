@@ -30,7 +30,7 @@ export BROWSER='firefox'
 # Instructs OpenMP-aware applications to use a number of threads matching
 # the CPU's hardware thread count (e.g., Intel i7-12700H has 20 threads).
 # This does NOT affect shell performance itself.
-export OMP_NUM_THREADS=20
+export OMP_NUM_THREADS=$(nproc)
 
 # --- Pyenv (Python Version Management) ---
 # Initializes pyenv to manage multiple Python versions.
@@ -162,7 +162,7 @@ sort_size() {
 }
 
 # for unlocking drive with the scripts with just drive <name of the drive> eg drive fast or drive media or drive browser
-drive() {
+unlock () {
     ~/user_scripts/unlock_drive/unlock_$1.sh
 }
 

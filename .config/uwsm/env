@@ -22,7 +22,7 @@ export LANG=en_US.UTF-8
 # and multimedia) to utilize a number of threads that matches your CPU's total
 # thread count. Your Intel Core i7-12700H has 8 P-cores (16 threads) and 4 E-cores,
 # totaling 20 threads. This can significantly improve performance in parallel workloads.
-export OMP_NUM_THREADS=20
+export OMP_NUM_THREADS=$(nproc)
 
 #--------------------------------------------------------------------------------
 # 2. GUI Toolkit Configuration (Qt & GTK)
@@ -119,6 +119,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # For your 12th Gen Intel CPU, `iHD` is the correct modern driver.
 # Using the iGPU for video decoding is typically more power-efficient.
 export LIBVA_DRIVER_NAME=iHD
+
+
+#-------------------------NVIDIA-------------------------------
+#COMMENT OUT ANY SET ENVIRONMENT VARIABLE IF YOU DONT HAVE NVIDIA
+#--------------------------------------------------------------
 
 # The following line is for using the nvidia-vaapi-driver. It directly CONFLICTS
 # with the Intel driver above. Do not uncomment both. Only use this if you

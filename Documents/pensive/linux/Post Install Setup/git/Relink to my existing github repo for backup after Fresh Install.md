@@ -39,6 +39,9 @@ Download your dotfiles' version history from GitHub into a hidden "bare" reposit
 git clone --bare git@github.com:dusklinux/.git_dotfiles_dir.git $HOME/.git_dotfiles_dir
 ```
 
+this usually works 
+`Are you sure you want to continue connecting (yes/no/[fingerprint])? yes`
+
 ### 5. ⚙️ Configure Repository Status
 
 Tweak the local repository to hide untracked files. This keeps your status output clean and focused only on the files you explicitly manage.

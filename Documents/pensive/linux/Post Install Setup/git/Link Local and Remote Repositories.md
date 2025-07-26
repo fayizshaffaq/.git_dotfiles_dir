@@ -1,12 +1,14 @@
 ### Step 9: Link Local and Remote Repositories
 
-1.  **Get the SSH URL** from your new, empty GitHub repository page. It should look like `git@github.com:username/repo.git`.
+1.  **Get the SSH URL** from your new empty GitHub repository page or existing initialized repo. It should look like `git@github.com:username/repo.git`.
 
 2.  **Add the remote** to your local repository's configuration.
 
 ```bash
 git_dotfiles remote add origin git@github.com:dusklinux/.git_dotfiles_dir.git
 ```
+
+Might get an error saying `error: remote origin already exists.` and that's okay. continue on with the rest. 
 
 3.  **Set the URL.**
 

@@ -6,7 +6,7 @@ source /opt/miniconda3/etc/profile.d/conda.sh
 
 	make yourself the group owner of the installation path of conda to allow you to update it and all the rest
 
-sudo chown -R fayiz:fayiz /opt/miniconda3
+sudo chown -R dusk:dusk/opt/miniconda3
 
 
 	to fix the openssl 3.0 legacy provider entry point error, can be added to the bash config file for peristance.

@@ -135,7 +135,7 @@ rm -rf ~/.mozilla
 rm -rf ~/.cache/mozilla
 
 	symbolic link for firefox
-sudo ln -s /run/media/fayiz/firefox/.mozilla /home/fayiz/.mozilla
+sudo ln -s /run/media/dusk/firefox/.mozilla /home/dusk/.mozilla
 
 
 	to truly dublicate and create a backup of a folder recurseivly 
@@ -198,7 +198,7 @@ sudo find . -name *.txt
 	to exclude a folder/file with a certain name, using grep and the -v option
 sudo find /home -name picture.png | grep -v xyz
 	to search for a file in a directory/subdirectories and recursivly (change the permission) or (delete found files) all with one command with -exec (exicute command) and the plus at the end means to stop the command.
-sudo find /home/fayiz -name 2024 -type f -exec chmod 600 +
+sudo find /home/dusk -name 2024 -type f -exec chmod 600 +
 
 CPU
 	download and install intel-undervolt for checking ive power consumption

@@ -453,7 +453,7 @@ xrandr --newmode "1920x1080_47.00"  132.00  1920 2024 2224 2528  1080 1083 1088 
 xrandr --addmode eDP-1 "1920x1080_47.00"
 xrandr --output eDP-1 --mode "1920x1080_47.00"
     
-        Save it as set_refresh_rate.sh in your home directory (e.g., /home/fayiz/set_refresh_rate.sh)
+        Save it as set_refresh_rate.sh in your home directory (e.g., /home/dusk/set_refresh_rate.sh)
 
         make it exicutable by 
         chmod +x ~/set_refresh_rate.sh

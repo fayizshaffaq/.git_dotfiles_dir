@@ -24,6 +24,11 @@ Regenerate grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+could reboot now if you want
+
+```bash
+systemctl reboot
+```
 
 ### Now create and add options to the initramfs file conf file to start the vfio early 
 

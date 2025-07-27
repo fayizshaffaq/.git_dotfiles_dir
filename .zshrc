@@ -166,6 +166,10 @@ unlock () {
     ~/user_scripts/unlock_drive/unlock_$1.sh
 }
 
+# for locking drive with the scripts with just drive <name of the drive> eg drive fast or drive media or drive browser
+lock () {
+    ~/user_scripts/lock_drive/lock_$1.sh
+}
 # List installed Arch packages, sorted by installation date.
 list_installed() {
   awk 'NR==FNR { if (/\[ALPM\] installed/) { ts = $1; gsub(/^\[|\]$/, "", ts); pkg = $4; if (!(pkg in fit)) fit[pkg] = ts; } next; } { if ($0 in fit) print fit[$0], $0; }' /var/log/pacman.log <(pacman -Qq) | sort -k1,1 | awk '{print $2}'

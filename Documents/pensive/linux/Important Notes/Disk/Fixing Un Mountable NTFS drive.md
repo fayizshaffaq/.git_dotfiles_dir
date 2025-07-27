@@ -23,6 +23,15 @@
 > /dev/mapper/nvidia_eahaabcc1). Please see the 'dmraid' documentation
 > for more details.
 > ```
+
+> [!note]- Error Message from sudo dmesg
+> ```bash
+> [  161.201183] ntfs3: Enabled Linux POSIX ACLs support
+> [  161.201187] ntfs3: Read-only LZX/Xpress compression included
+> [  161.201840] ntfs3(dm-0): It is recommened to use chkdsk.
+> [  161.279629] ntfs3(dm-0): volume is dirty and "force" flag is not set!
+> ```
+> 
 #### Why this Happnes
 
 Usually happens because the drive cut power to abruptly during activity which results in file corruption. 
@@ -54,6 +63,11 @@ sudo ntfsfix /dev/mapper/bitlk-xxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 This might attempt to correct errors by "Processing $MFT and $MFTMirr" as seen in similar cases.  However, be aware that for BitLocker-encrypted drives, ntfsfix often cannot fully resolve this type of corruption.
+
+then run this to clear all bad blocks (if this doesn't fix the drive right away, reboot> unlock drive> and then run this command again)
+```bash
+sudo ntfsfix --clear-dirty /dev/mapper/bitlk-xxxxxxxxxxxxxxxxxxxxxx
+```
 
 > [!note]- Alternative Linux Method, But Not verified to Work
 > 

@@ -68,7 +68,7 @@ sudo blkid
 ###### `/dev/mapper/bitlk-dcc9ed43-feec-44c3-b81e-2b493d799778`
 
 and then try to fix it with: 
-
+eg:
 `sudo ntfsfix /dev/mapper/bitlk-dcc9ed43-feec-44c3-b81e-2b493d799778`
 
 ```bash

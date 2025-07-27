@@ -42,9 +42,3 @@ Boot files successfully created.
 This message confirms that the EFI partition on drive `S:` now contains a valid, functional Windows bootloader. Your system now knows how to find and start Windows.
 
 You are now ready to proceed to the [[Post-Procedure Steps]].
-
-#### Sources:
-
-- [[Boot File Reconstruction]]
-- [[+ MOC Fixing Windows Boot Menu]]
-- [[EFI partition synthesis]]

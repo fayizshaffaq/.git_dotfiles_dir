@@ -99,13 +99,14 @@ The following packages offer modern alternatives to standard command-line tools.
 
 A selection of useful graphical and terminal-based applications.
 
-| Category | Packages |
-| :--- | :--- |
-| **Productivity** | `obsidian` `kate` `doublecmd-qt5` |
-| **Multimedia** | `obs-studio` `audacity` `yt-dlp` |
-| **Notifications** | `dunst` (A lightweight alternative to `mako`) |
-| **File Previews** | `tumbler` (For generating thumbnails in file managers like Thunar) |
-| **System Tools** | `grimblast` (A powerful screenshot utility for Sway/Hyprland) |
+| Category              | Packages                                                           |
+| :-------------------- | :----------------------------------------------------------------- |
+| **Productivity**      | `obsidian` `kate` `doublecmd-qt5`                                  |
+| **Multimedia**        | `obs-studio` `audacity` `yt-dlp`                                   |
+| **Notifications**     | `dunst` (A lightweight alternative to `mako`)                      |
+| **File Previews**     | `tumbler` (For generating thumbnails in file managers like Thunar) |
+| **System Tools**      | `grimblast` (A powerful screenshot utility for Sway/Hyprland)      |
+| **Arch Wiki Offline** | arch-wiki-docs                                                     |
 
 ---
 

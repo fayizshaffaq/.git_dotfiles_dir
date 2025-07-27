@@ -206,10 +206,6 @@ Fine-tune your Hyprland compositor and shell environment. These steps are often 
 
 **Clean Environment Variables:**
 
-```bash
-nvim ~/.config/hypr/hyprland.conf
-```
-
 - [ ] Comment OUT any and all environment variable under the Nvidia section in the uwsm env file. 
 
 ```bash

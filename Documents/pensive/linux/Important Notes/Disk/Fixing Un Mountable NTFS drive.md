@@ -50,6 +50,15 @@ There are Three methods to fixing this.
 sudo pacman -S --needed ntfs-3g
 ```
 
+Unlock the Target NTFS drive. (find out the block drive with `lsblk`)
+```bash
+lsblk
+```
+
+```bash
+udisksctl unlock --block-device /dev/sdX
+```
+
 and then find out your unlocked drive's full path 
 
 ```bash
@@ -59,6 +68,7 @@ sudo blkid
 ###### `/dev/mapper/bitlk-dcc9ed43-feec-44c3-b81e-2b493d799778`
 
 and then try to fix it with: 
+
 `sudo ntfsfix /dev/mapper/bitlk-dcc9ed43-feec-44c3-b81e-2b493d799778`
 
 ```bash
@@ -70,6 +80,12 @@ This might attempt to correct errors by "Processing $MFT and $MFTMirr" as seen i
 then run this to clear all bad blocks (if this doesn't fix the drive right away, reboot> unlock drive> and then run this command again)
 ```bash
 sudo ntfsfix --clear-dirty /dev/mapper/bitlk-xxxxxxxxxxxxxxxxxxxxxx
+```
+
+For finding out UUID of your target device 
+
+```bash
+lsblk -f
 ```
 
 > [!note]- Alternative Linux Method, But Not verified to Work

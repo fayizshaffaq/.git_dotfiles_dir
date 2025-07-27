@@ -20,4 +20,6 @@
     4.5. [[Disable Unnecessary Startup Programs]]
     4.6. [[Adjust the Visual Effects in Windows 11]]
 
-5. [[Conclusion Win]]
+5. [[Setting up Shared Directory Between Guest_win11 and Host ]]
+
+6. [[Conclusion Win]]

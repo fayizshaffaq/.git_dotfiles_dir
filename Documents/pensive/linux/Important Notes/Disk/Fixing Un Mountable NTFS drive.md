@@ -77,7 +77,25 @@ sudo ntfsfix /dev/mapper/bitlk-xxxxxxxxxxxxxxxxxxxxxxxxx
 
 This might attempt to correct errors by "Processing $MFT and $MFTMirr" as seen in similar cases.  However, be aware that for BitLocker-encrypted drives, ntfsfix often cannot fully resolve this type of corruption.
 
-then run this to clear all bad blocks (if this doesn't fix the drive right away, reboot> unlock drive> and then run this command again)
+> [!warning]- If you get an error similar to this, It's strongly advised to directly skip to method 2 (Windows chkdsk method)
+> ```ini
+> Mounting volume... ntfs_mst_post_read_fixup_warn: magic: 0x00000000  size: 1024   usa_ofs: 0  usa_count: 0: Invalid argument
+Record 0 has no FILE magic (0x0)
+Failed to load $MFT: Input/output error
+FAILED
+Attempting to correct errors... ntfs_mst_post_read_fixup_warn: magic: 0x00000000  size: 1024   usa_ofs: 0  usa_count: 0: Invalid argument
+Record 0 has no FILE magic (0x0)
+Failed to load $MFT: Input/output error
+FAILED
+Failed to startup volume: Input/output error
+Checking for self-located MFT segment... ntfs_mst_post_read_fixup_warn: magic: 0x00000000  size: 1024   usa_ofs: 0  usa_count: 0: Invalid argument
+OK
+Unrecoverable error
+Volume is corrupt. You should run chkdsk.
+> ```
+
+
+Then run this to clear all bad blocks (if this doesn't fix the drive right away, reboot> unlock drive> and then run this command again)
 ```bash
 sudo ntfsfix --clear-dirty /dev/mapper/bitlk-xxxxxxxxxxxxxxxxxxxxxx
 ```

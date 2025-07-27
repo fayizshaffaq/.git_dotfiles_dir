@@ -19,7 +19,9 @@ After installing the VirtIO network device driver, click the Next button to proc
 
 After installing windows and booting into the os for the first time you must install VirtIO Windows Guest Tools. This package includes some optional drivers and services that will boost SPICE performance and integration. This includes the QXL video driver as well as the SPICE guest agent for copy and paste, automatic resolution switching, and other features.
 
-So launch **Windows Explorer**, navigate to the **CD Drive (E:)**, and double-click the **virtio-win-guest-tools** package to install it.
+So launch **Windows Explorer**, navigate to the `**CD Drive (E:)**`, and double-click the `**virtio-win-guest-tools**` package to install it.
+
+> [!note] Dont install the 64 or the 86 file instead install `virtio-win-guest-tools`
 
 After installing the guest tools, on the Windows-11 KVM window, at the top of the virt viewer,  click `View`, `Scale Display`, and check the `Auto resize VM with window` option. This will enable the Windows 11 guest window to automatically resize as you scale it.
 

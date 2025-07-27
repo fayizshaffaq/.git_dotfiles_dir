@@ -32,7 +32,7 @@
 > [  161.279629] ntfs3(dm-0): volume is dirty and "force" flag is not set!
 > ```
 > 
-#### Why this Happnes
+#### Why this Happens
 
 Usually happens because the drive cut power to abruptly during activity which results in file corruption. 
 The error $MFTMirr does not match $MFT (record 3) indicates that the Master File Table (MFT) and its mirror copy are out of sync, which typically happens after unsafe removal of an NTFS drive. 
@@ -40,6 +40,9 @@ The error $MFTMirr does not match $MFT (record 3) indicates that the Master File
 This is a critical filesystem inconsistency that needs proper repair.
  
 There are Three methods to fixing this. 
+- fixing it with ntfs tools on linux 
+- fixing it on windows
+- fixing it with windows installation media from the install environment (if windows is not installed)
 
 ### First is with the linux method - with ntfs-3g
 

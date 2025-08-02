@@ -71,7 +71,7 @@ Now, we will install the necessary build tools and compile the `Kokoros` applica
 If you don't have Rust installed, use `pacman` to install it. Cargo is the official build tool and package manager for Rust.
 
 ```bash
-sudo pacman -S cargo
+sudo pacman -S --needed cargo
 ```
 
 ### Step 2: Compile the Executable
@@ -106,12 +106,15 @@ The repository includes scripts to download the necessary files. First, we must 
 ```bash
 # You can use either of the following commands
 sudo chmod u+x scripts/download_{models,voices}.sh
-# or
+```
+
+ or
+ 
+```bash
 sudo chmod u+x scripts/download_models.sh scripts/download_voices.sh
 ```
 
 You can verify the permissions have been set correctly with:
-
 ```bash
 ls -la scripts/
 ```
@@ -125,9 +128,11 @@ Execute the scripts to download the model and voice files. They will be placed i
 
 ```bash
 ./scripts/download_models.sh
-./scripts/download_voices.sh
 ```
 
+```bash
+./scripts/download_voices.sh
+```
 ### Step 3: Final Verification
 
 Check that the `koko` binary still functions correctly with the models in place.

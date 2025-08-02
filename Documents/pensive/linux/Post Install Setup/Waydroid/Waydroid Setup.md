@@ -13,22 +13,26 @@ This guide provides a comprehensive walkthrough for installing and configuring W
 Before you begin, it's crucial to verify that your Linux kernel has the necessary modules enabled for Waydroid to function.
 
 1.  **Check for `binder` and `ashmem`:** (works without this as well)
-    Open a terminal and run the following command:
-    ```bash
-    grep -E "binder|ashmem" /proc/filesystems
-    ```
+
+Open a terminal and run the following command:
+
+```bash
+grep -E "binder|ashmem" /proc/filesystems
+```
 
 2.  **Verify the Output:**
-    You should see both `binder` and `ashmem` listed.
-    ```
-    nodev	binder
-    nodev	ashmem
-    ```
+
+You should see both `binder` and `ashmem` listed.
+
+```
+nodev	binder
+nodev	ashmem
+```
 
 > [!note] (Optional, NOT NEEDED)
 > If the command returns no output or is missing one of the modules, Waydroid will not work. On Arch Linux, the `linux-zen` kernel includes these modules by default. You may need to install it and reboot your system.
 > ```bash
-> sudo pacman -S linux-zen
+> sudo pacman -S --needed linux-zen
 > ```
 
 ---
@@ -123,7 +127,6 @@ sudo systemctl enable --now waydroid-container
 
 > [!tip] Restart your pc once and then open waydroid with rofi. 
 
-```
 #### Method B: Manual Session
 
 This method starts a session that lasts until you stop it or reboot your machine. It's useful for on-demand use.
@@ -142,6 +145,11 @@ Once the session is running, you should see the Waydroid application in your sys
 
 ---
 
+## FIXING BLACK SCREEN 
+
+```bash
+waydroid prop set persist.waydroid.multi_windows true
+```
 ## Fixing Network issues. 
 [[Waydroid Network & Firewall Configuration]]
 

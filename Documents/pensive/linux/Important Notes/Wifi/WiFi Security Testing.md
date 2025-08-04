@@ -36,6 +36,21 @@ sudo pacman -S --needed aircrack-ng
 nmcli device wifi list
 ```
 
+for gui, install this 
+```bash
+sudo pacman -S --needed reaver bully john wireshark-cli wifite hcxtools hcxdumptool cowpatty macchanger hashcat
+```
+
+```bash
+paru -S pyrit
+```
+
+and then run 
+
+```bash
+sudo wifite --kill
+```
+
 ---
 ---
 

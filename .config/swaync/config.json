@@ -1,0 +1,96 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "left",
+    "positionY": "bottom",
+    "control-center-margin-top": 0,
+    "control-center-margin-bottom": 5,
+    "control-center-margin-right": 0,
+    "control-center-margin-left": 5,
+    "notification-window-width": 350,
+    "control-center-width": 300,
+    "fit-to-screen": true,
+    "layer": "overlay",
+    "control-center-layer": "top",
+    "layer-shell": true,
+    "cssPriority": "user",
+    "hide-on-action": false,
+    "script-fail-notify": true,
+    "ignore-gtk-theme": true,
+    "widgets": [
+        "title",
+        "dnd",
+        "buttons-grid",
+        "volume",
+        "backlight",
+        "mpris",
+        "notifications"
+    ],
+    "widget-config": {
+        "title": {
+            "clear-all-button": true,
+            "button-text": "Clear"
+        },
+        "dnd": {
+            "label": "󰂛"
+        },
+        "volume": {
+            "label": "󰕾"
+        },
+        "backlight": {
+            "label": ""
+        },
+        "mpris": {
+            "image-size": 96,
+            "image-radius": 12,
+            "autohide": true
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰡬",
+                    "command": "uwsm-app -- $HOME/user_scripts/sliders/hyprsunset_slider.sh"
+                },
+                {
+                    "label": "",
+                    "command": "uwsm-app -- kitty -e $HOME/user_scripts/network_manager/nmcli_wifi.sh"
+                },
+                {
+                    "label": "󰂯",
+                    "command": "uwsm-app -- blueman-manager"
+                },
+                {
+                    "label": "󰕾",
+                    "command": "uwsm-app -- pavucontrol"
+                },
+                {
+                    "label": "",
+                    "command": "uwsm-app -- $HOME/user_scripts/swww/swww_random_standalone.sh"
+                },
+                {
+                    "label": "󰓅",
+                    "command": "uwsm-app -- kitty -e $HOME/user_scripts/performance/services_and_process_terminator.sh"
+                },
+                {
+                    "label": "󰌾",
+                    "command": "uwsm-app -- hyprlock -q"
+                },
+                {
+                    "label": "󰤄",
+                    "command": "systemctl suspend"
+                },
+                {
+                    "label": "󰜉",
+                    "command": "systemctl reboot"
+                },
+                {
+                    "label": "󱫓",
+                    "command": "uwsm-app -- kitty -e $HOME/user_scripts/hypridle/timeout.sh"
+                },
+                {
+                    "label": "⏻",
+                    "command": "systemctl poweroff"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,32 @@
+return {
+	"lewis6991/gitsigns.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	opts = {
+		-- 1. The Aesthetic "Rice" Settings
+		signs = {
+			add = { text = "" },
+			change = { text = "" },
+			delete = { text = "󰮉" },
+			topdelete = { text = "" },
+			changedelete = { text = "" },
+			untracked = { text = "" },
+		},
+		numhl = false,
+		linehl = false,
+
+		-- 2. Behavior Settings
+		-- OPTIMIZATION: Set to false to respect the global 'signcolumn="yes"' in options.lua
+		signcolumn = false,
+
+		-- Critical for dotfiles: show the "new file" bar for untracked files
+		attach_to_untracked = true,
+
+		-- 3. The "Dual Mode" Logic
+		worktrees = {
+			{
+				toplevel = os.getenv("HOME"),
+				gitdir = os.getenv("HOME") .. "/.git_dotfiles_dir",
+			},
+		},
+	},
+}

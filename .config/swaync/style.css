@@ -1,0 +1,347 @@
+/* * SWAYNC STYLE CONFIGURATION 
+ * Optimized for Matugen & Hyprland
+ * Slim 300px Version
+ */
+
+/* --- Variable Imports & Mapping --- */
+@import url("../matugen/generated/swaync-colors.css");
+
+@define-color background-color @surface;
+@define-color background-alt-color @surface_container;
+@define-color text-color @on_background;
+@define-color accent-color @primary;
+@define-color urgent-color @error;
+@define-color hover-color @surface_container_high;
+@define-color shadow-color @shadow;
+
+/* --- Global Settings --- */
+* {
+  color: @text-color;
+  all: unset;
+  font-family: "JetBrains Mono Nerd Font", "Fira Sans", sans-serif;
+  font-size: 14px;
+  transition: 200ms ease-in-out;
+}
+
+.blank-window {  
+  background: transparent;  
+}
+  
+/* --- CONTROL CENTER (Main Window) --- */
+.control-center {
+  background: alpha(@background-color, 0.95);
+  border-radius: 24px;
+  border: 1px solid @accent-color;
+  box-shadow: 0 0 10px 0 alpha(@shadow-color, 0.6);
+  margin: 0;
+  padding: 12px;
+}
+
+/* --- Notifications in Control Center --- */
+.control-center .notification-row .notification-background,
+.control-center .notification-row .notification-background .notification.critical {
+  background-color: @background-alt-color;
+  border-radius: 16px;
+  margin: 4px 0px;
+  padding: 2px;
+  border: 1px solid @accent-color;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+  color: @urgent-color;
+  border-color: @urgent-color;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+  margin: 4px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 0.5em;
+}
+
+/* Actions (Buttons inside notifications) */
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background: alpha(@accent-color, .6);
+  color: @text-color;
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background: @accent-color;
+  color: @background-color;
+}
+
+/* Close Button */
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 6px;
+  color: @text-color;
+  margin: 0px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: @accent-color;
+  color: @background-color;
+}
+
+progressbar, progress, trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255,255,255,.1);
+}
+
+/* --- FLOATING NOTIFICATIONS (Popups) --- */
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background: alpha(@background-color, .98);
+  box-shadow: 0 0 8px 0 alpha(@shadow-color, 0.6);
+  border: 1px solid @accent-color;
+  border-radius: 24px;
+  margin: 8px;
+  padding: 0;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+  padding: 3px;
+  border-radius: 12px;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.critical {
+  border: 2px solid @urgent-color;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content {
+  margin: 7px;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 0.5em;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  border-radius: 8px;
+  background-color: @background-alt-color;
+  margin: 6px;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background-color: @hover-color;
+  border: 1px solid @accent-color;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+  color: @text-color;
+}
+
+.body {
+  font-size: 0.8rem;
+  color: @text-color;
+}
+
+.time {
+  color: @text-color;
+  opacity: 0.8;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button {
+  margin: 6px;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:hover {
+  background-color: @accent-color;
+  color: @background-color;
+}
+
+.notification.critical progress {
+  background-color: @urgent-color;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @accent-color;
+}
+
+/* --- WIDGETS --- */
+
+/* Title Widget */
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+}
+
+.widget-title button {
+  background: @background-alt-color;
+  border-radius: 6px;
+  padding: 4px 16px;
+  border: 1px solid transparent;
+}
+
+.widget-title button:hover {
+  background-color: @hover-color;
+  border: 1px solid @accent-color;
+}
+
+/* DND Widget */
+.widget-dnd {
+  margin: 6px;
+  font-size: 1.2rem;
+}
+
+.widget-dnd > switch {
+  background: @background-alt-color;
+  font-size: initial;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 2px;
+  border: 1px solid transparent;
+}
+
+.widget-dnd > switch:hover {
+  background: @hover-color;
+  border: 1px solid @accent-color;
+}
+
+.widget-dnd > switch:checked {
+  background: @accent-color;
+}
+
+.widget-dnd > switch slider {
+  background: @text-color;
+  border-radius: 6px;
+}
+
+/* Buttons Grid - OPTIMIZED FOR COMPACT LAYOUT */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 4px;
+  margin: 6px;
+  border-radius: 12px;
+  background: @background-alt-color;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 2px 4px;    /* Drastically reduced margins to fit 5 in a row */
+  padding: 4px 6px;   /* Reduced padding for sleek look */
+  background: transparent;
+  border-radius: 8px;
+  min-width: 20px;    /* Prevents forced width expansion */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @hover-color;
+}
+
+/* Volume & Backlight */
+.widget-volume, .widget-backlight {
+    background: @background-alt-color;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+.widget-volume label, .widget-backlight label {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+scale trough {
+    min-height: 6px;
+    border-radius: 12px;
+    background-color: alpha(@background-color, 0.5);
+}
+
+scale trough highlight {
+    border-radius: 12px;
+    background-color: @accent-color;
+}
+
+/* --- MPRIS WIDGET --- */
+.widget-mpris {
+    background: @background-alt-color;
+    padding: 8px;
+    margin: 6px;
+    border-radius: 12px;
+}
+
+.widget-mpris > box {
+    background: transparent;
+}
+
+.widget-mpris > box > button {
+    background: transparent;
+    border-radius: 0;
+}
+
+.widget-mpris-player {
+    background: alpha(@background-color, 0.5);
+    border-radius: 12px;
+    padding: 8px;
+    margin: 4px 0;
+}
+
+.widget-mpris-player > box {
+    background: transparent;
+}
+
+.widget-mpris-album-art {
+    border-radius: 12px;
+    margin-right: 12px;
+}
+
+.widget-mpris-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: @text-color;
+}
+
+.widget-mpris-subtitle {
+    font-size: 0.9rem;
+    color: @text-color;
+    opacity: 0.8;
+}
+
+.widget-mpris > box > button:hover {
+    background: @hover-color;
+    border-radius: 8px;
+}
+
+/* --- Explicit Text/Icon Color Enforcement --- */
+.widget-title,
+.widget-dnd,
+.widget-volume label,
+.widget-backlight label,
+.widget-mpris-title,
+.widget-mpris-subtitle,
+.widget-buttons-grid > flowbox > flowboxchild > button,
+.widget-title button {
+  color: @text-color;
+}
+
+/* Target the "No Notifications" placeholder */
+.notification-placeholder,
+.notification-placeholder label {
+  color: @text-color;
+  opacity: 0.7;
+}
